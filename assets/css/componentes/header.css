@@ -1,0 +1,84 @@
+/* HEADER */
+
+.header-contact {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 10px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-contact i {
+    margin-right: 8px;
+}
+
+.header-container {
+    background: var(--color-primary-light);
+    position: fixed;
+    width: 100%;
+    top: 44px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--color-primary);
+
+    padding: 0 5%;
+}
+
+.header-logo {
+    background: url('../../imagens/logos/logoNovaP.png') no-repeat center;
+    background-size: contain;
+
+    width: 170px;
+    height: 80px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 35px;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: bold;
+    transition: .3s;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+    color: var(--color-primary);
+}
+
+/* RESPONSIVO HEADER */
+
+@media(max-width:768px) {
+    .header-contact {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}

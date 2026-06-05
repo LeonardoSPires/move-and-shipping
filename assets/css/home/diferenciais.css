@@ -1,0 +1,73 @@
+/* DIFERENCIAIS */
+
+.advantages {
+    padding: 100px 0;
+    background: var(--color-light-bg);
+}
+
+.advantages-container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+
+.advantages-container h2 {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 2.5rem;
+}
+
+.advantages-container p {
+    text-align: center;
+    color: var(--color-text);
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.advantages-card {
+    
+    padding: 35px;
+    border-left: 8px solid var(--color-primary);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+}
+
+.advantages-card i {
+    font-size: 3rem;
+    color: var(--color-primary);
+}
+
+.advantages-card h2 {
+    text-align: left;
+    margin: 15px 0;
+}
+
+.advantages-card p {
+    color: var(--color-text);
+    text-align: left;
+}
+
+/* RESPONSIVO ADVANTAGES */
+
+@media(max-width:992px) {
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:768px) {
+    .advantages {
+        padding: 70px 0;
+    }
+}
+
+@media(max-width:480px) {
+    .advantages-container h2 {
+        font-size: 2rem;
+    }
+}

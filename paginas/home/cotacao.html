@@ -1,0 +1,27 @@
+<section class="cotacao" id="cotacao">
+    <div class="cotacao-container">
+        <div class="cotacao-intro">
+            <h2>Solicite sua Cotação</h2>
+            <p>Preencha os dados abaixo e receba uma proposta personalizada para sua mudança nacional ou internacional.</p>
+        </div>
+
+        <form id="quoteForm" class="cotacao-form">
+            <div class="cotacao-grid">
+                <input type="text" placeholder="Nome completo" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="tel" placeholder="Telefone" required>
+                <input type="text" placeholder="Cidade de origem" required>
+                <input type="text" placeholder="Cidade de destino" required>
+                <select required>
+                    <option value="" disabled selected>Tipo de serviço</option>
+                    <option value="nacional">Mudança Nacional</option>
+                    <option value="internacional">Mudança Internacional</option>
+                    <option value="comercial">Mudança Comercial</option>
+                </select>
+                <input type="text" placeholder="Volume estimado (m³)" required>
+                <textarea placeholder="Informações adicionais" rows="4"></textarea>
+            </div>
+            <button class="btn" type="submit">Enviar Cotação</button>
+        </form>
+    </div>
+</section>

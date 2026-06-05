@@ -1,0 +1,46 @@
+/* SOBRE */
+
+.about {
+    padding: 100px 0;
+    background: var(--color-primary-light);
+}
+
+.about-container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-container h2 {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    max-width: 800px;
+    margin: auto;
+    color: var(--color-text);
+    margin-bottom: 40px;
+    text-align: justify;
+}
+.about-container .btn {
+    width: 350px;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+
+/* RESPONSIVO ABOUT */
+
+@media(max-width:768px) {
+    .about {
+        padding: 70px 0;
+    }
+}
+
+@media(max-width:480px) {
+    .about-container h2 {
+        font-size: 2rem;
+    }
+}

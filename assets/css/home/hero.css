@@ -1,0 +1,145 @@
+/* HERO */
+
+.hero {
+    background: url('../../imagens/banners/banner-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 80px;
+    padding: 80px 5%;
+}
+
+.hero-container {
+    max-width: 550px;
+}
+
+.hero-container h1 {
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.1;
+    color: var(--color-primary-light);
+}
+
+.hero-container h3 {
+    margin-top: 30px;
+    color: var(--color-primary-light);
+}
+
+.wave-letter {
+    display: inline-block;
+    animation: waveColor 4s infinite;
+}
+
+@keyframes waveColor {
+
+    0%,
+    100% {
+        color: var(--color-primary-light);
+    }
+
+    50% {
+        color: var(--color-primary);
+    }
+}
+
+.hero-form-container {
+    background: var(--color-light-bg);
+    width: 100%;
+    max-width: 400px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+
+.hero-form-container h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.hero-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.hero-form input {
+    padding: 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+}
+
+.hero-animate-up,
+.hero-animate-right {
+    opacity: 0;
+}
+
+.hero-animate-up {
+    animation: heroSlideUp 0.9s ease-out forwards;
+    animation-delay: 0.1s;
+}
+
+.hero-animate-right {
+    animation: heroSlideRight 0.9s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes heroSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroSlideRight {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-form button {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* RESPONSIVO HERO */
+
+@media(max-width:992px) {
+    .hero {
+        gap: 50px;
+    }
+}
+
+@media(max-width:768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .hero-container h1 {
+        font-size: 3rem;
+    }
+
+    .hero-form-container {
+        max-width: 100%;
+    }
+}
+
+@media(max-width:480px) {
+    .hero-container h1 {
+        font-size: 2.4rem;
+    }
+}

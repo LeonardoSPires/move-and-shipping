@@ -1,0 +1,98 @@
+/* FOOTER */
+
+.footer {
+    background: url('../../imagens/backgrounds/backgoundFooter.png') no-repeat center;
+    background-size: cover;
+    color: var(--color-white);
+    padding: 70px 0;
+    min-height:700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer img {
+    padding-top: 20px;
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.footer-container-principal{
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 20px;
+    height: 500px;
+}
+
+.footer-info-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.endereco1, .endereco2{
+    padding: 20px;
+}
+
+h3 {
+    margin-bottom: 15px;
+}
+
+.email{
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.footer-social{
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 20px;
+    color: var(--color-white);
+}
+
+.footer-links-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--color-white);
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+/* RESPONSIVO FOOTER */
+
+@media(max-width:768px) {
+    .footer-container-principal {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-info-left {
+        gap: 10px;
+    }
+
+    .endereco1, .endereco2 {
+        padding: 10px;
+    }
+
+    .email {
+        padding-top: 10px;
+    }
+}   
