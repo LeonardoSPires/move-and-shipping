@@ -1,12 +1,35 @@
 // Carregamento centralizado de Header e Footer
 
 const pagesMap = {
-    home: { path: 'index.html', name: 'home' },
-    services: { path: 'paginas/servicos/servicos.html', name: 'services' },
-    about: { path: 'paginas/sobre/sobre.html', name: 'about' },
-    cotacao: { path: 'paginas/cotacao/cotacao.html', name: 'cotacao' },
-    blog: { path: 'paginas/blog/blog.html', name: 'blog' },
-    contato: { path: 'paginas/contato/contato.html', name: 'contato' }
+    home: {
+        path: 'index.html',
+        name: 'home'
+    },
+
+    services: {
+        path: 'paginas/servicos/servicos.html',
+        name: 'services'
+    },
+
+    about: {
+        path: 'paginas/sobre/sobre.html',
+        name: 'about'
+    },
+
+    cotacao: {
+        path: 'paginas/cotacao/cotacao.html',
+        name: 'cotacao'
+    },
+
+    blog: {
+        path: 'paginas/blog/blog.html',
+        name: 'blog'
+    },
+
+    contato: {
+        path: 'paginas/contato/contato.html',
+        name: 'contato'
+    }
 };
 
 function getCurrentPage() {
