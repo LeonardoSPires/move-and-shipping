@@ -1,123 +1,214 @@
-/* ESTILOS BASE DAS PÁGINAS INTERNAS */
+/* PÁGINA CONTATO */
 
-.page-container {
+.contact-container {
     width: min(90%, 1200px);
     margin: 0 auto;
 }
 
-.page-hero {
+.contact-hero {
     min-height: 55vh;
+    background: linear-gradient(rgba(13, 30, 55, .72), rgba(13, 30, 55, .72)),
+        url('../../imagens/banners/imgHomeRosaEscuro.jpg') center / cover no-repeat;
     display: flex;
     align-items: center;
     padding: 140px 0 80px;
-    background: linear-gradient(rgba(10, 22, 45, .65), rgba(10, 22, 45, .65)),
-        url('../../imagens/banners/imgHomeRosaEscuro.jpg') center / cover no-repeat;
-}
-
-.page-hero-content {
-    width: min(90%, 1100px);
-    margin: 0 auto;
-    max-width: 780px;
     color: var(--color-white);
 }
 
-.page-hero-content span,
-.section-heading span {
-    display: inline-block;
+.contact-hero h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
     color: var(--color-primary-light);
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 14px;
+    margin-bottom: 20px;
 }
 
-.section-heading span {
-    color: var(--color-primary);
-}
-
-.page-hero-content h1 {
-    font-size: clamp(2.8rem, 5vw, 5rem);
-    line-height: 1.05;
-    margin-bottom: 22px;
-}
-
-.page-hero-content p {
-    font-size: 1.25rem;
-}
-
-.section-heading {
-    text-align: center;
+.contact-hero h2 {
     max-width: 850px;
-    margin: 0 auto 50px;
+    font-size: clamp(1.5rem, 3vw, 2.6rem);
+    line-height: 1.25;
+    color: var(--color-white);
 }
 
-.section-heading h2 {
-    color: var(--color-primary);
-    font-size: 2.5rem;
-}
-
-@media(max-width: 768px) {
-    .page-hero-content h1 {
-        font-size: 2.5rem;
-    }
-}
-
-.contato-page {
+.contact-main {
     padding: 100px 0;
     background: var(--color-light-bg);
 }
 
-.contato-grid {
+.contact-grid {
     display: grid;
     grid-template-columns: .9fr 1.1fr;
-    gap: 40px;
-    align-items: start;
+    gap: 50px;
+    align-items: stretch;
 }
 
-.contato-info,
-.contato-form {
+.contact-info,
+.contact-form-box {
     background: var(--color-primary-light);
-    padding: 40px;
+    border-radius: 22px;
+    padding: 42px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .10);
+}
+
+.contact-image {
+    width: 100%;
+    min-height: 220px;
+    background: var(--color-primary);
     border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary-light);
 }
 
-.contato-info h2 {
+.contact-image i {
+    font-size: 6rem;
+}
+
+.contact-info h3,
+.contact-form-box h3 {
     color: var(--color-primary);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    font-size: 1.7rem;
 }
 
-.contato-info p {
+.contact-item {
+    display: flex;
+    gap: 14px;
+    align-items: center;
     color: var(--color-text-dark);
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    font-size: 1.1rem;
 }
 
-.contato-info i {
+.contact-item i {
     color: var(--color-primary);
-    margin-right: 8px;
+    font-size: 1.3rem;
 }
 
-.contato-form {
+.contact-form {
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
 
-.contato-form input,
-.contato-form textarea {
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
     width: 100%;
-    padding: 16px;
     border: 1px solid var(--color-border);
     border-radius: 12px;
+    padding: 16px;
+    font-family: inherit;
     font-size: 1rem;
+    color: var(--color-text-dark);
+    background: var(--color-white);
 }
 
-.contato-form textarea {
+.contact-form textarea {
     resize: vertical;
 }
 
-@media(max-width: 800px) {
-    .contato-grid {
+.contact-form button {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-top: 6px;
+}
+
+.contact-address {
+    padding: 90px 0;
+    background: var(--color-white);
+}
+
+.address-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.address-card {
+    background: var(--color-light-bg);
+    border-radius: 18px;
+    padding: 34px;
+    border-top: 6px solid var(--color-primary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+
+.address-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 18px;
+}
+
+.address-card p {
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.contact-faq {
+    padding: 100px 0;
+    background: var(--color-light-bg);
+}
+
+.contact-faq h2 {
+    color: var(--color-primary);
+    font-size: 2.7rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.faq-list details {
+    background: var(--color-primary-light);
+    border-radius: 14px;
+    padding: 22px 26px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+
+.faq-list summary {
+    cursor: pointer;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 1.15rem;
+}
+
+.faq-list p {
+    margin-top: 16px;
+    color: var(--color-text);
+}
+
+/* RESPONSIVO */
+
+@media(max-width: 900px) {
+    .contact-grid,
+    .address-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 768px) {
+    .contact-main,
+    .contact-address,
+    .contact-faq {
+        padding: 70px 0;
+    }
+
+    .contact-info,
+    .contact-form-box {
+        padding: 30px;
+    }
+
+    .contact-hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .contact-hero h2 {
+        font-size: 1.5rem;
     }
 }

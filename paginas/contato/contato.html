@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="../../assets/css/componentes/footer.css">
     <link rel="stylesheet" href="../../assets/css/contato/contato.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -21,30 +19,129 @@
     <div id="header-container"></div>
 
     <main>
-        <section class="page-hero contato-hero">
-            <div class="page-hero-content">
-                <span>Fale conosco</span>
+        <section class="contact-hero">
+            <div class="contact-container">
                 <h1>Contato</h1>
-                <p>Estamos prontos para ajudar no planejamento da sua mudança.</p>
+                <h2>Você tem alguma dúvida sobre sua mudança, nossos serviços ou cotações?</h2>
             </div>
         </section>
 
-        <section class="contato-page">
-            <div class="page-container contato-grid">
-                <div class="contato-info">
-                    <h2>Entre em contato</h2>
-                    <p><i class="fa-solid fa-phone"></i> América do Sul: 0800-252 5663</p>
-                    <p><i class="fa-solid fa-phone"></i> América do Norte: 1-800-252-5663</p>
-                    <p><i class="fa-solid fa-at"></i> info@moveandshipping.com</p>
+        <section class="contact-main">
+            <div class="contact-container contact-grid">
+
+                <div class="contact-info">
+                    <div class="contact-image">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <h3>Contato</h3>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>América do Sul: 0800-252 5663</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>América do Norte: 1-800-252-5663</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-at"></i>
+                        <span>info@moveandshipping.com</span>
+                    </div>
                 </div>
 
-                <form class="contato-form">
-                    <input type="text" placeholder="Nome completo" required>
-                    <input type="email" placeholder="E-mail" required>
-                    <input type="tel" placeholder="Telefone">
-                    <textarea placeholder="Mensagem" rows="5"></textarea>
-                    <button type="submit" class="btn">Enviar Mensagem</button>
-                </form>
+                <div class="contact-form-box">
+                    <h3>Fale conosco usando o formulário</h3>
+
+                    <form class="contact-form">
+                        <input type="text" placeholder="Nome" required>
+                        <input type="email" placeholder="E-mail" required>
+
+                        <select required>
+                            <option value="" disabled selected>Selecione um assunto</option>
+                            <option value="duvidas">Dúvidas sobre mudança</option>
+                            <option value="cotacao">Solicitar cotação</option>
+                            <option value="parceria">Parcerias</option>
+                            <option value="outros">Outros</option>
+                        </select>
+
+                        <textarea placeholder="Mensagem" rows="6" required></textarea>
+
+                        <button type="submit" class="btn">Enviar mensagem</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact-address">
+            <div class="contact-container address-grid">
+
+                <article class="address-card">
+                    <h3>MOVE AND SHIPPING USA</h3>
+                    <p>N1309 Coffeen Ave STE 1200</p>
+                    <p>Sheridan, WY 82801</p>
+                    <p>United States</p>
+                </article>
+
+                <article class="address-card">
+                    <h3>MOVE AND SHIPPING RJ</h3>
+                    <p>Rio de Janeiro - RJ</p>
+                    <p>Brasil</p>
+                    <p>Atendimento nacional e internacional</p>
+                </article>
+
+                <article class="address-card">
+                    <h3>MOVE AND SHIPPING SP</h3>
+                    <p>São Paulo - SP</p>
+                    <p>Brasil</p>
+                    <p>Atendimento comercial e residencial</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="contact-faq">
+            <div class="contact-container">
+                <h2>FAQ</h2>
+
+                <div class="faq-list">
+
+                    <details>
+                        <summary>Quais são as formas de pagamento disponíveis?</summary>
+                        <p>
+                            Trabalhamos com as principais formas de pagamento, conforme o tipo de serviço contratado.
+                            Nossa equipe informa as opções disponíveis durante o envio da proposta.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Em quais países a Move and Shipping atua?</summary>
+                        <p>
+                            Atuamos em diversos países através de uma rede de parceiros especializados em mudanças
+                            internacionais, transporte e logística.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>A Move and Shipping também transporta animais?</summary>
+                        <p>
+                            Podemos orientar o cliente sobre empresas especializadas nesse tipo de transporte,
+                            conforme origem, destino e regras do país.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Serei informado sobre as etapas da minha mudança?</summary>
+                        <p>
+                            Sim. Nossa equipe acompanha o processo e mantém o cliente informado sobre as principais
+                            etapas da mudança, desde a origem até a entrega final.
+                        </p>
+                    </details>
+
+                </div>
             </div>
         </section>
     </main>

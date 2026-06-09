@@ -29,22 +29,55 @@ const pagesMap = {
     contato: {
         path: 'paginas/contato/contato.html',
         name: 'contato'
-    }
+    },
+
+    internacional: { 
+        path: 'paginas/servicos/internacional.html', 
+        name: 'internacional' 
+    },
+
+    nacional: { 
+        path: 'paginas/servicos/nacional.html', 
+        name: 'nacional' 
+    },
+
+    comercial: { 
+        path: 'paginas/servicos/comercial.html', 
+        name: 'comercial' 
+    },
+
+    paraBrasil: { 
+        path: 'paginas/servicos/paraBrasil.html', 
+        name: 'paraBrasil' 
+    },
+
 };
 
 function getCurrentPage() {
-    const filename = window.location.pathname.split('/').pop() || 'index.html';
+    const filename =
+        window.location.pathname.split('/').pop() ||
+        'index.html';
 
-    if (filename === 'index.html' || filename === '') return 'home';
-    if (filename === 'servicos.html') return 'services';
+    if (filename === 'index.html') return 'home';
+
     if (filename === 'sobre.html') return 'about';
+
     if (filename === 'cotacao.html') return 'cotacao';
+
     if (filename === 'blog.html') return 'blog';
+
     if (filename === 'contato.html') return 'contato';
+
+    if (filename === 'internacional.html') return 'internacional';
+
+    if (filename === 'nacional.html') return 'nacional';
+
+    if (filename === 'comercial.html') return 'comercial';
+
+    if (filename === 'paraBrasil.html') return 'paraBrasil';
 
     return 'home';
 }
-
 function getBasePath() {
     const path = window.location.pathname;
 
@@ -75,8 +108,9 @@ async function loadComponent(containerId, componentPath) {
         container.innerHTML = html;
 
         if (containerId === 'header-container') {
-            adjustHeaderLinks();
-        }
+        adjustHeaderLinks();
+        setupMegaMenu();
+}
 
         if (containerId === 'footer-container') {
             adjustFooterLinks();
@@ -93,14 +127,30 @@ function adjustHeaderLinks() {
     const currentPage = getCurrentPage();
     const basePath = getBasePath();
 
-    document.querySelectorAll('.header-nav [data-page]').forEach(link => {
+    // Busca qualquer elemento com data-page
+    const links = document.querySelectorAll('[data-page]');
+
+    links.forEach(link => {
         const page = link.getAttribute('data-page');
         const pageInfo = pagesMap[page];
 
         if (!pageInfo) return;
 
-        link.setAttribute('href', basePath + pageInfo.path);
-        link.classList.toggle('active', page === currentPage);
+        const href = basePath
+            ? basePath + pageInfo.path
+            : pageInfo.path;
+
+        // Se for um <a>
+        if (link.tagName.toLowerCase() === 'a') {
+            link.setAttribute('href', href);
+        }
+
+        // Página ativa
+        if (page === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
     });
 }
 
@@ -135,3 +185,23 @@ document.addEventListener('DOMContentLoaded', () => {
     loadComponent('header-container', 'componentes/header.html');
     loadComponent('footer-container', 'componentes/footer.html');
 });
+
+function setupMegaMenu() {
+    const dropdown = document.querySelector('.nav-dropdown');
+    const toggle = document.querySelector('.dropdown-toggle');
+
+    if (!dropdown || !toggle) return;
+
+    toggle.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        dropdown.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.header-nav a').forEach(link => {
+        link.addEventListener('click', function () {
+            dropdown.classList.remove('active');
+        });
+    });
+}

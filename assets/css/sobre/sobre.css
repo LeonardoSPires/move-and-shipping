@@ -1,270 +1,280 @@
-/* PÁGINA SOBRE */
+/* ABOUT PAGE */
 
-.sobre-container {
+.about-container {
     width: min(90%, 1200px);
     margin: 0 auto;
 }
 
-.section-tag {
-    display: inline-block;
-    color: var(--color-primary);
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 14px;
-}
-
-.sobre-hero {
-    min-height: 70vh;
-    background: linear-gradient(rgba(10, 22, 45, .65), rgba(10, 22, 45, .65)),
+.about-hero {
+    min-height: 62vh;
+    background: linear-gradient(rgba(13, 30, 55, .72), rgba(13, 30, 55, .72)),
         url('../../imagens/banners/imgHomeRosaEscuro.jpg') center / cover no-repeat;
     display: flex;
     align-items: center;
-    padding: 140px 0 90px;
-}
-
-.sobre-hero-content {
-    width: min(90%, 1100px);
-    margin: 0 auto;
-    max-width: 780px;
+    padding: 140px 0 80px;
     color: var(--color-white);
 }
 
-.sobre-hero-content .section-tag {
+.about-hero-content {
+    width: min(90%, 1100px);
+    margin: 0 auto;
+}
+
+.about-hero h1 {
+    font-size: clamp(3rem, 6vw, 5.8rem);
+    line-height: 1;
+    margin-bottom: 24px;
     color: var(--color-primary-light);
 }
 
-.sobre-hero-content h1 {
-    font-size: clamp(2.8rem, 5vw, 5rem);
-    line-height: 1.05;
-    margin-bottom: 24px;
+.about-hero h2 {
+    max-width: 850px;
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    line-height: 1.2;
+    color: var(--color-white);
 }
 
-.sobre-hero-content p {
-    font-size: 1.25rem;
-}
-
-.sobre-historia {
+.about-story {
     padding: 100px 0;
     background: var(--color-light-bg);
 }
 
-.sobre-grid {
+.story-grid {
     display: grid;
-    grid-template-columns: 1.4fr .8fr;
-    gap: 50px;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 55px;
     align-items: center;
 }
 
-.sobre-historia h2,
-.sobre-titulo h2 {
-    color: var(--color-primary);
-    font-size: 2.5rem;
-    margin-bottom: 24px;
+.story-image {
+    min-height: 440px;
+    border-radius: 30px;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 18px 40px rgba(0,0,0,.18);
 }
 
-.sobre-historia p,
-.sobre-titulo p {
+.image-placeholder {
+    width: 78%;
+    min-height: 320px;
+    border-radius: 26px;
+    border: 3px solid var(--color-primary-light);
+    color: var(--color-primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder i {
+    font-size: 7rem;
+}
+
+.story-text h2,
+.section-title h2,
+.about-reviews h2,
+.about-clients h2,
+.about-certificates h2 {
+    color: var(--color-primary);
+    font-size: 2.7rem;
+    margin-bottom: 22px;
+}
+
+.story-text p {
     color: var(--color-text);
     margin-bottom: 18px;
     text-align: justify;
 }
 
-.sobre-card-destaque {
-    background: var(--color-primary-light);
-    padding: 40px;
-    border-radius: 20px;
-    border-left: 8px solid var(--color-primary);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
-}
-
-.sobre-card-destaque h3 {
-    color: var(--color-primary);
-    margin-bottom: 14px;
-}
-
-.sobre-card-destaque ul {
-    list-style: none;
-    margin-top: 25px;
-}
-
-.sobre-card-destaque li {
-    margin-bottom: 14px;
-    color: var(--color-text-dark);
-}
-
-.sobre-card-destaque i {
-    color: var(--color-primary);
-    margin-right: 8px;
-}
-
-.sobre-valores {
+.about-values {
     padding: 100px 0;
     background: var(--color-white);
 }
 
-.sobre-titulo {
-    text-align: center;
+.section-title {
+    max-width: 900px;
+    margin-bottom: 50px;
+}
+
+.section-title p {
+    color: var(--color-text);
     max-width: 850px;
-    margin: 0 auto 50px;
 }
 
-.sobre-titulo p {
-    text-align: center;
-}
-
-.valores-grid,
-.servicos-grid {
+.values-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 26px;
 }
 
-.valor-card,
-.servicos-grid article {
+.value-card {
     background: var(--color-light-bg);
-    padding: 32px;
     border-radius: 18px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
-    transition: .3s;
+    padding: 34px 28px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    border-top: 6px solid var(--color-primary);
 }
 
-.valor-card:hover,
-.servicos-grid article:hover {
-    transform: translateY(-6px);
-}
-
-.valor-card i,
-.servicos-grid i {
+.value-card i {
     color: var(--color-primary);
-    font-size: 2.6rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 22px;
 }
 
-.valor-card h3,
-.servicos-grid h3 {
+.value-card h3 {
     color: var(--color-primary);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
-.valor-card p,
-.servicos-grid p {
+.value-card p {
     color: var(--color-text);
 }
 
-.sobre-servicos {
-    padding: 100px 0;
+.about-reviews {
+    padding: 90px 0;
     background: var(--color-primary);
 }
 
-.sobre-servicos .section-tag,
-.sobre-servicos h2 {
+.about-reviews h2 {
     color: var(--color-primary-light);
+    text-align: center;
 }
 
-.sobre-servicos .sobre-titulo p {
-    color: var(--color-white);
-}
-
-.servicos-grid article {
-    background: var(--color-primary-light);
-}
-
-.sobre-numeros {
-    padding: 80px 0;
-    background: var(--color-light-bg);
-}
-
-.numeros-grid {
+.reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    text-align: center;
+    gap: 26px;
+    margin-top: 40px;
 }
 
-.numeros-grid div {
+.review-card {
     background: var(--color-primary-light);
-    padding: 35px;
     border-radius: 18px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    padding: 32px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
 }
 
-.numeros-grid strong {
-    display: block;
+.stars {
     color: var(--color-primary);
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.numeros-grid span {
-    color: var(--color-text-dark);
-    font-size: 1.1rem;
-}
-
-.sobre-cta {
-    padding: 100px 0;
-    background: linear-gradient(rgba(215, 41, 145, .88), rgba(215, 41, 145, .88)),
-        url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
-    text-align: center;
-    color: var(--color-white);
-}
-
-.sobre-cta h2 {
-    font-size: 2.7rem;
+    font-size: 1.5rem;
     margin-bottom: 18px;
 }
 
-.sobre-cta p {
-    margin-bottom: 30px;
+.review-card p {
+    color: var(--color-text-dark);
+    margin-bottom: 18px;
 }
 
-.sobre-cta .btn {
-    background: var(--color-primary-light);
+.review-card strong {
     color: var(--color-primary);
+}
+
+.about-quote {
+    padding: 100px 0;
+    background: linear-gradient(rgba(255, 228, 242, .92), rgba(255, 228, 242, .92)),
+        url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
+    text-align: center;
+}
+
+.quote-content h2 {
+    color: var(--color-primary);
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+}
+
+.quote-content p {
+    color: var(--color-text);
+    max-width: 780px;
+    margin: 0 auto 32px;
+}
+
+.about-clients {
+    padding: 90px 0;
+    background: var(--color-white);
+    text-align: center;
+}
+
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 22px;
+    margin-top: 36px;
+}
+
+.logos-grid div,
+.certificates-grid div {
+    min-height: 95px;
+    background: var(--color-light-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
 }
 
+.about-certificates {
+    padding: 90px 0 110px;
+    background: var(--color-light-bg);
+    text-align: center;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 36px;
+}
+
 @media(max-width: 1024px) {
-    .sobre-grid {
+    .story-grid {
         grid-template-columns: 1fr;
     }
 
-    .valores-grid,
-    .servicos-grid {
+    .values-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logos-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media(max-width: 768px) {
-    .sobre-hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .sobre-historia,
-    .sobre-valores,
-    .sobre-servicos,
-    .sobre-cta {
+    .about-story,
+    .about-values,
+    .about-reviews,
+    .about-quote,
+    .about-clients,
+    .about-certificates {
         padding: 70px 0;
     }
 
-    .numeros-grid {
+    .reviews-grid,
+    .certificates-grid {
         grid-template-columns: 1fr;
+    }
+
+    .story-image {
+        min-height: 320px;
     }
 }
 
-@media(max-width: 520px) {
-    .valores-grid,
-    .servicos-grid {
+@media(max-width: 540px) {
+    .values-grid,
+    .logos-grid {
         grid-template-columns: 1fr;
     }
 
-    .sobre-card-destaque {
-        padding: 28px;
+    .about-hero h1 {
+        font-size: 2.7rem;
     }
 
-    .sobre-historia h2,
-    .sobre-titulo h2,
-    .sobre-cta h2 {
+    .story-text h2,
+    .section-title h2,
+    .quote-content h2 {
         font-size: 2rem;
     }
 }
