@@ -16,11 +16,6 @@ const pagesMap = {
         name: 'about'
     },
 
-    cotacao: {
-        path: 'paginas/cotacao/cotacao.html',
-        name: 'cotacao'
-    },
-
     blog: {
         path: 'paginas/blog/blog.html',
         name: 'blog'
@@ -31,53 +26,42 @@ const pagesMap = {
         name: 'contato'
     },
 
-    internacional: { 
-        path: 'paginas/servicos/internacional.html', 
-        name: 'internacional' 
+    internacional: {
+        path: 'paginas/servicos/internacional.html',
+        name: 'internacional'
     },
 
-    nacional: { 
-        path: 'paginas/servicos/nacional.html', 
-        name: 'nacional' 
+    nacional: {
+        path: 'paginas/servicos/nacional.html',
+        name: 'nacional'
     },
 
-    comercial: { 
-        path: 'paginas/servicos/comercial.html', 
-        name: 'comercial' 
+    comercial: {
+        path: 'paginas/servicos/comercial.html',
+        name: 'comercial'
     },
 
-    paraBrasil: { 
-        path: 'paginas/servicos/paraBrasil.html', 
-        name: 'paraBrasil' 
-    },
-
+    paraBrasil: {
+        path: 'paginas/servicos/paraBrasil.html',
+        name: 'paraBrasil'
+    }
 };
 
 function getCurrentPage() {
-    const filename =
-        window.location.pathname.split('/').pop() ||
-        'index.html';
+    const filename = window.location.pathname.split('/').pop() || 'index.html';
 
-    if (filename === 'index.html') return 'home';
-
+    if (filename === 'index.html' || filename === '') return 'home';
     if (filename === 'sobre.html') return 'about';
-
-    if (filename === 'cotacao.html') return 'cotacao';
-
     if (filename === 'blog.html') return 'blog';
-
     if (filename === 'contato.html') return 'contato';
-
     if (filename === 'internacional.html') return 'internacional';
-
     if (filename === 'nacional.html') return 'nacional';
-
     if (filename === 'comercial.html') return 'comercial';
-
     if (filename === 'paraBrasil.html') return 'paraBrasil';
 
     return 'home';
 }
+
 function getBasePath() {
     const path = window.location.pathname;
 
@@ -108,9 +92,10 @@ async function loadComponent(containerId, componentPath) {
         container.innerHTML = html;
 
         if (containerId === 'header-container') {
-        adjustHeaderLinks();
-        setupMegaMenu();
-}
+            adjustHeaderLinks();
+            setupMegaMenu();
+            setupMegaMenuTabs();
+        }
 
         if (containerId === 'footer-container') {
             adjustFooterLinks();
@@ -127,7 +112,6 @@ function adjustHeaderLinks() {
     const currentPage = getCurrentPage();
     const basePath = getBasePath();
 
-    // Busca qualquer elemento com data-page
     const links = document.querySelectorAll('[data-page]');
 
     links.forEach(link => {
@@ -136,21 +120,13 @@ function adjustHeaderLinks() {
 
         if (!pageInfo) return;
 
-        const href = basePath
-            ? basePath + pageInfo.path
-            : pageInfo.path;
+        const href = basePath + pageInfo.path;
 
-        // Se for um <a>
         if (link.tagName.toLowerCase() === 'a') {
             link.setAttribute('href', href);
         }
 
-        // Página ativa
-        if (page === currentPage) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
+        link.classList.toggle('active', page === currentPage);
     });
 }
 
@@ -181,11 +157,6 @@ function adjustImagePaths(scope = document) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-container', 'componentes/header.html');
-    loadComponent('footer-container', 'componentes/footer.html');
-});
-
 function setupMegaMenu() {
     const dropdown = document.querySelector('.nav-dropdown');
     const toggle = document.querySelector('.dropdown-toggle');
@@ -199,9 +170,90 @@ function setupMegaMenu() {
         dropdown.classList.toggle('active');
     });
 
+    document.addEventListener('click', function (event) {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+
     document.querySelectorAll('.header-nav a').forEach(link => {
         link.addEventListener('click', function () {
             dropdown.classList.remove('active');
         });
     });
 }
+
+function setupMegaMenuTabs() {
+    const serviceData = {
+        internacional: {
+            title: 'Mudança Internacional',
+            description: 'Transporte internacional porta a porta com suporte documental, planejamento logístico e acompanhamento em todas as etapas.',
+            image: 'assets/imagens/servicos/mudancaInter.png',
+            page: 'internacional'
+        },
+
+        nacional: {
+            title: 'Mudança Nacional',
+            description: 'Mudanças residenciais para qualquer região do Brasil com embalagem, transporte seguro e equipe especializada.',
+            image: 'assets/imagens/servicos/mudancaResidP.png',
+            page: 'nacional'
+        },
+
+        comercial: {
+            title: 'Mudança Comercial',
+            description: 'Planejamento e execução para empresas, escritórios e operações comerciais com organização e agilidade.',
+            image: 'assets/imagens/servicos/mudancaComercialPp.png',
+            page: 'comercial'
+        },
+
+        paraBrasil: {
+            title: 'Mudança para o Brasil',
+            description: 'Suporte completo para retorno ao Brasil, transporte internacional, documentação e acompanhamento logístico.',
+            image: 'assets/imagens/servicos/mudancaParaBrasilP.png',
+            page: 'paraBrasil'
+        }
+    };
+
+    const tabs = document.querySelectorAll('.mega-tab');
+    const image = document.getElementById('mega-menu-image');
+    const title = document.getElementById('mega-menu-title');
+    const description = document.getElementById('mega-menu-description');
+    const link = document.getElementById('mega-menu-link');
+
+    if (!tabs.length || !image || !title || !description || !link) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const service = tab.getAttribute('data-service');
+            const data = serviceData[service];
+
+            if (!data) return;
+
+            tabs.forEach(item => item.classList.remove('active'));
+            tab.classList.add('active');
+
+            const basePath = getBasePath();
+
+            image.src = basePath + data.image;
+            image.alt = data.title;
+            title.textContent = data.title;
+            description.textContent = data.description;
+
+            link.setAttribute('data-page', data.page);
+
+            const pageInfo = pagesMap[data.page];
+
+            if (pageInfo) {
+                link.href = basePath + pageInfo.path;
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-container', 'componentes/header.html');
+    loadComponent('footer-container', 'componentes/footer.html');
+});
