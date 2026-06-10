@@ -95,14 +95,13 @@
 
 .mega-menu {
     position: absolute;
-    top: 52px;
+    top: 48px;
     left: 50%;
     transform: translateX(-50%);
 
-    width: 850px;
+    width: 720px;
+    height: 100vh;
     background: var(--color-primary-light);
-    border: 2px solid var(--color-primary);
-    border-radius: 18px;
     padding: 24px;
 
     display: grid;
@@ -114,7 +113,6 @@
     pointer-events: none;
 
     transition: .3s;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, .18);
     z-index: 4000;
 }
 
@@ -154,8 +152,8 @@
     background: var(--color-light-bg);
     border-radius: 16px;
     padding: 18px;
-    display: grid;
-    grid-template-columns: 220px 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     align-items: center;
 }

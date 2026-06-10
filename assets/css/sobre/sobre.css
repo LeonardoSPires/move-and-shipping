@@ -6,9 +6,9 @@
 }
 
 .about-hero {
-    min-height: 62vh;
-    background: linear-gradient(rgba(13, 30, 55, .72), rgba(13, 30, 55, .72)),
-        url('../../imagens/banners/imgHomeRosaEscuro.jpg') center / cover no-repeat;
+    height: 100vh;
+    background: linear-gradient(rgba(13, 30, 55, .15), rgba(13, 30, 55, .72)),
+        url('../../imagens/banners/banner-sobre.JPG') center / cover no-repeat;
     display: flex;
     align-items: center;
     padding: 140px 0 80px;
@@ -21,10 +21,10 @@
 }
 
 .about-hero h1 {
-    font-size: clamp(3rem, 6vw, 5.8rem);
+    font-size: 2.5rem;
     line-height: 1;
     margin-bottom: 24px;
-    color: var(--color-primary-light);
+    color: var(--color-primary);
 }
 
 .about-hero h2 {
@@ -36,7 +36,7 @@
 
 .about-story {
     padding: 100px 0;
-    background: var(--color-light-bg);
+    background: var(--color-primary);
 }
 
 .story-grid {
@@ -76,40 +76,47 @@
 .about-reviews h2,
 .about-clients h2,
 .about-certificates h2 {
-    color: var(--color-primary);
+    color: var(--color-primary-light);
     font-size: 2.7rem;
     margin-bottom: 22px;
 }
+.section-title h1 {
+    color: var(--color-primary);
+}
 
 .story-text p {
-    color: var(--color-text);
+    color: var(--color-primary-light);
     margin-bottom: 18px;
     text-align: justify;
 }
 
 .about-values {
     padding: 100px 0;
-    background: var(--color-white);
+    background: var(--color-primary-light);
+    text-align: center;
 }
 
 .section-title {
-    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 50px;
 }
 
 .section-title p {
     color: var(--color-text);
-    max-width: 850px;
+    width: 850px;
+    text-align: center;
 }
 
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 26px;
 }
 
 .value-card {
-    background: var(--color-light-bg);
+    background: var(--color--light);
     border-radius: 18px;
     padding: 34px 28px;
     box-shadow: 0 8px 25px rgba(0,0,0,.08);
@@ -189,9 +196,44 @@
     margin: 0 auto 32px;
 }
 
+.quote-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 300px;
+    height: 60px;
+
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+
+    border-radius: 12px;
+
+    transition: all .3s ease;
+
+    box-shadow: 0 10px 25px rgba(215, 41, 145, .25);
+}
+
+.quote-btn:hover {
+    transform: translateY(-3px);
+
+    background: #bf1e7f;
+
+    box-shadow: 0 16px 30px rgba(215, 41, 145, .35);
+}
+
+.quote-btn:active {
+    transform: translateY(0);
+}
+
 .about-clients {
     padding: 90px 0;
-    background: var(--color-white);
+    background: var(--color-primary);
     text-align: center;
 }
 
@@ -217,7 +259,7 @@
 
 .about-certificates {
     padding: 90px 0 110px;
-    background: var(--color-light-bg);
+    background: var(--color-primary);
     text-align: center;
 }
 
