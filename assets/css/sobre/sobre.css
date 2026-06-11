@@ -7,7 +7,7 @@
 
 .about-hero {
     height: 100vh;
-    background: linear-gradient(rgba(13, 30, 55, .15), rgba(13, 30, 55, .72)),
+    background: linear-gradient(rgba(13, 30, 55, 0), rgba(13, 30, 55, .72)),
         url('../../imagens/banners/banner-sobre.JPG') center / cover no-repeat;
     display: flex;
     align-items: center;

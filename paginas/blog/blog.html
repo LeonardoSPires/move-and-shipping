@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="../../assets/css/componentes/footer.css">
     <link rel="stylesheet" href="../../assets/css/blog/blog.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -21,37 +19,231 @@
     <div id="header-container"></div>
 
     <main>
-        <section class="page-hero blog-hero">
-            <div class="page-hero-content">
-                <span>Conteúdo e informação</span>
-                <h1>Blog Move and Shipping</h1>
-                <p>Dicas e orientações para planejar sua mudança com mais tranquilidade.</p>
+        <section class="blog-hero">
+            <div class="blog-container blog-hero-content">
+                <span>Blog Move and Shipping</span>
+                <h1>Conteúdos para planejar sua mudança com segurança.</h1>
+                <p>
+                    Guias, dicas e informações sobre mudanças nacionais, internacionais,
+                    documentação, embalagem, seguro e transporte de bens.
+                </p>
+
+                <a href="#artigos" class="blog-hero-btn">Ver artigos recentes</a>
             </div>
         </section>
 
-        <section class="blog-page">
-            <div class="page-container">
-                <div class="blog-page-grid">
-                    <article class="blog-page-card">
-                        <i class="fa-solid fa-plane"></i>
-                        <h3>Como planejar uma mudança internacional</h3>
-                        <p>Entenda as principais etapas para organizar documentos, prazos e transporte.</p>
+        <section class="blog-categorias">
+            <div class="blog-container categorias-wrapper">
+                <a href="#">Mudança Internacional</a>
+                <a href="#">Mudança Nacional</a>
+                <a href="#">Mudança Comercial</a>
+                <a href="#">Mudança para o Brasil</a>
+                <a href="#">Documentação</a>
+                <a href="#">Embalagem</a>
+                <a href="#">Seguro</a>
+            </div>
+        </section>
+
+        <section class="blog-destaques" id="artigos">
+            <div class="blog-container">
+                <div class="blog-section-title">
+                    <span>Artigos em destaque</span>
+                    <h2>Guias úteis para sua próxima mudança</h2>
+                </div>
+
+                <div class="destaques-grid">
+                    <article class="post-card post-card-large">
+                        <div class="post-icon">
+                            <i class="fa-solid fa-passport"></i>
+                        </div>
+
+                        <div class="post-content">
+                            <span class="post-category">Mudança para o Brasil</span>
+                            <h3>Como se mudar para o Brasil com seus bens pessoais</h3>
+                            <p>
+                                Entenda quais etapas, documentos e cuidados são importantes
+                                para organizar uma mudança internacional com destino ao Brasil.
+                            </p>
+                            <a href="#">Ler artigo</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card post-card-large">
+                        <div class="post-icon">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+
+                        <div class="post-content">
+                            <span class="post-category">Checklist</span>
+                            <h3>Checklist completo para mudança internacional</h3>
+                            <p>
+                                Veja os principais pontos que precisam ser organizados antes,
+                                durante e depois da sua mudança para outro país.
+                            </p>
+                            <a href="#">Ler artigo</a>
+                        </div>
+                    </article>
+
+                    <article class="post-card post-card-large">
+                        <div class="post-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+
+                        <div class="post-content">
+                            <span class="post-category">Custos</span>
+                            <h3>Quanto custa uma mudança internacional?</h3>
+                            <p>
+                                Conheça os fatores que influenciam o valor de uma mudança,
+                                como volume, origem, destino, transporte e serviços contratados.
+                            </p>
+                            <a href="#">Ler artigo</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-recentes">
+            <div class="blog-container">
+                <div class="blog-section-title">
+                    <span>Artigos recentes</span>
+                    <h2>Informação para mudar com mais tranquilidade</h2>
+                </div>
+
+                <div class="recentes-grid">
+                    <article class="post-card">
+                        <i class="fa-solid fa-building"></i>
+                        <h3>Como escolher uma empresa de mudança</h3>
+                        <p>Veja critérios importantes para contratar uma empresa segura e confiável.</p>
                         <a href="#">Ler mais</a>
                     </article>
 
-                    <article class="blog-page-card">
-                        <i class="fa-solid fa-box"></i>
-                        <h3>Como proteger itens frágeis</h3>
-                        <p>Veja cuidados importantes para embalagem de objetos delicados.</p>
+                    <article class="post-card">
+                        <i class="fa-solid fa-clock"></i>
+                        <h3>Quanto tempo demora uma mudança internacional?</h3>
+                        <p>Entenda prazos médios e fatores que podem influenciar o trânsito.</p>
                         <a href="#">Ler mais</a>
                     </article>
 
-                    <article class="blog-page-card">
-                        <i class="fa-solid fa-ship"></i>
-                        <h3>Transporte marítimo de mudanças</h3>
-                        <p>Saiba como funciona o embarque internacional de bens pessoais.</p>
+                    <article class="post-card">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Como funciona o seguro internacional?</h3>
+                        <p>Saiba por que o seguro é importante para proteger seus bens.</p>
                         <a href="#">Ler mais</a>
                     </article>
+
+                    <article class="post-card">
+                        <i class="fa-solid fa-box-open"></i>
+                        <h3>O que pode e não pode ser enviado?</h3>
+                        <p>Conheça cuidados básicos antes de preparar sua mudança.</p>
+                        <a href="#">Ler mais</a>
+                    </article>
+
+                    <article class="post-card">
+                        <i class="fa-solid fa-file-signature"></i>
+                        <h3>Documentos para importar bens ao Brasil</h3>
+                        <p>Veja quais documentos podem ser necessários no processo.</p>
+                        <a href="#">Ler mais</a>
+                    </article>
+
+                    <article class="post-card">
+                        <i class="fa-solid fa-plane-departure"></i>
+                        <h3>Mudança EUA Brasil: passo a passo</h3>
+                        <p>Entenda as principais etapas de uma mudança entre os dois países.</p>
+                        <a href="#">Ler mais</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-guias">
+            <div class="blog-container guias-grid">
+                <div class="guias-text">
+                    <span>Guias gratuitos</span>
+                    <h2>Guias mais procurados</h2>
+                    <p>
+                        Criamos conteúdos simples e práticos para ajudar você a entender
+                        melhor cada tipo de mudança.
+                    </p>
+                </div>
+
+                <div class="guias-lista">
+                    <a href="#"><i class="fa-solid fa-arrow-right"></i> Guia para mudança para o Brasil</a>
+                    <a href="#"><i class="fa-solid fa-arrow-right"></i> Guia para mudança para os EUA</a>
+                    <a href="#"><i class="fa-solid fa-arrow-right"></i> Guia para mudança para Portugal</a>
+                    <a href="#"><i class="fa-solid fa-arrow-right"></i> Guia para expatriados</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-faq">
+            <div class="blog-container">
+                <div class="blog-section-title">
+                    <span>Perguntas frequentes</span>
+                    <h2>Dúvidas comuns sobre mudanças</h2>
+                </div>
+
+                <div class="faq-list">
+                    <details>
+                        <summary>Quanto tempo demora uma mudança internacional?</summary>
+                        <p>
+                            O prazo depende da origem, destino, modalidade de transporte e liberação documental.
+                            Em geral, mudanças internacionais podem levar de algumas semanas a alguns meses.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Posso enviar móveis usados para o Brasil?</summary>
+                        <p>
+                            Sim, desde que o processo siga as regras aplicáveis para bagagem desacompanhada
+                            e documentação exigida.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>O seguro da mudança é obrigatório?</summary>
+                        <p>
+                            Não é obrigatório em todos os casos, mas é altamente recomendado para proteger
+                            seus bens durante o transporte.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Como funciona a embalagem?</summary>
+                        <p>
+                            A embalagem profissional utiliza materiais adequados para proteger móveis,
+                            eletrônicos, louças, objetos frágeis e itens pessoais.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-newsletter">
+            <div class="blog-container newsletter-box">
+                <div>
+                    <h2>Receba dicas sobre mudanças internacionais</h2>
+                    <p>Cadastre seu e-mail para receber conteúdos úteis da Move and Shipping.</p>
+                </div>
+
+                <form>
+                    <input type="email" placeholder="Seu e-mail">
+                    <button type="submit">Inscrever-se</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="blog-cta">
+            <div class="blog-container">
+                <h2>Vai realizar uma mudança?</h2>
+                <p>
+                    Nossa equipe está pronta para ajudar você em todas as etapas,
+                    da cotação até a entrega final.
+                </p>
+
+                <div class="blog-cta-buttons">
+                    <a href="../cotacao/cotacao.html" class="btn-primary">Solicitar Cotação</a>
+                    <a href="../contato/contato.html" class="btn-secondary">Fale Conosco</a>
                 </div>
             </div>
         </section>

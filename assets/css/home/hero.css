@@ -126,8 +126,24 @@
     .hero {
         flex-direction: column;
         text-align: center;
+        justify-content: center;
         padding: 60px 20px;
     }
+
+    .hero-form-container {
+        display: none;
+    }
+
+    .hero-container {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-section {
+        justify-content: center;
+    }
+
 
     .hero-container h1 {
         font-size: 3rem;

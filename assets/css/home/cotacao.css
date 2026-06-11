@@ -2,11 +2,11 @@
 
 .cotacao {
     padding: 100px 0;
-    background: var(--color-light-bg) url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;;
+    background: var(--color-light-bg) url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
 }
 
 .cotacao-container {
-    width: min(50%, 1200px);
+    width: min(90%, 760px);
     margin: 0 auto;
 }
 
@@ -32,7 +32,7 @@
     border: 1px solid var(--color-border);
     border-radius: 18px;
     padding: 40px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.05);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .08);
 }
 
 .cotacao-grid {
@@ -50,22 +50,39 @@
     border-radius: 12px;
     padding: 16px;
     font-size: 1rem;
+    font-family: inherit;
     color: var(--color-text-dark);
+    background: var(--color-white);
+    outline: none;
+}
+
+.cotacao-form input:focus,
+.cotacao-form select:focus,
+.cotacao-form textarea:focus {
+    border-color: var(--color-primary);
 }
 
 .cotacao-form textarea {
     resize: vertical;
     grid-column: span 2;
+    min-height: 130px;
 }
 
 .cotacao-form button {
     width: 100%;
     padding: 16px;
     font-size: 1.1rem;
+    font-weight: bold;
     border-radius: 12px;
 }
 
+/* RESPONSIVO COTAÇÃO */
+
 @media(max-width: 900px) {
+    .cotacao-container {
+        width: min(90%, 700px);
+    }
+
     .cotacao-grid {
         grid-template-columns: 1fr;
     }
@@ -78,5 +95,29 @@
 @media(max-width: 600px) {
     .cotacao {
         padding: 70px 0;
+    }
+
+    .cotacao-intro h2 {
+        font-size: 2rem;
+    }
+
+    .cotacao-intro p {
+        font-size: 1rem;
+    }
+
+    .cotacao-form {
+        padding: 24px;
+        border-radius: 16px;
+    }
+
+    .cotacao-grid {
+        gap: 16px;
+    }
+
+    .cotacao-form input,
+    .cotacao-form select,
+    .cotacao-form textarea {
+        padding: 14px;
+        font-size: .95rem;
     }
 }

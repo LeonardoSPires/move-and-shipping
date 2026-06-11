@@ -98,3 +98,6 @@ p {
     transition-delay: 0.40s;
 }
 
+body.menu-open {
+    overflow: hidden;
+}

@@ -6,18 +6,18 @@
 }
 
 .contact-hero {
-    min-height: 55vh;
-    background: linear-gradient(rgba(13, 30, 55, .72), rgba(13, 30, 55, .72)),
-        url('../../imagens/banners/imgHomeRosaEscuro.jpg') center / cover no-repeat;
+    min-height: 75vh;
+    background: linear-gradient(rgba(13, 30, 55, 0), rgba(13, 30, 55, .75)),
+    url('../../imagens/banners/banner-contato.PNG') center / cover no-repeat;
     display: flex;
     align-items: center;
-    padding: 140px 0 80px;
+    padding: 150px 0 20px;
     color: var(--color-white);
 }
 
 .contact-hero h1 {
     font-size: clamp(3rem, 6vw, 5.5rem);
-    color: var(--color-primary-light);
+    color: var(--color-primary);
     margin-bottom: 20px;
 }
 

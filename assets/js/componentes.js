@@ -95,6 +95,7 @@ async function loadComponent(containerId, componentPath) {
             adjustHeaderLinks();
             setupMegaMenu();
             setupMegaMenuTabs();
+            setupHeaderScroll();
         }
 
         if (containerId === 'footer-container') {
@@ -257,3 +258,73 @@ document.addEventListener('DOMContentLoaded', () => {
     loadComponent('header-container', 'componentes/header.html');
     loadComponent('footer-container', 'componentes/footer.html');
 });
+
+function setupMobileMenu() {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.header-nav');
+
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener('click', function () {
+        toggle.classList.toggle('active');
+        nav.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+
+    document.querySelectorAll('.header-nav a').forEach(link => {
+        link.addEventListener('click', function () {
+            toggle.classList.remove('active');
+            nav.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    });
+}
+function setupHeaderScroll() {
+
+    const header = document.querySelector('.header-container');
+    const topBar = document.querySelector('.header-contact');
+
+    if (!header) return;
+
+    function updateHeader() {
+
+        if (window.scrollY > 80) {
+
+            header.classList.remove('transparent');
+            header.classList.add('scrolled');
+
+            if (topBar) {
+                topBar.classList.add('hidden');
+            }
+
+        } else {
+
+            header.classList.remove('scrolled');
+            header.classList.add('transparent');
+
+            if (topBar) {
+                topBar.classList.remove('hidden');
+            }
+        }
+    }
+
+    updateHeader();
+
+    window.addEventListener('scroll', updateHeader);
+}
+
+const topBar = document.querySelector('.header-contact');
+
+if (window.scrollY > 80) {
+    header.classList.add('scrolled');
+
+    if (topBar) {
+        topBar.classList.add('hidden');
+    }
+} else {
+    header.classList.remove('scrolled');
+
+    if (topBar) {
+        topBar.classList.remove('hidden');
+    }
+}
