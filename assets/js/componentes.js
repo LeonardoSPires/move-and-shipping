@@ -95,6 +95,7 @@ async function loadComponent(containerId, componentPath) {
             adjustHeaderLinks();
             setupMegaMenu();
             setupMegaMenuTabs();
+            setupMobileMenu();
             setupHeaderScroll();
         }
 
@@ -254,11 +255,6 @@ function setupMegaMenuTabs() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-container', 'componentes/header.html');
-    loadComponent('footer-container', 'componentes/footer.html');
-});
-
 function setupMobileMenu() {
     const toggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.header-nav');
@@ -279,26 +275,22 @@ function setupMobileMenu() {
         });
     });
 }
-function setupHeaderScroll() {
 
+function setupHeaderScroll() {
     const header = document.querySelector('.header-container');
     const topBar = document.querySelector('.header-contact');
 
     if (!header) return;
 
     function updateHeader() {
-
         if (window.scrollY > 80) {
-
             header.classList.remove('transparent');
             header.classList.add('scrolled');
 
             if (topBar) {
                 topBar.classList.add('hidden');
             }
-
         } else {
-
             header.classList.remove('scrolled');
             header.classList.add('transparent');
 
@@ -309,22 +301,10 @@ function setupHeaderScroll() {
     }
 
     updateHeader();
-
     window.addEventListener('scroll', updateHeader);
 }
 
-const topBar = document.querySelector('.header-contact');
-
-if (window.scrollY > 80) {
-    header.classList.add('scrolled');
-
-    if (topBar) {
-        topBar.classList.add('hidden');
-    }
-} else {
-    header.classList.remove('scrolled');
-
-    if (topBar) {
-        topBar.classList.remove('hidden');
-    }
-}
+document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-container', 'componentes/header.html');
+    loadComponent('footer-container', 'componentes/footer.html');
+});
