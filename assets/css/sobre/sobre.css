@@ -21,7 +21,7 @@
 }
 
 .about-hero h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1;
     margin-bottom: 24px;
     color: var(--color-primary);
@@ -53,7 +53,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 18px 40px rgba(0,0,0,.18);
 }
 
 .image-placeholder {
@@ -105,7 +104,7 @@
 
 .section-title p {
     color: var(--color-text);
-    width: 850px;
+    width: 100%;
     text-align: center;
 }
 
@@ -120,7 +119,6 @@
     border-radius: 18px;
     padding: 34px 28px;
     box-shadow: 0 8px 25px rgba(0,0,0,.08);
-    border-top: 6px solid var(--color-primary);
 }
 
 .value-card i {
@@ -157,9 +155,20 @@
 
 .review-card {
     background: var(--color-primary-light);
-    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     padding: 32px;
     box-shadow: 0 8px 25px rgba(0,0,0,.12);
+}
+.review-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 18px;
+    
 }
 
 .stars {
@@ -171,6 +180,7 @@
 .review-card p {
     color: var(--color-text-dark);
     margin-bottom: 18px;
+    text-align: center;
 }
 
 .review-card strong {
@@ -179,8 +189,7 @@
 
 .about-quote {
     padding: 100px 0;
-    background: linear-gradient(rgba(255, 228, 242, .92), rgba(255, 228, 242, .92)),
-        url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
+    background: url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
     text-align: center;
 }
 
@@ -194,6 +203,7 @@
     color: var(--color-text);
     max-width: 780px;
     margin: 0 auto 32px;
+    font-size: 1.3rem;
 }
 
 .quote-btn {
@@ -233,13 +243,26 @@
 
 .about-clients {
     padding: 90px 0;
-    background: var(--color-primary);
+    background: white;
     text-align: center;
+}
+
+.about-clients h2, .about-certificates h2 {
+    color: var(--color-primary);
+    padding-bottom: 40px;
 }
 
 .logos-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 36px;
+}
+.logos-grid2 {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
     gap: 22px;
     margin-top: 36px;
 }
@@ -247,8 +270,6 @@
 .logos-grid div,
 .certificates-grid div {
     min-height: 95px;
-    background: var(--color-light-bg);
-    border: 1px solid var(--color-border);
     border-radius: 16px;
     color: var(--color-primary);
     display: flex;
@@ -259,7 +280,7 @@
 
 .about-certificates {
     padding: 90px 0 110px;
-    background: var(--color-primary);
+    background: white;
     text-align: center;
 }
 

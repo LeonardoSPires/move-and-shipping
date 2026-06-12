@@ -9,7 +9,7 @@
     min-height: 75vh;
     background:
         linear-gradient(rgba(13, 30, 55, 0), rgba(13, 30, 55, .75)),
-        url('../../imagens/banners/banner-blog.png') center / cover no-repeat;
+        url('../../imagens/banners/banner-blog.jpg') center / cover no-repeat;
     display: flex;
     align-items: center;
     padding: 150px 0 90px;
@@ -78,6 +78,7 @@
 .blog-categorias {
     padding: 28px 0;
     background: var(--color-primary-light);
+    border-bottom: 1px solid var(--color-primary);
 }
 
 .categorias-wrapper {
@@ -136,11 +137,11 @@
 }
 
 .blog-destaques {
-    background: var(--color-white);
+    background: linear-gradient(var(--color-primary-light), white, var(--color-primary-light));
 }
 
 .blog-recentes {
-    background: var(--color-light-bg);
+    background: var(--color-primary-light);
 }
 
 .destaques-grid {
