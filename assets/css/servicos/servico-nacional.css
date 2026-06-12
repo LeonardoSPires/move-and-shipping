@@ -1,0 +1,343 @@
+/* PÁGINA DETALHE DE SERVIÇO */
+
+.service-container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+
+/* HERO */
+
+.service-hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 0 20px;
+    color: var(--color-white);
+}
+
+.international-hero {
+    background:
+        linear-gradient(rgba(13, 30, 55, 0), rgba(13, 30, 55, .75)),
+        url('../../imagens/backgrounds/background-interacional.png') center / cover no-repeat;
+}
+
+.service-hero-content h1 {
+    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.service-hero-content h2 {
+    max-width: 850px;
+    width: 55%;
+    font-size: clamp(1.5rem, 3vw, 2.6rem);
+    line-height: 1.25;
+    color: var(--color-white);
+}
+
+/* INTRO + FORM */
+
+.service-intro {
+    background: var(--color-primary);
+}
+
+.service-intro-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.service-intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px 0 120px;
+    max-width: 520px;
+}
+
+.service-intro-text p {
+    color: var(--color-primary-light);
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.service-form-box {
+    width: 500px;
+    background: var(--color-primary-light);
+    border-radius: 22px;
+    padding: 42px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .10);
+
+    position: relative;
+    top: -240px;
+    align-self: flex-start;
+}
+
+.service-form-box h3 {
+    color: var(--color-primary);
+    margin-bottom: 24px;
+    font-size: 1.7rem;
+}
+
+.service-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.service-form input,
+.service-form select,
+.service-form textarea {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 16px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    background: var(--color-white);
+}
+
+.service-form textarea {
+    resize: vertical;
+}
+
+.service-form button {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-top: 6px;
+}
+
+/* FEATURES */
+
+.service-features {
+    padding: 100px 0;
+    background: var(--color-light-bg);
+}
+
+.section-title {
+    max-width: 850px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-title h2 {
+    color: var(--color-primary);
+}
+.section-title p {
+    text-align: center;
+}
+
+.features-grid,
+.reviews-grid,
+.blog-service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+}
+
+.features-grid article,
+.reviews-grid article,
+.blog-service-grid article {
+    background: var(--color-primary-light);
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    border-top: 6px solid var(--color-primary);
+}
+
+.features-grid i,
+.blog-service-grid i {
+    color: var(--color-primary);
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+}
+
+.features-grid h3,
+.blog-service-grid h3 {
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.features-grid p,
+.blog-service-grid p,
+.reviews-grid p {
+    color: var(--color-text);
+}
+
+/* STORAGE */
+
+.service-storage {
+    padding: 100px 0;
+    background: url('../../imagens/backgrounds/background-Storage.png') center / cover no-repeat;
+    color: var(--color-white);
+}
+
+.storage-text {
+    background: rgba(0, 0, 0, .6);
+    border-radius: 18px;
+    padding: 32px;
+    max-width: 600px;
+}
+
+.service-storage h2 {
+    color: var(--color-primary);
+    padding-bottom: 12px;
+}
+
+.service-storage h3,
+.service-storage p {
+    color: var(--color-primary-light);
+    font-size: 1.3rem;
+}
+
+.service-reviews {
+    padding: 90px 0;
+    background: var(--color-white);
+    text-align: center;
+}
+
+.reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+    text-align: left;
+}
+
+.stars {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+}
+
+.reviews-grid strong {
+    display: block;
+    color: var(--color-primary);
+    margin-top: 16px;
+}
+
+.service-cta {
+    padding: 100px 0;
+    background: url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
+    text-align: center;
+}
+
+.service-cta p {
+    max-width: 720px;
+    margin: 0 auto 30px;
+    color: var(--color-text);
+}
+
+.service-blog {
+    padding: 100px 0;
+    background: var(--color-light-bg);
+}
+
+.blog-service-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.blog-service-grid a {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.service-faq {
+    padding: 100px 0;
+    background: var(--color-primary);
+}
+
+.service-faq h2 {
+    color: var(--color-primary-light);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.faq-list details {
+    background: var(--color-light-bg);
+    border-radius: 14px;
+    padding: 22px 26px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+
+.faq-list summary {
+    cursor: pointer;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.faq-list p {
+    color: var(--color-text);
+    margin-top: 16px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width: 1024px) {
+    .service-hero-grid,
+    .intro-grid,
+    .storage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 768px) {
+    .service-hero,
+    .service-intro,
+    .service-features,
+    .service-storage,
+    .service-reviews,
+    .service-cta,
+    .service-blog,
+    .service-faq {
+        padding: 70px 0;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-form {
+        padding: 28px;
+    }
+}
+
+@media(max-width: 540px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-hero-text h1 {
+        font-size: 2.6rem;
+    }
+
+    .intro-text h2,
+    .section-title h2,
+    .storage-text h2,
+    .service-reviews h2,
+    .service-cta h2,
+    .service-faq h2 {
+        font-size: 2rem;
+    }
+}

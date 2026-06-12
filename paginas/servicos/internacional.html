@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../assets/css/global/base.css">
     <link rel="stylesheet" href="../../assets/css/componentes/header.css">
     <link rel="stylesheet" href="../../assets/css/componentes/footer.css">
-    <link rel="stylesheet" href="../../assets/css/servicos/servico-detalhe.css">
+    <link rel="stylesheet" href="../../assets/css/servicos/servico-internacional.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,54 +19,56 @@
     <div id="header-container"></div>
 
     <main>
-        <section class="service-hero">
-            <div class="service-container service-hero-grid">
-                <div class="service-hero-text">
-                    <h1>Mudança Internacional</h1>
-                    <h2>Segurança e experiência em cada etapa da sua mudança.</h2>
+        <section class="service-hero international-hero">
+    <div class="service-container service-hero-content">
+        <h1>Mudança Internacional</h1>
+        <h2>Segurança e experiência em cada etapa da sua mudança.</h2>
+    </div>
+</section>
 
-                    <p>
-                        A Move and Shipping é especialista em mudanças internacionais, oferecendo planejamento,
-                        transporte e suporte completo para que seus bens cheguem ao destino com segurança,
-                        organização e tranquilidade.
-                    </p>
-                </div>
+<section class="service-intro">
+    <div class="service-container service-intro-grid">
 
-                <div class="service-hero-image">
-                    <img src="../../assets/imagens/servicos/mudancaInter.png" alt="Mudança Internacional">
-                </div>
-            </div>
-        </section>
+        <div class="service-intro-text">
+            <p>
+                Nossa equipe especializada em mudanças internacionais está pronta para oferecer
+                um serviço completo, seguro e personalizado para cada cliente.
+            </p>
 
-        <section class="service-intro">
-            <div class="service-container intro-grid">
-                <div class="intro-text">
-                    <h2>Serviço de mudança internacional</h2>
-                    <h3>Planejamento feito por quem entende.</h3>
+            <p>
+                Com ampla experiência em logística internacional, garantimos um processo tranquilo
+                e eficiente, desde o planejamento até a entrega final.
+            </p>
 
-                    <p>
-                        Nossa equipe acompanha todas as fases da mudança, desde a análise inicial,
-                        embalagem e documentação até o transporte e a entrega final.
-                    </p>
+            <p>
+                Oferecemos soluções flexíveis, suporte documental e acompanhamento profissional
+                para que sua mudança seja realizada com máxima segurança e tranquilidade.
+            </p>
+        </div>
 
-                    <p>
-                        Cada mudança é planejada de forma personalizada, considerando origem, destino,
-                        volume, prazos, modalidade de transporte e exigências documentais.
-                    </p>
-                </div>
+        <div class="service-form-box">
+            <h3>Fale conosco usando o formulário</h3>
 
-                <form class="service-form">
-                    <h3>Solicite uma cotação gratuita</h3>
+            <form class="service-form">
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="E-mail" required>
 
-                    <input type="text" placeholder="Nome" required>
-                    <input type="email" placeholder="E-mail" required>
-                    <input type="text" placeholder="Cidade/País de origem" required>
-                    <input type="text" placeholder="Cidade/País de destino" required>
+                <select required>
+                    <option value="" disabled selected>Selecione um assunto</option>
+                    <option value="duvidas">Dúvidas sobre mudança</option>
+                    <option value="cotacao">Solicitar cotação</option>
+                    <option value="parceria">Parcerias</option>
+                    <option value="outros">Outros</option>
+                </select>
 
-                    <button type="submit" class="btn">Enviar Cotação</button>
-                </form>
-            </div>
-        </section>
+                <textarea placeholder="Mensagem" rows="6" required></textarea>
+
+                <button type="submit" class="btn">Enviar mensagem</button>
+            </form>
+        </div>
+
+    </div>
+    </section>
 
         <section class="service-features">
             <div class="service-container">
@@ -115,6 +117,25 @@
                         </p>
                     </article>
                 </div>
+                <div class="features-grid">
+                    <article>
+                        <i class="fa-solid fa-route"></i>
+                        <h3>Planejamento de rotas</h3>
+                        <p>
+                            Analisamos a melhor opção logística para o transporte da sua mudança,
+                            considerando prazo, custo e segurança.
+                        </p>
+                    </article>
+
+                    <article>
+                        <i class="fa-solid fa-door-open"></i>
+                        <h3>Door to Door e Port to Port</h3>
+                        <p>
+                            Oferecemos opções flexíveis de serviço, de acordo com a necessidade,
+                            origem e destino do cliente.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -133,10 +154,6 @@
                         A organização e identificação dos itens ajudam a manter o controle e a segurança
                         durante todo o período de guarda.
                     </p>
-                </div>
-
-                <div class="storage-icon">
-                    <i class="fa-solid fa-warehouse"></i>
                 </div>
             </div>
         </section>
