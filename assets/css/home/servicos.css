@@ -45,7 +45,7 @@
     background: var(--color-primary-light);
     width: 30%;
     max-height: 450px;
-    padding: 24px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
 
@@ -66,7 +66,6 @@
 .espacoBtn {
     display: flex;
     justify-content: flex-end;
-    margin-top: 25px;
 }
 
 .btnInfoCardTop,
@@ -78,6 +77,8 @@
     cursor: pointer;
     transition: .3s;
     font-weight: bold;
+    margin: 10px;
+    text-decoration: none;
 }
 
 .btnInfoCardTop {
