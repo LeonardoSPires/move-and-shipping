@@ -15,12 +15,6 @@
     color: var(--color-white);
 }
 
-.international-hero {
-    background:
-        linear-gradient(rgba(13, 30, 55, 0), rgba(13, 30, 55, .75)),
-        url('../../imagens/backgrounds/background-interacional.png') center / cover no-repeat;
-}
-
 .service-hero-content h1 {
     font-size: clamp(3rem, 5.5vw, 5.5rem);
     color: var(--color-primary);
@@ -68,7 +62,6 @@
     border-radius: 22px;
     padding: 42px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, .10);
-
     position: relative;
     top: -240px;
     align-self: flex-start;
@@ -126,11 +119,13 @@
 .section-title h2 {
     color: var(--color-primary);
 }
+
 .section-title p {
     text-align: center;
 }
 
 .features-grid,
+.features-grid-link,
 .reviews-grid,
 .blog-service-grid {
     display: grid;
@@ -146,6 +141,40 @@
     padding: 32px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
     border-top: 6px solid var(--color-primary);
+}
+
+.features-grid-link article {
+    background: var(--color-primary);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 24px var(--color-border);
+    border-top: 6px solid #51439b;
+    margin-top: 60px;
+    color: var(--color-primary-light);
+    text-decoration: none;
+}
+
+.features-grid-link article p {
+    padding-top: 12px;
+}
+
+.features-grid-link article div {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.features-grid-link a {
+    text-decoration: none;
+}
+
+.features-grid-link button {
+    padding: 20px 30px;
+    background-color: var(--color-primary-light);
+    color: var(--color-text-dark);
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
 }
 
 .features-grid i,
@@ -193,6 +222,8 @@
     font-size: 1.3rem;
 }
 
+/* REVIEWS */
+
 .service-reviews {
     padding: 90px 0;
     background: var(--color-white);
@@ -217,6 +248,8 @@
     margin-top: 16px;
 }
 
+/* CTA */
+
 .service-cta {
     padding: 100px 0;
     background: url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
@@ -227,7 +260,19 @@
     max-width: 720px;
     margin: 0 auto 30px;
     color: var(--color-text);
+    padding-bottom: 30px;
 }
+
+.service-cta a {
+    padding: 30px 90px;
+    background-color: var(--color-primary);
+    color: var(--color-primary-light);
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* BLOG */
 
 .service-blog {
     padding: 100px 0;
@@ -245,6 +290,8 @@
     text-decoration: none;
     font-weight: bold;
 }
+
+/* FAQ */
 
 .service-faq {
     padding: 100px 0;
@@ -287,14 +334,20 @@
 /* RESPONSIVO */
 
 @media(max-width: 1024px) {
-    .service-hero-grid,
-    .intro-grid,
-    .storage-grid {
-        grid-template-columns: 1fr;
+    .service-intro-grid {
+        flex-direction: column;
+        gap: 0;
     }
 
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .service-form-box {
+        top: 0;
+        width: 100%;
+        margin-bottom: 70px;
+    }
+
+    .features-grid,
+    .features-grid-link {
+        grid-template-columns: 1fr;
     }
 
     .blog-service-grid {
@@ -314,25 +367,38 @@
         padding: 70px 0;
     }
 
+    .service-hero-content h2 {
+        width: 100%;
+    }
+
+    .service-intro-text {
+        padding: 40px 0;
+    }
+
+    .service-form-box {
+        display: none;
+    }
+
     .reviews-grid {
         grid-template-columns: 1fr;
     }
 
-    .service-form {
-        padding: 28px;
+    .service-cta a {
+        display: inline-block;
+        padding: 20px 40px;
     }
 }
 
 @media(max-width: 540px) {
-    .features-grid {
+    .features-grid,
+    .features-grid-link {
         grid-template-columns: 1fr;
     }
 
-    .service-hero-text h1 {
+    .service-hero-content h1 {
         font-size: 2.6rem;
     }
 
-    .intro-text h2,
     .section-title h2,
     .storage-text h2,
     .service-reviews h2,
@@ -340,4 +406,13 @@
     .service-faq h2 {
         font-size: 2rem;
     }
+}
+
+
+/* HERO ESPECÍFICO */
+
+.nacional-hero {
+    background:
+        linear-gradient(rgba(13, 30, 55, 0), rgba(13, 30, 55, .75)),
+        url('../../imagens/backgrounds/background-residencial.png') center / cover no-repeat;
 }

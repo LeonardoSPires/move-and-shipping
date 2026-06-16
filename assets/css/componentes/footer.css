@@ -11,9 +11,8 @@
     width: min(90%, 1200px);
     margin: 0 auto;
 
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: 60px;
+    display: flex;
+    justify-content: space-around;
     align-items: end;
 }
 

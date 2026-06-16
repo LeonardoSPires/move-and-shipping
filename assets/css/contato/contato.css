@@ -12,7 +12,7 @@
 
 .contact-hero {
     min-height: 75vh;
-    background: linear-gradient(rgba(13, 30, 55, 0), rgba(13, 30, 55, .75)),
+    background: linear-gradient(rgba(13, 30, 55, 0), rgba(0, 0, 0, 0.75)),
     url('../../imagens/banners/banner-contato.jpg') center / cover no-repeat;
     display: flex;
     align-items: center;

@@ -162,26 +162,55 @@ function adjustImagePaths(scope = document) {
 function setupMegaMenu() {
     const dropdown = document.querySelector('.nav-dropdown');
     const toggle = document.querySelector('.dropdown-toggle');
+    const megaMenu = document.querySelector('.mega-menu');
 
-    if (!dropdown || !toggle) return;
+    if (!dropdown || !toggle || !megaMenu) return;
 
-    toggle.addEventListener('click', function (event) {
+    const isTouchDevice =
+        window.matchMedia('(hover: none)').matches ||
+        window.matchMedia('(pointer: coarse)').matches;
+
+    const isMobileOrTouch = window.innerWidth <= 768 || isTouchDevice;
+
+    function closeMenu() {
+        dropdown.classList.remove('active');
+    }
+
+    function toggleMenu(event) {
         event.preventDefault();
         event.stopPropagation();
 
         dropdown.classList.toggle('active');
-    });
+    }
 
-    document.addEventListener('click', function (event) {
-        if (!dropdown.contains(event.target)) {
-            dropdown.classList.remove('active');
-        }
-    });
-
-    document.querySelectorAll('.header-nav a').forEach(link => {
-        link.addEventListener('click', function () {
-            dropdown.classList.remove('active');
+    if (!isMobileOrTouch) {
+        toggle.addEventListener('mouseenter', () => {
+            dropdown.classList.add('active');
         });
+
+        megaMenu.addEventListener('mouseenter', () => {
+            dropdown.classList.add('active');
+        });
+
+        megaMenu.addEventListener('mouseleave', closeMenu);
+
+        document.querySelectorAll('.header-nav > a').forEach(link => {
+            link.addEventListener('mouseenter', closeMenu);
+        });
+    }
+
+    if (isMobileOrTouch) {
+        toggle.addEventListener('click', toggleMenu);
+
+        document.addEventListener('click', function (event) {
+            if (!dropdown.contains(event.target)) {
+                closeMenu();
+            }
+        });
+    }
+
+    document.querySelectorAll('.mega-menu a, .header-nav > a').forEach(link => {
+        link.addEventListener('click', closeMenu);
     });
 }
 
