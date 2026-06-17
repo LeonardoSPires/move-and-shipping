@@ -78,7 +78,11 @@
 
 /* RESPONSIVO COTAÇÃO */
 
-@media(max-width: 900px) {
+@media(max-width: 1024px) {
+
+    .cotacao {
+    padding: 100px 0;
+}
     .cotacao-container {
         width: min(90%, 700px);
     }

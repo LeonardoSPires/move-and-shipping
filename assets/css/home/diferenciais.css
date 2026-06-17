@@ -5,6 +5,10 @@
     background: var(--color-light-bg);
 }
 
+.advantages-grid {
+    margin-top: 50px;
+}
+
 .advantages-container {
     width: min(90%, 1200px);
     margin: 0 auto;
@@ -13,14 +17,13 @@
 .advantages-container h2 {
     text-align: center;
     color: var(--color-primary);
-    font-size: 2.5rem;
 }
 
 .advantages-container p {
     text-align: center;
     color: var(--color-text);
     margin-top: 10px;
-    margin-bottom: 40px;
+
 }
 
 .advantages-grid {
@@ -42,9 +45,11 @@
     color: var(--color-primary);
 }
 
-.advantages-card h2 {
+.advantages-card h3 {
     text-align: left;
     margin: 15px 0;
+    color: var(--color-primary);
+    font-size: 1.9rem;
 }
 
 .advantages-card p {
@@ -54,20 +59,70 @@
 
 /* RESPONSIVO ADVANTAGES */
 
-@media(max-width:992px) {
+/* RESPONSIVO DIFERENCIAIS */
+
+@media(max-width: 1024px) {
+
+    .advantages {
+        padding: 80px 0;
+    }
+
+    .advantages-container {
+        width: min(92%, 1000px);
+    }
+
     .advantages-grid {
-        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .advantages-card {
+        padding: 20px;
+    }
+
+    .advantages-card i {
+        font-size: 2.6rem;
     }
 }
 
-@media(max-width:768px) {
+@media(max-width: 768px) {
+
     .advantages {
         padding: 70px 0;
     }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .advantages-container h2 {
+        font-size: 2.2rem;
+    }
+
+    .advantages-container p {
+        margin-bottom: 30px;
+    }
+
+    .advantages-card {
+        padding: 25px;
+    }
 }
 
-@media(max-width:480px) {
+@media(max-width: 480px) {
+
     .advantages-container h2 {
         font-size: 2rem;
+    }
+
+    .advantages-card {
+        padding: 22px;
+    }
+
+    .advantages-card i {
+        font-size: 2.2rem;
+    }
+
+    .advantages-card h2 {
+        font-size: 1.4rem;
     }
 }

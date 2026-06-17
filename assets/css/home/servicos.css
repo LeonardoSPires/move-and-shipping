@@ -145,30 +145,47 @@
     padding-bottom: 20px;
 }
 
-/* RESPONSIVO */
+/* RESPONSIVO SERVIÇOS */
 
-@media(max-width: 992px) {
+@media(max-width: 1024px) {
+    .services {
+        padding: 80px 0;
+    }
+
     .services-grid-top {
         flex-direction: column;
+        align-items: stretch;
         gap: 30px;
+        margin-top: 50px;
     }
 
     .imgServices {
         width: 100%;
+        flex: none;
     }
 
     .infoCardTop {
         width: 100%;
-        left: 0;
         max-height: none;
+        left: 0;
+        padding: 28px;
     }
 
     .services-grid-bottom {
         grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
     }
 
     .infoCardBottom {
         max-width: 100%;
+    }
+
+    .infoCardBottom img {
+        height: 190px;
+    }
+
+    .infoCardBaixo {
+        min-height: 320px;
     }
 }
 
@@ -215,11 +232,11 @@
 
     .espacoBtn,
     .espacoBtnBottom {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .btnInfoCardBottom {
-        width: calc(100% - 40px);
+        width: auto;
         margin: 20px;
     }
 }
@@ -236,5 +253,16 @@
 
     .infoCardBottom img {
         height: 190px;
+    }
+
+    .btnInfoCardTop,
+    .btnInfoCardBottom {
+        width: 100%;
+        text-align: center;
+    }
+
+    .espacoBtn,
+    .espacoBtnBottom {
+        justify-content: center;
     }
 }

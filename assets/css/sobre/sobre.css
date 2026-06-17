@@ -159,7 +159,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    border-radius: 5%;
     padding: 32px;
     box-shadow: 0 8px 25px rgba(0,0,0,.12);
 }
@@ -290,22 +290,58 @@
     gap: 24px;
     margin-top: 36px;
 }
+/* RESPONSIVO ABOUT */
 
 @media(max-width: 1024px) {
+    .about-hero {
+        min-height: 90vh;
+        height: auto;
+        padding: 140px 0 70px;
+    }
+
     .story-grid {
-        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .story-image {
+        min-height: 360px;
     }
 
     .values-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .logos-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .logos-grid2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media(max-width: 768px) {
+    .about-hero {
+        min-height: 75vh;
+        padding: 120px 0 60px;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero h2 {
+        max-width: 100%;
+    }
+
     .about-story,
     .about-values,
     .about-reviews,
@@ -315,29 +351,69 @@
         padding: 70px 0;
     }
 
+    .story-image {
+        min-height: 300px;
+    }
+
+    .image-placeholder {
+        min-height: 240px;
+    }
+
+    .image-placeholder i {
+        font-size: 5rem;
+    }
+
+    .values-grid,
     .reviews-grid,
+    .logos-grid,
+    .logos-grid2,
     .certificates-grid {
         grid-template-columns: 1fr;
     }
 
-    .story-image {
-        min-height: 320px;
+    .review-card {
+        border-radius: 22px;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .quote-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .quote-content p {
+        font-size: 1.1rem;
+    }
+
+    .quote-btn {
+        min-width: 260px;
     }
 }
 
 @media(max-width: 540px) {
-    .values-grid,
-    .logos-grid {
-        grid-template-columns: 1fr;
+    .about-hero h1 {
+        font-size: 2.5rem;
     }
 
-    .about-hero h1 {
-        font-size: 2.7rem;
+    .about-hero h2 {
+        font-size: 1.5rem;
     }
 
     .story-text h2,
     .section-title h2,
+    .about-reviews h2,
+    .about-clients h2,
+    .about-certificates h2,
     .quote-content h2 {
         font-size: 2rem;
+    }
+
+    .value-card {
+        padding: 26px 22px;
+    }
+
+    .quote-btn {
+        width: 100%;
+        min-width: auto;
     }
 }

@@ -416,3 +416,117 @@
         linear-gradient(rgba(13, 30, 55, 0), rgba(13, 30, 55, .75)),
         url('../../imagens/backgrounds/background-residencial.png') center / cover no-repeat;
 }
+
+/* RESPONSIVO */
+
+@media(max-width: 1024px) {
+    .service-hero {
+        min-height: 70vh;
+        padding: 140px 0 60px;
+    }
+
+    .service-hero-content h2 {
+        width: 75%;
+    }
+
+    .service-intro-grid {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .service-intro-text {
+        max-width: 100%;
+        padding: 70px 0 40px;
+    }
+
+    .service-form-box {
+        width: 80%;
+        top: 0;
+        margin: 0 100px 70px 100px;
+    }
+
+    .features-grid,
+    .features-grid-link {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 768px) {
+    .service-hero {
+        min-height: 70vh;
+        padding: 120px 0 60px;
+    }
+
+    .service-hero-content h2 {
+        width: 100%;
+    }
+
+    .service-intro,
+    .service-features,
+    .service-storage,
+    .service-reviews,
+    .service-cta,
+    .service-blog,
+    .service-faq {
+        padding: 70px 0;
+    }
+
+    .service-intro-text {
+        padding: 0;
+    }
+
+    .service-form-box {
+        display: none;
+    }
+
+    .features-grid,
+    .features-grid-link,
+    .reviews-grid,
+    .blog-service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid-link article {
+        margin-top: 0;
+    }
+
+    .storage-text {
+        max-width: 100%;
+    }
+
+    .service-cta a {
+        display: inline-block;
+        padding: 20px 40px;
+    }
+}
+
+@media(max-width: 540px) {
+    .service-hero-content h1 {
+        font-size: 2.6rem;
+    }
+
+    .section-title h2,
+    .storage-text h2,
+    .service-reviews h2,
+    .service-cta h2,
+    .service-faq h2 {
+        font-size: 2rem;
+    }
+
+    .service-intro-text p,
+    .service-storage h3,
+    .service-storage p {
+        font-size: 1rem;
+    }
+
+    .features-grid article,
+    .reviews-grid article,
+    .blog-service-grid article,
+    .features-grid-link article {
+        padding: 24px;
+    }
+}
