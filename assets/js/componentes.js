@@ -226,21 +226,21 @@ function setupMegaMenuTabs() {
         nacional: {
             title: 'Mudança Nacional',
             description: 'Mudanças residenciais para qualquer região do Brasil com embalagem, transporte seguro e equipe especializada.',
-            image: 'assets/imagens/servicos/mudancaResidP.png',
+            image: 'assets/imagens/backgrounds/background-residencial.png',
             page: 'nacional'
         },
 
         comercial: {
             title: 'Mudança Comercial',
             description: 'Planejamento e execução para empresas, escritórios e operações comerciais com organização e agilidade.',
-            image: 'assets/imagens/servicos/mudancaComercialPp.png',
+            image: 'assets/imagens/backgrounds/background-comercial.png',
             page: 'comercial'
         },
 
         paraBrasil: {
             title: 'Mudança para o Brasil',
             description: 'Suporte completo para retorno ao Brasil, transporte internacional, documentação e acompanhamento logístico.',
-            image: 'assets/imagens/servicos/mudancaParaBrasilP.png',
+            image: 'assets/imagens/backgrounds/background-para-brasil.png',
             page: 'paraBrasil'
         }
     };

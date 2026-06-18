@@ -413,7 +413,7 @@
 
 .brasil-hero {
     background:
-        linear-gradient(rgba(13, 30, 55, 0), rgba(13, 30, 55, .75)),
+        linear-gradient(rgba(254, 254, 254, 0), rgba(13, 30, 55, .75)),
         url('../../imagens/backgrounds/background-para-brasil.png') center / cover no-repeat;
 }
 

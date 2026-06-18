@@ -36,6 +36,7 @@ async function loadSections() {
 // Inicializar funcionalidades após carregar as seções
 function initializeScripts() {
     const contactForm = document.getElementById('contactForm');
+
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -44,12 +45,23 @@ function initializeScripts() {
     }
 
     const quoteForm = document.getElementById('quoteForm');
-    if (quoteForm) {
+    const quoteSuccess = document.getElementById('quoteSuccess');
+
+    if (quoteForm && quoteSuccess) {
         quoteForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Cotação enviada com sucesso!');
+
+            quoteSuccess.classList.add('show');
+            quoteForm.reset();
+
+            setTimeout(function () {
+                quoteSuccess.classList.remove('show');
+            }, 6000);
         });
     }
+
+    // resto do código do initializeScripts continua aqui...
+
 
     // Funcionalidade de link ativo na navegação usando event delegation
     const headerNav = document.querySelector('.header-nav');
@@ -119,17 +131,33 @@ function setupScrollAnimations() {
     const upSelectors = [
         '.hero-container',
         '.advantages-card',
-        '.infoCardTop',
-        '.infoCardBottom',
         '.blog-card',
         '.testimonials-card',
         '.cotacao-form',
         '.about-container',
-        '.footer-container-principal'
+        '.footer-container-principal',
+
+        // páginas internas
+        '.service-intro-text',
+        '.features-grid article',
+        '.features-grid-link article',
+        '.storage-text',
+        '.reviews-grid article',
+        '.blog-service-grid article',
+        '.faq-list details',
+        '.address-card',
+        '.contact-info',
+        '.about-story',
+        '.value-card',
+        '.review-card'
     ];
 
     const rightSelectors = [
-        '.hero-form-container'
+        '.hero-form-container',
+        '.infoCardBottom',
+        '.service-form-box',
+        '.infoCardTop',
+        '.contact-form-box'
     ];
 
     const upElements = document.querySelectorAll(upSelectors.join(', '));
@@ -137,16 +165,16 @@ function setupScrollAnimations() {
 
     if (!upElements.length && !rightElements.length) return;
 
-    upElements.forEach((element) => {
+    upElements.forEach(element => {
         element.classList.add('animate-up');
     });
 
-    rightElements.forEach((element) => {
+    rightElements.forEach(element => {
         element.classList.add('animate-right', 'delay');
     });
 
     const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach((entry) => {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('in-view');
                 obs.unobserve(entry.target);
@@ -157,15 +185,9 @@ function setupScrollAnimations() {
         rootMargin: '0px 0px -20px 0px'
     });
 
-    upElements.forEach((element) => {
+    [...upElements, ...rightElements].forEach(element => {
         observer.observe(element);
-        if (isElementVisible(element)) {
-            element.classList.add('in-view');
-        }
-    });
 
-    rightElements.forEach((element) => {
-        observer.observe(element);
         if (isElementVisible(element)) {
             element.classList.add('in-view');
         }
