@@ -199,16 +199,17 @@ body.menu-open {
     }
 }
 
-.whatsapp-message{
+.whatsapp-message {
     position: fixed;
-    right: 25px;
-    bottom: 95px;
+    right: 15px;
+    bottom: 80px;
+    width: 200px;
+    text-align: center;
 
     background: white;
     color: #333;
 
     padding: 12px 16px;
-
     border-radius: 12px;
 
     box-shadow: 0 8px 25px rgba(0,0,0,.15);
@@ -218,28 +219,8 @@ body.menu-open {
 
     z-index: 9998;
 
-    animation: showMessage 8s infinite;
-}
+    opacity: 1;
+    transform: translateY(0);
 
-@keyframes showMessage{
-
-    0%{
-        opacity:0;
-        transform:translateY(10px);
-    }
-
-    10%{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-    70%{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-    100%{
-        opacity:0;
-        transform:translateY(10px);
-    }
+    transition: opacity 1s ease, transform 1s ease;
 }
