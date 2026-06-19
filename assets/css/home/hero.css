@@ -1,7 +1,7 @@
 /* HERO */
 
 .hero {
-    background: linear-gradient(rgba(13, 30, 55, 0), rgba(0, 0, 0, 0.75)),
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.75)),
     url('../../imagens/banners/banner-hero.jpg');
     background-size: cover;
     background-position: center;

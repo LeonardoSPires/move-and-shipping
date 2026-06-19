@@ -149,12 +149,14 @@ function setupScrollAnimations() {
         '.contact-info',
         '.about-story',
         '.value-card',
-        '.review-card'
+        '.infoCardBottom',
+        '.review-card',
+        '.destaques-grid',
+        '.recentes-grid',
     ];
 
     const rightSelectors = [
         '.hero-form-container',
-        '.infoCardBottom',
         '.service-form-box',
         '.infoCardTop',
         '.contact-form-box'
