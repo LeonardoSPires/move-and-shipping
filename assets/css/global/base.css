@@ -101,101 +101,74 @@ p {
 body.menu-open {
     overflow: hidden;
 }
-
-.whatsapp-floating{
+.whatsapp-floating {
     position: fixed;
     bottom: 25px;
     right: 25px;
+
     display: flex;
     align-items: center;
     gap: 10px;
+
     padding: 14px 20px;
     background: linear-gradient(135deg, #25D366, #128C7E);
-    border: none;
     border-radius: 50px;
+
     text-decoration: none;
     color: #fff;
+
     box-shadow: 0 10px 28px rgba(37, 211, 102, 0.35);
     z-index: 9999;
-    transition: all .3s ease;
+
+    animation: none !important;
+    transform: none !important;
 }
 
-.whatsapp-floating:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(37, 211, 102, 0.45);
+.whatsapp-floating:hover {
+    transform: none !important;
+    opacity: .95;
 }
 
-.globe-icon{
-    color: #fff;
-    font-size: 22px;
-    animation: rotateGlobe 12s linear infinite;
-}
-
-.whatsapp-text{
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-@keyframes rotateGlobe{
-    from{ transform: rotate(0deg); }
-    to{ transform: rotate(360deg); }
-}
-
-@keyframes pulseWhatsapp {
-  0% { transform: scale(1); }
-  5% { transform: scale(1.08); }
-  10% { transform: scale(1); }
-  100% { transform: scale(1); }
-}
-
-.whatsapp-floating{
-  animation: pulseWhatsapp 10s infinite;
-}
-
-.icon-wrapper{
+.icon-wrapper {
     position: relative;
     width: 24px;
     height: 24px;
 }
 
 .globe-icon,
-.whatsapp-icon{
+.whatsapp-icon {
     position: absolute;
     top: 0;
     left: 0;
     font-size: 22px;
-    transition: all .3s ease;
+    color: #fff;
+    transition: .3s;
 }
 
-.globe-icon{
+.globe-icon {
     opacity: 1;
-    transform: scale(1);
+    animation: rotateGlobe 12s linear infinite;
 }
 
-.whatsapp-icon{
+.whatsapp-icon {
     opacity: 0;
-    transform: scale(.5);
 }
 
-.whatsapp-floating:hover .globe-icon{
+.whatsapp-floating:hover .globe-icon {
     opacity: 0;
-    transform: scale(1.5);
 }
 
-.whatsapp-floating:hover .whatsapp-icon{
+.whatsapp-floating:hover .whatsapp-icon {
     opacity: 1;
-    transform: scale(1);
 }
 
-@media(max-width:768px){
-
-    .whatsapp-floating{
-        padding:14px;
+@keyframes rotateGlobe {
+    from {
+        transform: rotate(0deg);
     }
 
-    .whatsapp-text{
-        display:none;
+    to {
+        transform: rotate(360deg);
     }
 }
 
@@ -203,14 +176,16 @@ body.menu-open {
     position: fixed;
     right: 15px;
     bottom: 80px;
+
     width: 200px;
     text-align: center;
 
-    background: white;
+    background: #fff;
     color: #333;
 
     padding: 12px 16px;
     border-radius: 12px;
+    margin-bottom: 10px;
 
     box-shadow: 0 8px 25px rgba(0,0,0,.15);
 
@@ -221,6 +196,48 @@ body.menu-open {
 
     opacity: 1;
     transform: translateY(0);
-
     transition: opacity 1s ease, transform 1s ease;
+}
+
+@media(max-width: 768px) {
+    .whatsapp-floating {
+        padding: 14px;
+    }
+
+    .whatsapp-text {
+        display: none;
+    }
+
+    .whatsapp-floating,
+    .whatsapp-message{
+        right: 15px !important;
+        transform: none !important;
+    }
+
+}
+
+@media(max-width: 768px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .hero,
+    .header-container,
+    .header-nav,
+    .mega-menu,
+    .services,
+    .about-hero,
+    .contact-hero,
+    .service-hero {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .whatsapp-floating,
+    .whatsapp-message {
+        right: 15px !important;
+    }
 }

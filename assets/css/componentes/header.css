@@ -301,7 +301,7 @@
     .header-container {
         top: 0;
         height: 90px;
-        width: 100vw;
+        width: 100%;
         padding: 0 20px;
 
         flex-direction: row;

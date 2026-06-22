@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../../assets/imagens/logos/favicon.png">
-    <title>Blog | Move and Shipping</title>
+    <title>Blog | Mudanças Internacionais, Nacionais e Comerciais | Move and Shipping</title>
 
     <link rel="stylesheet" href="../../assets/css/global/base.css">
     <link rel="stylesheet" href="../../assets/css/componentes/header.css">
@@ -34,16 +34,17 @@
         </section>
 
         <section class="blog-categorias">
-            <div class="blog-container categorias-wrapper">
-                <a href="#">Mudança Internacional</a>
-                <a href="#">Mudança Nacional</a>
-                <a href="#">Mudança Comercial</a>
-                <a href="#">Mudança para o Brasil</a>
-                <a href="#">Documentação</a>
-                <a href="#">Embalagem</a>
-                <a href="#">Seguro</a>
-            </div>
-        </section>
+    <div class="blog-container categorias-wrapper">
+        <button class="filter-btn active" type="button" data-filter="todos">Todos</button>
+        <button class="filter-btn" type="button" data-filter="internacional">Mudança Internacional</button>
+        <button class="filter-btn" type="button" data-filter="nacional">Mudança Nacional</button>
+        <button class="filter-btn" type="button" data-filter="comercial">Mudança Comercial</button>
+        <button class="filter-btn" type="button" data-filter="brasil">Mudança para o Brasil</button>
+        <button class="filter-btn" type="button" data-filter="documentacao">Documentação</button>
+        <button class="filter-btn" type="button" data-filter="embalagem">Embalagem</button>
+        <button class="filter-btn" type="button" data-filter="seguro">Seguro</button>
+    </div>
+</section>
 
         <section class="blog-destaques" id="artigos">
             <div class="blog-container">
@@ -248,14 +249,85 @@
                 </div>
             </div>
         </section>
+
+        <section class="blog-knowledge">
+
+    <div class="blog-container">
+
+        <div class="blog-section-title">
+            <span>Guia Completo</span>
+            <h2>Tudo o que você precisa saber antes da sua mudança</h2>
+        </div>
+
+        <div class="knowledge-grid">
+
+            <article class="knowledge-card">
+                <i class="fas fa-globe-americas"></i>
+                <h3>Mudanças Internacionais</h3>
+
+                <ul>
+                    <li>Como funciona o processo porta a porta</li>
+                    <li>Documentação necessária</li>
+                    <li>Seguro internacional</li>
+                    <li>Frete marítimo x aéreo</li>
+                    <li>Prazos médios de entrega</li>
+                </ul>
+            </article>
+
+            <article class="knowledge-card">
+                <i class="fas fa-truck"></i>
+                <h3>Mudanças Nacionais</h3>
+
+                <ul>
+                    <li>Mudanças interestaduais</li>
+                    <li>Planejamento e logística</li>
+                    <li>Embalagem profissional</li>
+                    <li>Armazenagem temporária</li>
+                    <li>Proteção dos bens</li>
+                </ul>
+            </article>
+
+            <article class="knowledge-card">
+                <i class="fas fa-building"></i>
+                <h3>Mudanças Comerciais</h3>
+
+                <ul>
+                    <li>Transferência de escritórios</li>
+                    <li>Equipamentos corporativos</li>
+                    <li>Cronograma operacional</li>
+                    <li>Redução de interrupções</li>
+                    <li>Planejamento por etapas</li>
+                </ul>
+            </article>
+
+            <article class="knowledge-card">
+                <i class="fas fa-passport"></i>
+                <h3>Mudança para o Brasil</h3>
+
+                <ul>
+                    <li>Bagagem desacompanhada</li>
+                    <li>Documentação exigida</li>
+                    <li>Liberação aduaneira</li>
+                    <li>Importação de bens usados</li>
+                    <li>Prazos e custos envolvidos</li>
+                </ul>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
     </main>
 
     <div id="footer-container"></div>
 
-    <script src="../../assets/js/componentes.js"></script>
     <script src="../../assets/js/menu.js"></script>
     <script src="../../assets/js/whatsapp.js"></script>
-    <script src="../../assets/js/home.js"></script>      
+    <script src="../../assets/js/componentes.js"></script>
+    <script src="../../assets/js/home.js"></script>
+    <script src="../../assets/js/blog-filters.js"></script>
 </body>
 
 </html>

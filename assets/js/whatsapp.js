@@ -23,7 +23,7 @@ function setupWhatsappMessages() {
 
             text.style.opacity = 1;
             text.style.transform = 'translateY(0)';
-        }, 500);
+        }, 1500);
 
     }, 5500);
 }

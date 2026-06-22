@@ -22,6 +22,7 @@
     font-size: clamp(3rem, 5vw, 5rem);
     line-height: 1.1;
     color: var(--color-primary-light);
+    overflow-wrap: break-word;
 }
 
 .hero-container h3 {

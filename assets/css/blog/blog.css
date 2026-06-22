@@ -325,7 +325,7 @@
 /* CTA FINAL */
 
 .blog-cta {
-    padding: 100px 0;
+    padding: 300px 0;
     background:
         linear-gradient(rgba(215, 41, 145, 0), rgba(215, 41, 145, .88)),
         url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
@@ -348,6 +348,61 @@
     justify-content: center;
     gap: 18px;
     flex-wrap: wrap;
+}
+
+.blog-knowledge {
+    padding: 100px 0;
+    background: var(--color-light-bg);
+}
+
+.knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.knowledge-card {
+    background: var(--color-primary-light);
+    padding: 35px;
+    border-radius: 18px;
+    border-top: 6px solid var(--color-primary);
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.knowledge-card i {
+    font-size: 2.8rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.knowledge-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.knowledge-card ul {
+    list-style: none;
+}
+
+.knowledge-card li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    color: var(--color-text);
+}
+
+.knowledge-card li:last-child {
+    border-bottom: none;
+}
+
+@media(max-width:768px) {
+
+    .blog-knowledge {
+        padding: 70px 0;
+    }
+
+    .knowledge-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* RESPONSIVO */
