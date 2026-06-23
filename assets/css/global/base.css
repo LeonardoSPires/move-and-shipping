@@ -10,6 +10,7 @@
     --color-white: #fff;
     --color-border: #ddd;
     --color-light-bg: #ffe4f2;
+    --color-label: #9d9090;
 }
 
 * {
@@ -104,7 +105,7 @@ body.menu-open {
 .whatsapp-floating {
     position: fixed;
     bottom: 25px;
-    right: 25px;
+    right: 40px;
 
     display: flex;
     align-items: center;
@@ -174,7 +175,7 @@ body.menu-open {
 
 .whatsapp-message {
     position: fixed;
-    right: 15px;
+    right: 40px;
     bottom: 80px;
 
     width: 200px;
