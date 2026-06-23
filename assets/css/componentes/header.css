@@ -69,11 +69,11 @@
     gap: 35px;
 }
 
-.header-nav a {
+.nav-link {
     text-decoration: none;
     color: var(--color-text-dark);
     text-shadow: 0 1px 2px var(--color-primary-light);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     transition: .3s;
 }
 .dropdown-toggle {
@@ -101,7 +101,7 @@
     border: none;
     cursor: pointer;
     font-family: inherit;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     padding: 0;
 
     display: flex;
@@ -227,7 +227,8 @@
 }
 .mega-menu-text div {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    margin-top: 15px;
 }
 
 .mega-menu-btn {
