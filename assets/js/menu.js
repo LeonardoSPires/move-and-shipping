@@ -72,14 +72,14 @@ function setupMegaMenuTabs() {
 
         comercial: {
             title: 'Mudança Comercial',
-            description: 'Planejamento e execução para empresas, escritórios e operações comerciais com organização e agilidade.',
+            description: 'Planejamento e execução de mudanças corporativas, com logística eficiente, organização estratégica e mínima interrupção das operações da empresa.',
             image: 'assets/imagens/backgrounds/background-comercial.png',
             page: 'comercial'
         },
 
         paraBrasil: {
             title: 'Mudança para o Brasil',
-            description: 'Suporte completo para retorno ao Brasil, transporte internacional, documentação e acompanhamento logístico.',
+            description: 'Suporte completo para retorno ao Brasil, incluindo transporte internacional, orientação documental, logística porta a porta e acompanhamento em todas as etapas do processo.',
             image: 'assets/imagens/backgrounds/background-para-brasil.png',
             page: 'paraBrasil'
         }
