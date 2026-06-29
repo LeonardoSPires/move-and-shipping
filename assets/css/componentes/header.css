@@ -300,8 +300,7 @@
 .language-switcher{
     display:flex;
     align-items:center;
-    gap:10px;
-    margin-left:25px;
+    gap: 25px;
 }
 
 .language-switcher a{
@@ -367,7 +366,7 @@
 
     .header-nav {
         position: fixed;
-        top: 90px;
+        top: 0;
         right: 0;
 
         width: 100%;
