@@ -188,9 +188,12 @@
 }
 
 .about-quote {
-    padding: 100px 0;
-    background: url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
+    padding: 300px 0;
+    background:
+        linear-gradient(rgba(215, 41, 145, 0.914), rgba(215, 41, 145, 0), rgba(215, 41, 145, .88)),
+        url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
     text-align: center;
+    color: var(--color-white);
 }
 
 .quote-content h2 {
