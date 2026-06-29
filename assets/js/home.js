@@ -1,131 +1,120 @@
+// Inicializar funcionalidades da Home e páginas internas
 
-// Carregar seções HTML dinamicamente (exceto header e footer que são carregados pelo componentsLoader)
-async function loadSections() {
-    const sections = [
-        { id: 'hero-container', file: 'paginas/home/hero.html' },
-        { id: 'advantages-container', file: 'paginas/home/diferenciais.html' },
-        { id: 'services-container', file: 'paginas/home/servicos.html' },
-        { id: 'about-container', file: 'paginas/home/sobre.html' },
-        { id: 'cotacao-container', file: 'paginas/home/cotacao.html' },
-        { id: 'testimonials-container', file: 'paginas/home/depoimentos.html' },
-        { id: 'blog-container', file: 'paginas/home/blog.html' }
-    ];
-
-    for (const section of sections) {
-        try {
-            const response = await fetch(section.file);
-            if (response.ok) {
-                const html = await response.text();
-                const container = document.getElementById(section.id);
-                if (container) {
-                    container.innerHTML = html;
-                    if (typeof adjustImagePaths === 'function') {
-                        adjustImagePaths(container);
-                    }
-                }
-            }
-        } catch (error) {
-            console.error(`Erro ao carregar ${section.file}:`, error);
-        }
-    }
-
-    // Executar scripts após carregar as seções
-    initializeScripts();
-}
-
-// Inicializar funcionalidades após carregar as seções
 function initializeScripts() {
-    const contactForm = document.getElementById('contactForm');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Orçamento enviado com sucesso!');
-        });
-    }
-
-    const quoteForm = document.getElementById('quoteForm');
-    const quoteSuccess = document.getElementById('quoteSuccess');
-
-    if (quoteForm && quoteSuccess) {
-        quoteForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            quoteSuccess.classList.add('show');
-            quoteForm.reset();
-
-            setTimeout(function () {
-                quoteSuccess.classList.remove('show');
-            }, 6000);
-        });
-    }
-
-    // resto do código do initializeScripts continua aqui...
-
-
-    // Funcionalidade de link ativo na navegação usando event delegation
-    const headerNav = document.querySelector('.header-nav');
-    if (headerNav) {
-        headerNav.addEventListener('click', function (e) {
-            const link = e.target.closest('.nav-link');
-            if (!link) return;
-
-            const href = link.getAttribute('href');
-            const isAnchor = href && href.startsWith('#');
-            if (isAnchor) {
-                e.preventDefault();
-
-                // Remove a classe active de todos os links
-                document.querySelectorAll('.header-nav .nav-link').forEach(navLink => {
-                    navLink.classList.remove('active');
-                });
-
-                // Adiciona a classe active ao link clicado
-                link.classList.add('active');
-            }
-        });
-    }
-
-    // Efeito de ondulação de cores no h1 do hero
-    const heroH1 = document.querySelector('.hero-container h1');
-    if (heroH1) {
-        // Preservar o HTML original com os <br>
-        const originalHTML = heroH1.innerHTML;
-        let letterIndex = 0;
-
-        // Processar o HTML mantendo os <br>
-        const parts = originalHTML.split('<br>');
-
-        const newHTML = parts.map(part => {
-            return part.split('').map(char => {
-                if (char === ' ') return char;
-
-                const span = `<span class="wave-letter" style="animation-delay:${letterIndex * 0.1}s">${char}</span>`;
-                letterIndex++;
-                return span;
-            }).join('');
-        }).join('<br>');
-
-        heroH1.innerHTML = newHTML;
-    }
-
+    setupContactForm();
+    setupQuoteForm();
+    setupHeaderActiveLinks();
+    setupHeroWaveText();
     setupScrollAnimations();
     animateHeroIntro();
 }
+
+/* FORMULÁRIO DO HERO */
+
+function setupContactForm() {
+    const contactForm = document.getElementById('contactForm');
+
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Orçamento enviado com sucesso!');
+        contactForm.reset();
+    });
+}
+
+/* FORMULÁRIO DE COTAÇÃO */
+
+function setupQuoteForm() {
+    const quoteForm = document.getElementById('quoteForm');
+    const quoteSuccess = document.getElementById('quoteSuccess');
+
+    if (!quoteForm || !quoteSuccess) return;
+
+    quoteForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        quoteSuccess.classList.add('show');
+        quoteForm.reset();
+
+        setTimeout(function () {
+            quoteSuccess.classList.remove('show');
+        }, 6000);
+    });
+}
+
+/* LINK ATIVO NO HEADER */
+
+function setupHeaderActiveLinks() {
+    const headerNav = document.querySelector('.header-nav');
+
+    if (!headerNav) return;
+
+    headerNav.addEventListener('click', function (e) {
+        const link = e.target.closest('.nav-link');
+
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+        const isAnchor = href && href.startsWith('#');
+
+        if (!isAnchor) return;
+
+        e.preventDefault();
+
+        document.querySelectorAll('.header-nav .nav-link').forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+
+        link.classList.add('active');
+    });
+}
+
+/* EFEITO DE ONDULAÇÃO NO H1 DO HERO */
+
+function setupHeroWaveText() {
+    const heroH1 = document.querySelector('.hero-container h1');
+
+    if (!heroH1) return;
+
+    // Evita aplicar o efeito duas vezes
+    if (heroH1.dataset.waveApplied === 'true') return;
+
+    const originalHTML = heroH1.innerHTML;
+    let letterIndex = 0;
+
+    const parts = originalHTML.split('<br>');
+
+    const newHTML = parts.map(part => {
+        return part.split('').map(char => {
+            if (char === ' ') return char;
+
+            const span = `<span class="wave-letter" style="animation-delay:${letterIndex * 0.1}s">${char}</span>`;
+            letterIndex++;
+
+            return span;
+        }).join('');
+    }).join('<br>');
+
+    heroH1.innerHTML = newHTML;
+    heroH1.dataset.waveApplied = 'true';
+}
+
+/* ANIMAÇÃO INICIAL DO HERO */
 
 function animateHeroIntro() {
     const heroContainer = document.querySelector('.hero-container');
     const heroForm = document.querySelector('.hero-form-container');
 
-    if (!heroContainer || !heroForm) {
-        return;
-    }
+    if (!heroContainer || !heroForm) return;
 
     requestAnimationFrame(() => {
         heroContainer.classList.add('in-view');
         heroForm.classList.add('in-view');
     });
 }
+
+/* ANIMAÇÕES AO ROLAR A PÁGINA */
 
 function setupScrollAnimations() {
     const upSelectors = [
@@ -137,7 +126,12 @@ function setupScrollAnimations() {
         '.about-container',
         '.footer-container-principal',
 
-        // páginas internas
+        // Home
+        '.infoCardBottom',
+        '.destaques-grid',
+        '.recentes-grid',
+
+        // Páginas internas
         '.service-intro-text',
         '.features-grid article',
         '.features-grid-link article',
@@ -149,10 +143,7 @@ function setupScrollAnimations() {
         '.contact-info',
         '.about-story',
         '.value-card',
-        '.infoCardBottom',
-        '.review-card',
-        '.destaques-grid',
-        '.recentes-grid',
+        '.review-card'
     ];
 
     const rightSelectors = [
@@ -198,20 +189,46 @@ function setupScrollAnimations() {
 
 function isElementVisible(element) {
     const rect = element.getBoundingClientRect();
+
     return rect.top < window.innerHeight && rect.bottom > 0;
 }
 
-function isHomePage() {
-    const page = window.location.pathname.split('/').pop();
-    return page === '' || page === 'index.html';
+async function loadHome() {
+    const container = document.getElementById('home-container');
+
+    if (!container) return;
+
+    try {
+        const response = await fetch('paginas/home/home.html');
+
+        if (!response.ok) {
+            console.error('Erro ao carregar home.html:', response.status);
+            return;
+        }
+
+        const html = await response.text();
+
+        container.innerHTML = html;
+
+        if (typeof adjustImagePaths === 'function') {
+            adjustImagePaths(container);
+        }
+
+        initializeScripts();
+
+    } catch (error) {
+        console.error('Erro ao carregar home.html:', error);
+    }
 }
 
-// Carregar as seções quando o DOM estiver pronto
+/* INICIALIZAÇÃO */
+
 document.addEventListener('DOMContentLoaded', () => {
-    if (isHomePage()) {
-        loadSections();
+    const homeContainer = document.getElementById('home-container');
+
+    if (homeContainer) {
+        loadHome();
     } else {
         initializeScripts();
     }
 });
-

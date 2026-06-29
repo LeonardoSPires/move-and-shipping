@@ -1,8 +1,10 @@
 /* COTAÇÃO */
 
 .cotacao {
-    padding: 100px 0;
-    background: var(--color-light-bg) url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
+    padding: 120px 0;
+    background: linear-gradient(rgba(215, 41, 145, 0), rgb(215, 41, 145)), url(../../imagens/backgrounds/backgroundCotacao.png) center / cover no-repeat;
+    text-align: center;
+    color: var(--color-white);
 }
 
 .cotacao-container {

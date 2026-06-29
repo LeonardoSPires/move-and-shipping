@@ -8,17 +8,15 @@
 /* HERO */
 
 .service-hero {
+    background:
+    linear-gradient(rgba(254, 254, 254, 0), rgba(13, 30, 55, .75)),
+    url('/assets/imagens/backgrounds/background-interacional.png') center / cover no-repeat;
     min-height: 75vh;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 150px 0 20px;
     color: var(--color-white);
-}
-
-.international-hero {
-    background:
-        linear-gradient(rgba(254, 254, 254, 0), rgba(13, 30, 55, .75)),
-        url('../../imagens/backgrounds/background-interacional.png') center / cover no-repeat;
 }
 
 .service-hero-content h1 {

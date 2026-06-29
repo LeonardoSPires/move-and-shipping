@@ -1,41 +1,94 @@
-// Carregamento centralizado de Header e Footer
+// Caminho base do projeto
 
-const pagesMap = {
-    home: { path: 'index.html', name: 'home' },
-    services: { path: 'paginas/servicos/servicos.html', name: 'services' },
-    about: { path: 'paginas/sobre/sobre.html', name: 'about' },
-    blog: { path: 'paginas/blog/blog.html', name: 'blog' },
-    contato: { path: 'paginas/contato/contato.html', name: 'contato' },
-    internacional: { path: 'paginas/servicos/internacional.html', name: 'internacional' },
-    nacional: { path: 'paginas/servicos/nacional.html', name: 'nacional' },
-    comercial: { path: 'paginas/servicos/comercial.html', name: 'comercial' },
-    paraBrasil: { path: 'paginas/servicos/paraBrasil.html', name: 'paraBrasil' }
+const ROOT = "";
+
+// Páginas do site
+const pages = {
+    home: "index.html",
+
+    services: "paginas/servicos/servicos.html",
+
+    about: "paginas/sobre/sobre.html",
+
+    blog: "paginas/blog/blog.html",
+
+    contato: "paginas/contato/contato.html",
+
+    internacional: "paginas/servicos/internacional.html",
+
+    nacional: "paginas/servicos/nacional.html",
+
+    comercial: "paginas/servicos/comercial.html",
+
+    paraBrasil: "paginas/servicos/paraBrasil.html"
 };
+
+function getCurrentLang() {
+    const path = window.location.pathname;
+
+    if (path.includes('/pt/')) return 'pt';
+    if (path.includes('/en/')) return 'en';
+    if (path.includes('/es/')) return 'es';
+    if (path.includes('/de/')) return 'de';
+
+    return 'pt';
+}
 
 function getCurrentPage() {
     const filename = window.location.pathname.split('/').pop() || 'index.html';
 
     if (filename === 'index.html' || filename === '') return 'home';
-    if (filename === 'sobre.html') return 'about';
+
+    if (
+        filename === 'servicos.html' ||
+        filename === 'services.html'
+    ) return 'services';
+
+    if (
+        filename === 'sobre.html' ||
+        filename === 'about.html' ||
+        filename === 'sobre-nosotros.html' ||
+        filename === 'ueber-uns.html'
+    ) return 'about';
+
     if (filename === 'blog.html') return 'blog';
-    if (filename === 'contato.html') return 'contato';
-    if (filename === 'internacional.html') return 'internacional';
-    if (filename === 'nacional.html') return 'nacional';
-    if (filename === 'comercial.html') return 'comercial';
-    if (filename === 'paraBrasil.html') return 'paraBrasil';
+
+    if (
+        filename === 'contato.html' ||
+        filename === 'contact.html' ||
+        filename === 'contacto.html' ||
+        filename === 'kontakt.html'
+    ) return 'contato';
+
+    if (
+        filename === 'internacional.html' ||
+        filename === 'international.html'
+    ) return 'internacional';
+
+    if (
+        filename === 'nacional.html' ||
+        filename === 'domestic.html' ||
+        filename === 'national.html'
+    ) return 'nacional';
+
+    if (
+        filename === 'comercial.html' ||
+        filename === 'commercial.html'
+    ) return 'comercial';
+
+    if (
+        filename === 'paraBrasil.html' ||
+        filename === 'to-brazil.html' ||
+        filename === 'a-brasil.html' ||
+        filename === 'nach-brasilien.html'
+    ) return 'paraBrasil';
 
     return 'home';
 }
 
-function getBasePath() {
-    const path = window.location.pathname;
-    return path.includes('/paginas/') ? '../../' : '';
-}
-
 async function loadComponent(containerId, componentPath) {
     try {
-        const basePath = getBasePath();
-        const fullPath = basePath + componentPath;
+        const fullPath = `${ROOT}/${getCurrentLang()}/${componentPath}`;
         const response = await fetch(fullPath);
 
         if (!response.ok) {
@@ -51,18 +104,19 @@ async function loadComponent(containerId, componentPath) {
         container.innerHTML = html;
 
         if (containerId === 'header-container') {
-            adjustHeaderLinks();
+    adjustHeaderLinks();
+    setupLanguageSwitcher();
+    adjustImagePaths(container);
 
-            if (typeof setupMegaMenu === 'function') setupMegaMenu();
-            if (typeof setupMegaMenuTabs === 'function') setupMegaMenuTabs();
-            if (typeof setupMobileMenu === 'function') setupMobileMenu();
-            if (typeof setupHeaderScroll === 'function') setupHeaderScroll();
-            if (typeof setupWhatsappMessages === 'function') setupWhatsappMessages();
-        }
+    if (typeof setupMegaMenu === 'function') setupMegaMenu();
+    if (typeof setupMegaMenuTabs === 'function') setupMegaMenuTabs();
+    if (typeof setupMobileMenu === 'function') setupMobileMenu();
 
-        if (containerId === 'footer-container') {
-            adjustFooterLinks();
-        }
+    // deixe esse por último
+    if (typeof setupHeaderScroll === 'function') setupHeaderScroll();
+
+    if (typeof setupWhatsappMessages === 'function') setupWhatsappMessages();
+    }
 
         adjustImagePaths(container);
 
@@ -72,52 +126,71 @@ async function loadComponent(containerId, componentPath) {
 }
 
 function adjustHeaderLinks() {
+
     const currentPage = getCurrentPage();
-    const basePath = getBasePath();
-    const links = document.querySelectorAll('[data-page]');
 
-    links.forEach(link => {
-        const page = link.getAttribute('data-page');
-        const pageInfo = pagesMap[page];
+    document.querySelectorAll('[data-page]').forEach(link => {
 
-        if (!pageInfo) return;
+        const page = link.dataset.page;
 
-        if (link.tagName.toLowerCase() === 'a') {
-            link.setAttribute('href', basePath + pageInfo.path);
-        }
+        if (!pages[page]) return;
+
+        link.href = `${ROOT}/${getCurrentLang()}/${pages[page]}`;
 
         link.classList.toggle('active', page === currentPage);
+
     });
+
 }
 
 function adjustFooterLinks() {
-    const basePath = getBasePath();
 
     document.querySelectorAll('.footer-links-container [data-page]').forEach(link => {
-        const page = link.getAttribute('data-page');
-        const pageInfo = pagesMap[page];
 
-        if (!pageInfo) return;
+        const page = link.dataset.page;
 
-        link.setAttribute('href', basePath + pageInfo.path);
+        if (!pages[page]) return;
+
+        link.href = `${ROOT}/${getCurrentLang()}/${pages[page]}`;
+
     });
+}
+
+function setupLanguageSwitcher() {
+
+    const currentPage = getCurrentPage();
+
+    document.querySelectorAll('[data-lang]').forEach(link => {
+
+        const lang = link.dataset.lang;
+
+        if (!pages[currentPage]) return;
+
+        link.href = `${ROOT}/${lang}/${pages[currentPage]}`;
+
+        link.classList.toggle('active', lang === getCurrentLang());
+
+    });
+
 }
 
 function adjustImagePaths(scope = document) {
-    const basePath = getBasePath();
 
     scope.querySelectorAll('[data-src]').forEach(img => {
-        const src = img.getAttribute('data-src');
-        img.setAttribute('src', basePath + src);
+
+        img.src = `${ROOT}/${img.dataset.src}`;
+
     });
 
     scope.querySelectorAll('img[src^="assets/"]').forEach(img => {
-        const src = img.getAttribute('src');
-        img.setAttribute('src', basePath + src);
+
+        img.src = `${ROOT}/${img.getAttribute('src')}`;
+
     });
 }
-
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("Idioma atual:", getCurrentLang());
+
     loadComponent('header-container', 'componentes/header.html');
     loadComponent('footer-container', 'componentes/footer.html');
 });

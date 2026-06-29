@@ -1,5 +1,3 @@
-// Funcionalidades do Header: Mega Menu, Menu Mobile e Scroll
-
 function setupMegaMenu() {
     const dropdown = document.querySelector('.nav-dropdown');
     const toggle = document.querySelector('.dropdown-toggle');
@@ -15,21 +13,26 @@ function setupMegaMenu() {
 
     function closeMenu() {
         dropdown.classList.remove('active');
+        updateHeader();
     }
 
     function toggleMenu(event) {
         event.preventDefault();
         event.stopPropagation();
+
         dropdown.classList.toggle('active');
+        updateHeader();
     }
 
     if (!isMobileOrTouch) {
         toggle.addEventListener('mouseenter', () => {
             dropdown.classList.add('active');
+            updateHeader();
         });
 
         megaMenu.addEventListener('mouseenter', () => {
             dropdown.classList.add('active');
+            updateHeader();
         });
 
         megaMenu.addEventListener('mouseleave', closeMenu);
@@ -49,39 +52,76 @@ function setupMegaMenu() {
         });
     }
 
-    document.querySelectorAll('.mega-menu a, .header-nav > a').forEach(link => {
+    document.querySelectorAll('.header-nav > a').forEach(link => {
         link.addEventListener('click', closeMenu);
     });
 }
 
+function updateHeader() {
+    const header = document.querySelector('.header-container');
+    const topBar = document.querySelector('.header-contact');
+    const dropdown = document.querySelector('.nav-dropdown');
+
+    if (!header) return;
+
+    const isMegaMenuOpen = dropdown && dropdown.classList.contains('active');
+
+    if (window.scrollY > 80 || isMegaMenuOpen) {
+        header.classList.remove('transparent');
+        header.classList.add('scrolled');
+
+        if (topBar) {
+            topBar.classList.add('hidden');
+        }
+    } else {
+        header.classList.remove('scrolled');
+        header.classList.add('transparent');
+
+        if (topBar) {
+            topBar.classList.remove('hidden');
+        }
+    }
+}
+
+function setupHeaderScroll() {
+    updateHeader();
+
+    window.removeEventListener('scroll', updateHeader);
+    window.addEventListener('scroll', updateHeader);
+}
+
 function setupMegaMenuTabs() {
-    const serviceData = {
+    const servicesData = {
         internacional: {
-            title: 'Mudança Internacional',
-            description: 'Transporte internacional porta a porta com suporte documental, planejamento logístico e acompanhamento em todas as etapas.',
-            image: 'assets/imagens/servicos/mudancaInter.png',
-            page: 'internacional'
+            page: "internacional",
+            title: "Mudança Internacional",
+            description: "Transporte internacional porta a porta com suporte documental, planejamento logístico e acompanhamento em todas as etapas.",
+            image: "assets/imagens/servicos/mudancaInter.png",
+            alt: "Mudança Internacional"
         },
 
         nacional: {
-            title: 'Mudança Nacional',
-            description: 'Mudanças residenciais para qualquer região do Brasil com embalagem, transporte seguro e equipe especializada.',
-            image: 'assets/imagens/backgrounds/background-residencial.png',
-            page: 'nacional'
+            page: "nacional",
+            title: "Mudança Nacional",
+            description: "Mudanças nacionais com segurança, planejamento e cuidado em todo o transporte.",
+            image: "assets/imagens/servicos/mudancaResid.png",
+            alt: "Mudança Nacional"
         },
 
         comercial: {
-            title: 'Mudança Comercial',
-            description: 'Planejamento e execução de mudanças corporativas, com logística eficiente, organização estratégica e mínima interrupção das operações da empresa.',
-            image: 'assets/imagens/backgrounds/background-comercial.png',
-            page: 'comercial'
+            page: "comercial",
+            title: "Mudança Comercial",
+            description: "Mudanças comerciais e corporativas com organização, agilidade e mínima interrupção.",
+            image: "assets/imagens/servicos/mudancaComercial.png",
+            alt: "Mudança Comercial"
         },
 
         paraBrasil: {
-            title: 'Mudança para o Brasil',
-            description: 'Suporte completo para retorno ao Brasil, incluindo transporte internacional, orientação documental, logística porta a porta e acompanhamento em todas as etapas do processo.',
-            image: 'assets/imagens/backgrounds/background-para-brasil.png',
-            page: 'paraBrasil'
+            page: "paraBrasil",
+            title: "Mudança para o Brasil",
+            description: "Suporte completo para mudanças com destino ao Brasil, documentação e transporte internacional.",
+            image: "assets/imagens/servicos/mudancaParaBrasil.png",
+            alt: "Mudança para o Brasil"
         }
     };
 
@@ -99,77 +139,60 @@ function setupMegaMenuTabs() {
             event.stopPropagation();
 
             const service = tab.getAttribute('data-service');
-            const data = serviceData[service];
+            const data = servicesData[service];
 
             if (!data) return;
 
             tabs.forEach(item => item.classList.remove('active'));
             tab.classList.add('active');
 
-            const basePath = typeof getBasePath === 'function' ? getBasePath() : '';
+            image.src = `${ROOT}/${data.image}`;
+            image.alt = data.alt;
 
-            image.src = basePath + data.image;
-            image.alt = data.title;
             title.textContent = data.title;
             description.textContent = data.description;
-            link.setAttribute('data-page', data.page);
 
-            if (typeof pagesMap !== 'undefined') {
-                const pageInfo = pagesMap[data.page];
-
-                if (pageInfo) {
-                    link.href = basePath + pageInfo.path;
-                }
-            }
+            link.setAttribute("data-page", data.page);
+            link.href = `${ROOT}/${getCurrentLang()}/${pages[data.page]}`;
         });
     });
 }
 
-function setupMobileMenu() {
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('.header-nav');
+function updateHeader() {
 
-    if (!toggle || !nav) return;
-
-    toggle.addEventListener('click', function () {
-        toggle.classList.toggle('active');
-        nav.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    });
-
-    document.querySelectorAll('.header-nav a').forEach(link => {
-        link.addEventListener('click', function () {
-            toggle.classList.remove('active');
-            nav.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        });
-    });
-}
-
-function setupHeaderScroll() {
     const header = document.querySelector('.header-container');
     const topBar = document.querySelector('.header-contact');
+    const dropdown = document.querySelector('.nav-dropdown');
 
     if (!header) return;
 
-    function updateHeader() {
-        if (window.scrollY > 80) {
-            header.classList.remove('transparent');
-            header.classList.add('scrolled');
+    const isMegaMenuOpen =
+        dropdown && dropdown.classList.contains('active');
 
-            if (topBar) {
-                topBar.classList.add('hidden');
-            }
-        } else {
-            header.classList.remove('scrolled');
-            header.classList.add('transparent');
+    if (window.scrollY > 80 || isMegaMenuOpen) {
 
-            if (topBar) {
-                topBar.classList.remove('hidden');
-            }
+        header.classList.remove('transparent');
+        header.classList.add('scrolled');
+
+        if (topBar) {
+            topBar.classList.add('hidden');
         }
-    }
 
+    } else {
+
+        header.classList.add('transparent');
+        header.classList.remove('scrolled');
+
+        if (topBar) {
+            topBar.classList.remove('hidden');
+        }
+
+    }
+}
+
+function setupHeaderScroll() {
     updateHeader();
+
+    window.removeEventListener('scroll', updateHeader);
     window.addEventListener('scroll', updateHeader);
 }
