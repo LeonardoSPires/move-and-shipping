@@ -157,13 +157,13 @@
 
 .header-container.scrolled .mega-menu {
     top: 80px;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 160px);
 }
 
 .mega-menu-tabs {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .mega-tab {
@@ -236,7 +236,7 @@
     display: inline-block;
     background: var(--color-primary);
     color: var(--color-white) !important;
-    padding: 11px 22px;
+    padding: 8px 22px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
@@ -404,7 +404,6 @@
     .dropdown-toggle {
         width: 100%;
         font-size: 1.2rem;
-        text-align: left;
         justify-content: flex-start;
         color: var(--color-dark);
         text-shadow: none;
@@ -536,6 +535,8 @@
 
     .mega-menu-tabs {
         width: 100%;
+        justify-content: space-evenly;
+        gap: 0;
     }
 
     .mega-tab {
@@ -548,6 +549,7 @@
         width: 100%;
         min-height: auto;
         padding: 18px;
+        justify-content: space-evenly;
     }
 
     .mega-menu-content img {
@@ -560,6 +562,7 @@
 
     .mega-menu-text p {
         font-size: .95rem;
+        height: 100px;
     }
 
     .mega-menu-text div {

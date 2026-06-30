@@ -189,7 +189,6 @@ function adjustImagePaths(scope = document) {
     });
 }
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Idioma atual:", getCurrentLang());
 
     loadComponent('header-container', 'componentes/header.html');
     loadComponent('footer-container', 'componentes/footer.html');
