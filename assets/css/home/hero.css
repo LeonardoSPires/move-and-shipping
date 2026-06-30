@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: flex-end;
     gap: 80px;
-    padding: 80px 5%;
+    padding: 50px 5%;
 }
 
 .hero-container {
@@ -52,7 +52,7 @@
     background: var(--color-light-bg);
     width: 100%;
     max-width: 400px;
-    padding: 35px;
+    padding: 25px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
 }
