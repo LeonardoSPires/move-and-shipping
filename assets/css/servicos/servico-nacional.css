@@ -16,9 +16,9 @@
 }
 
 .service-hero-content h1 {
-    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    font-size: 4.5rem;
     color: var(--color-primary);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .service-hero-content h2 {
