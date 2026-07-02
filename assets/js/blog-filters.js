@@ -1,43 +1,54 @@
-// assets/js/blog-filters.js
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('blogSearch');
+    const cards = document.querySelectorAll('.blog-posts-grid .post-card');
+    const noResults = document.getElementById('noResults');
 
-function setupBlogFilters() {
-    const buttons = document.querySelectorAll('.filter-btn');
-    const posts = document.querySelectorAll('.post-card');
+    let activeFilter = 'todos';
 
-    if (!buttons.length || !posts.length) return;
+    function normalize(value) {
+        return value
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+    }
 
-    buttons.forEach(button => {
+    function applyFilters() {
+        const searchTerm = normalize(searchInput ? searchInput.value : '');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const categories = card.dataset.category || '';
+            const title = card.dataset.title || '';
+            const text = card.innerText || '';
+            const searchable = normalize(`${title} ${text} ${categories}`);
+
+            const matchesCategory = activeFilter === 'todos' || categories.includes(activeFilter);
+            const matchesSearch = !searchTerm || searchable.includes(searchTerm);
+            const shouldShow = matchesCategory && matchesSearch;
+
+            card.style.display = shouldShow ? '' : 'none';
+
+            if (shouldShow) {
+                visibleCount++;
+            }
+        });
+
+        if (noResults) {
+            noResults.style.display = visibleCount ? 'none' : 'block';
+        }
+    }
+
+    filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-
-            const filter = button.dataset.filter;
-
-            buttons.forEach(btn =>
-                btn.classList.remove('active')
-            );
-
+            filterButtons.forEach(item => item.classList.remove('active'));
             button.classList.add('active');
-
-            posts.forEach(post => {
-
-                const categories =
-                    post.dataset.category || '';
-
-                if (
-                    filter === 'todos' ||
-                    categories.includes(filter)
-                ) {
-                    post.style.display = '';
-                } else {
-                    post.style.display = 'none';
-                }
-
-            });
-
+            activeFilter = button.dataset.filter || 'todos';
+            applyFilters();
         });
     });
-}
 
-document.addEventListener(
-    'DOMContentLoaded',
-    setupBlogFilters
-);
+    if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+    }
+});

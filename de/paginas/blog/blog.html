@@ -1,338 +1,563 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+
+<html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/imagens/logos/favicon.png">
-    <title>Blog | Mudanças Internacionais, Nacionais e Comerciais | Move and Shipping</title>
-    <meta name="description"
-    content="Dicas, guias e informações sobre mudanças nacionais, internacionais, documentação, embalagem e seguros.">
-
-    <link rel="canonical" href="https://moveandshipping.com/de/paginas/blog/blog.html">
-
-    <link rel="alternate" hreflang="pt-BR" href="https://moveandshipping.com/pt/paginas/blog/blog.html">
-    <link rel="alternate" hreflang="en" href="https://moveandshipping.com/en/paginas/blog/blog.html">
-    <link rel="alternate" hreflang="es" href="https://moveandshipping.com/es/paginas/blog/blog.html">
-    <link rel="alternate" hreflang="de" href="https://moveandshipping.com/de/paginas/blog/blog.html">
-    <link rel="alternate" hreflang="x-default" href="https://moveandshipping.com/">
-
-    <link rel="stylesheet" href="../../../assets/css/global/base.css">
-    <link rel="stylesheet" href="../../../assets/css/componentes/header.css">
-    <link rel="stylesheet" href="../../../assets/css/componentes/footer.css">
-    <link rel="stylesheet" href="../../../assets/css/blog/blog.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../../../assets/imagens/logos/favicon.png" rel="icon" type="image/png" />
+    <title>Blog | Leitfäden für nationale und internationale Umzüge | Move and Shipping</title>
+    <meta
+        content="Umfassende Leitfäden zu nationalen, internationalen und gewerblichen Umzügen, Umzug nach Brasilien, Dokumentation, Verpackung, Versicherung, Lagerung und logistischer Planung."
+        name="description" />
+    <meta content="website" property="og:type" />
+    <meta content="Move and Shipping" property="og:site_name" />
+    <meta content="Move and Shipping Blog | Leitfäden für Umzüge und Logistik" property="og:title" />
+    <meta
+        content="Nützliche Inhalte zur sicheren Planung Ihres nationalen, internationalen, gewerblichen Umzugs oder Umzugs nach Brasilien."
+        property="og:description" />
+    <meta content="https://moveandshipping.com/de/paginas/blog/blog.html" property="og:url" />
+    <meta content="https://moveandshipping.com/assets/imagens/seo/og-image.jpg" property="og:image" />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta content="de_DE" property="og:locale" />
+    <link href="https://moveandshipping.com/de/paginas/blog/blog.html" rel="canonical" />
+    <link href="https://moveandshipping.com/pt/paginas/blog/blog.html" hreflang="pt-BR" rel="alternate" />
+    <link href="https://moveandshipping.com/en/paginas/blog/blog.html" hreflang="en" rel="alternate" />
+    <link href="https://moveandshipping.com/es/paginas/blog/blog.html" hreflang="es" rel="alternate" />
+    <link href="https://moveandshipping.com/de/paginas/blog/blog.html" hreflang="de" rel="alternate" />
+    <link href="https://moveandshipping.com/" hreflang="x-default" rel="alternate" />
+    <link href="../../../assets/css/global/base.css" rel="stylesheet" />
+    <link href="../../../assets/css/componentes/header.css" rel="stylesheet" />
+    <link href="../../../assets/css/componentes/footer.css" rel="stylesheet" />
+    <link href="../../../assets/css/blog/blog.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body id="top">
     <div id="header-container"></div>
-
     <main>
         <section class="blog-hero">
             <div class="blog-container blog-hero-content">
-                <span>Blog Move and Shipping</span>
-                <h1>Conteúdos para planejar sua mudança com segurança.</h1>
-                <p>
-                    Guias, dicas e informações sobre mudanças nacionais, internacionais,
-                    documentação, embalagem, seguro e transporte de bens.
-                </p>
-
-                <a href="#artigos" class="blog-hero-btn">Ver artigos recentes</a>
+                <span>Move and Shipping Blog</span>
+                <h1>Umfassende Leitfäden für eine sichere Umzugsplanung.</h1>
+                <p>Praktische Informationen zu nationalen, internationalen und gewerblichen Umzügen, Umzug nach
+                    Brasilien, Dokumentation, Verpackung, Versicherung, Fristen und Lagerung.</p>
+                <div class="blog-hero-actions">
+                    <a class="blog-hero-btn" href="#artigos">Artikel ansehen</a>
+                    <a class="blog-hero-btn secondary" href="#guias">Kostenlose Leitfäden</a>
+                </div>
             </div>
         </section>
-
+        <section class="blog-search-section">
+            <div class="blog-container">
+                <div class="blog-search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input id="blogSearch"
+                        placeholder="Suchen Sie nach Dokumentation, Versicherung, Verpackung, Brasilien, Frist, Fracht..."
+                        type="search" />
+                </div>
+            </div>
+        </section>
         <section class="blog-categorias">
-    <div class="blog-container categorias-wrapper">
-        <button class="filter-btn active" type="button" data-filter="todos">Todos</button>
-        <button class="filter-btn" type="button" data-filter="internacional">Mudança Internacional</button>
-        <button class="filter-btn" type="button" data-filter="nacional">Mudança Nacional</button>
-        <button class="filter-btn" type="button" data-filter="comercial">Mudança Comercial</button>
-        <button class="filter-btn" type="button" data-filter="brasil">Mudança para o Brasil</button>
-        <button class="filter-btn" type="button" data-filter="documentacao">Documentação</button>
-        <button class="filter-btn" type="button" data-filter="embalagem">Embalagem</button>
-        <button class="filter-btn" type="button" data-filter="seguro">Seguro</button>
-    </div>
-</section>
-
+            <div class="blog-container categorias-wrapper">
+                <button class="filter-btn active" data-filter="todos" type="button">Alle</button>
+                <button class="filter-btn" data-filter="internacional" type="button">Internationaler Umzug</button>
+                <button class="filter-btn" data-filter="nacional" type="button">Nationaler Umzug</button>
+                <button class="filter-btn" data-filter="comercial" type="button">Firmenumzug</button>
+                <button class="filter-btn" data-filter="brasil" type="button">Umzug nach Brasilien</button>
+                <button class="filter-btn" data-filter="documentacao" type="button">Dokumentation</button>
+                <button class="filter-btn" data-filter="embalagem" type="button">Verpackung</button>
+                <button class="filter-btn" data-filter="seguro" type="button">Versicherung</button>
+            </div>
+        </section>
         <section class="blog-destaques" id="artigos">
             <div class="blog-container">
                 <div class="blog-section-title">
-                    <span>Artigos em destaque</span>
-                    <h2>Guias úteis para sua próxima mudança</h2>
+                    <span>Empfohlene Artikel</span>
+                    <h2>Hier beginnen</h2>
+                    <p>Wir haben die wichtigsten Themen für alle zusammengestellt, die einen Umzug planen.</p>
                 </div>
-
-                <div class="destaques-grid">
-                    <article class="post-card post-card-large">
-                        <div class="post-icon">
-                            <i class="fa-solid fa-passport"></i>
-                        </div>
-
+                <div class="destaques-grid blog-posts-grid">
+                    <article class="post-card post-card-large" data-category="brasil documentacao internacional"
+                        data-title="Como se mudar para o Brasilien com persönliches umzugsut dokumentation aduana">
+                        <div class="post-icon"><i class="fa-solid fa-passport"></i></div>
                         <div class="post-content">
-                            <span class="post-category">Mudança para o Brasil</span>
-                            <h3>Como se mudar para o Brasil com seus bens pessoais</h3>
-                            <p>
-                                Entenda quais etapas, documentos e cuidados são importantes
-                                para organizar uma mudança internacional com destino ao Brasil.
-                            </p>
-                            <a href="https://www.gov.br/mre/pt-br/consulado-santa-cruz-de-la-sierra/informacoes-uteis/mudanca-para-o-brasil" target="_blank">Ler artigo</a>
+                            <span class="post-category">Umzug nach Brasilien</span>
+                            <h3>Wie Sie mit Ihrem Umzugsgut nach Brasilien ziehen</h3>
+                            <p>Erfahren Sie, welche Schritte, Dokumente und Vorsichtsmaßnahmen für einen internationalen
+                                Umzug nach Brasilien wichtig sind.</p>
+                            <a href="#mudanca-brasil">Artikel lesen</a>
                         </div>
                     </article>
-
-                    <article class="post-card post-card-large">
-                        <div class="post-icon">
-                            <i class="fa-solid fa-list-check"></i>
-                        </div>
-
+                    <article class="post-card post-card-large"
+                        data-category="internacional documentacao embalagem seguro"
+                        data-title="Checklist completo umzug internacional dokumentation verpackung versicherung frist">
+                        <div class="post-icon"><i class="fa-solid fa-list-check"></i></div>
                         <div class="post-content">
-                            <span class="post-category">Checklist</span>
-                            <h3>Checklist completo para mudança internacional</h3>
-                            <p>
-                                Veja os principais pontos que precisam ser organizados antes,
-                                durante e depois da sua mudança para outro país.
-                            </p>
-                            <a href="https://www.gov.br/mre/pt-br/assuntos/portal-consular/guia-do-retorno" target="_blank">Ler artigo</a>
+                            <span class="post-category">Checkliste</span>
+                            <h3>Vollständige Checkliste für internationale Umzüge</h3>
+                            <p>Sehen Sie die wichtigsten Punkte, die vor, während und nach Ihrem Umzug in ein anderes
+                                Land organisiert werden sollten.</p>
+                            <a href="#checklist-internacional">Artikel lesen</a>
                         </div>
                     </article>
-
-                    <article class="post-card post-card-large">
-                        <div class="post-icon">
-                            <i class="fa-solid fa-calculator"></i>
-                        </div>
-
+                    <article class="post-card post-card-large" data-category="internacional seguro frete"
+                        data-title="Quanto custa umzug internacional volume origem destino transporte versicherung">
+                        <div class="post-icon"><i class="fa-solid fa-calculator"></i></div>
                         <div class="post-content">
-                            <span class="post-category">Custos</span>
-                            <h3>Quanto custa uma mudança internacional?</h3>
-                            <p>
-                                Conheça os fatores que influenciam o valor de uma mudança,
-                                como volume, origem, destino, transporte e serviços contratados.
-                            </p>
-                            <a href="https://www.cronoshare.com.br/quanto-custa/mudanca-internacional" target="_blank">Ler artigo</a>
+                            <span class="post-category">Kosten</span>
+                            <h3>Was kostet ein internationaler Umzug?</h3>
+                            <p>Erfahren Sie, welche Faktoren die Kosten beeinflussen, wie Volumen, Herkunft, Ziel,
+                                Transportart und gebuchte Leistungen.</p>
+                            <a href="#custos">Artikel lesen</a>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
-
         <section class="blog-recentes">
             <div class="blog-container">
                 <div class="blog-section-title">
-                    <span>Artigos recentes</span>
-                    <h2>Informação para mudar com mais tranquilidade</h2>
+                    <span>Neue Artikel</span>
+                    <h2>Informationen für einen entspannteren Umzug</h2>
                 </div>
-
-                <div class="recentes-grid">
-                    <article class="post-card">
+                <div class="recentes-grid blog-posts-grid">
+                    <article class="post-card" data-category="nacional comercial internacional"
+                        data-title="Como escolher unternehmen de umzug segura confiável">
                         <i class="fa-solid fa-building"></i>
-                        <h3>Como escolher uma empresa de mudança</h3>
-                        <p>Veja critérios importantes para contratar uma empresa segura e confiável.</p>
-                        <a href="#">Ler mais</a>
+                        <h3>Wie wählt man ein Umzugsunternehmen aus?</h3>
+                        <p>Wichtige Kriterien für die Auswahl eines sicheren, organisierten und zuverlässigen
+                            Unternehmens.</p>
+                        <a href="#empresa-mudanca">Mehr erfahren</a>
                     </article>
-
-                    <article class="post-card">
+                    <article class="post-card" data-category="internacional brasil documentacao"
+                        data-title="Quanto tempo demora umzug internacional frist transporte liberação">
                         <i class="fa-solid fa-clock"></i>
-                        <h3>Quanto tempo demora uma mudança internacional?</h3>
-                        <p>Entenda prazos médios e fatores que podem influenciar o trânsito.</p>
-                        <a href="#">Ler mais</a>
+                        <h3>Wie lange dauert ein internationaler Umzug?</h3>
+                        <p>Erfahren Sie mehr über durchschnittliche Laufzeiten und Faktoren, die den Transport
+                            beeinflussen können.</p>
+                        <a href="#prazos">Mehr erfahren</a>
                     </article>
-
-                    <article class="post-card">
+                    <article class="post-card" data-category="seguro internacional nacional comercial"
+                        data-title="Como funciona versicherung internacional umzug proteção bens">
                         <i class="fa-solid fa-shield-halved"></i>
-                        <h3>Como funciona o seguro internacional?</h3>
-                        <p>Saiba por que o seguro é importante para proteger seus bens.</p>
-                        <a href="#">Ler mais</a>
+                        <h3>Wie funktioniert die Umzugsversicherung?</h3>
+                        <p>Erfahren Sie, warum eine Versicherung wichtig ist, um Ihr Umzugsgut während des Transports zu
+                            schützen.</p>
+                        <a href="#seguro">Mehr erfahren</a>
                     </article>
-
-                    <article class="post-card">
+                    <article class="post-card" data-category="embalagem documentacao internacional brasil"
+                        data-title="O que pode e não pode ser enviado umzug internacional">
                         <i class="fa-solid fa-box-open"></i>
-                        <h3>O que pode e não pode ser enviado?</h3>
-                        <p>Conheça cuidados básicos antes de preparar sua mudança.</p>
-                        <a href="#">Ler mais</a>
+                        <h3>Was darf und was darf nicht versendet werden?</h3>
+                        <p>Grundlegende Hinweise vor der Vorbereitung Ihres nationalen oder internationalen Umzugs.</p>
+                        <a href="#itens-permitidos">Mehr erfahren</a>
                     </article>
-
-                    <article class="post-card">
+                    <article class="post-card" data-category="documentacao brasil internacional"
+                        data-title="Documentos para importar bens ao Brasilien bagagem desacompanhada">
                         <i class="fa-solid fa-file-signature"></i>
-                        <h3>Documentos para importar bens ao Brasil</h3>
-                        <p>Veja quais documentos podem ser necessários no processo.</p>
-                        <a href="#">Ler mais</a>
+                        <h3>Dokumente für die Einfuhr von Umzugsgut nach Brasilien</h3>
+                        <p>Erfahren Sie, welche Dokumente für einen Umzug nach Brasilien erforderlich sein können.</p>
+                        <a href="#documentos-brasil">Mehr erfahren</a>
                     </article>
-
-                    <article class="post-card">
+                    <article class="post-card" data-category="brasil internacional documentacao"
+                        data-title="Mudança EUA Brasilien passo a passo retorno brasileiros">
                         <i class="fa-solid fa-plane-departure"></i>
-                        <h3>Mudança EUA Brasil: passo a passo</h3>
-                        <p>Entenda as principais etapas de uma mudança entre os dois países.</p>
-                        <a href="#">Ler mais</a>
+                        <h3>Umzug USA Brasilien: Schritt für Schritt</h3>
+                        <p>Erfahren Sie die wichtigsten Schritte eines Umzugs zwischen beiden Ländern.</p>
+                        <a href="#eua-brasil">Mehr erfahren</a>
+                    </article>
+                </div>
+                <p class="no-results" id="noResults">Keine Inhalte für Ihre Suche gefunden.</p>
+            </div>
+        </section>
+        <section class="blog-knowledge" id="guias">
+            <div class="blog-container">
+                <div class="blog-section-title">
+                    <span>Vollständiger Leitfaden</span>
+                    <h2>Alles, was Sie vor Ihrem Umzug wissen müssen</h2>
+                </div>
+                <div class="knowledge-grid">
+                    <article class="knowledge-card">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Internationale Umzüge</h3>
+                        <ul>
+                            <li>Wie der Door-to-Door-Prozess funktioniert</li>
+                            <li>Erforderliche Dokumentation</li>
+                            <li>Internationale Versicherung</li>
+                            <li>Seefracht vs. Luftfracht</li>
+                            <li>Durchschnittliche Lieferzeiten</li>
+                        </ul>
+                    </article>
+                    <article class="knowledge-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Nationale Umzüge</h3>
+                        <ul>
+                            <li>Umzüge zwischen Bundesstaaten</li>
+                            <li>Planung und Logistik</li>
+                            <li>Professionelle Verpackung</li>
+                            <li>Temporäre Lagerung</li>
+                            <li>Schutz des Umzugsguts</li>
+                        </ul>
+                    </article>
+                    <article class="knowledge-card">
+                        <i class="fas fa-building"></i>
+                        <h3>Gewerbliche Umzüge</h3>
+                        <ul>
+                            <li>Büroumzüge</li>
+                            <li>Unternehmensausstattung</li>
+                            <li>Operativer Zeitplan</li>
+                            <li>Reduzierung von Betriebsunterbrechungen</li>
+                            <li>Phasenplanung</li>
+                        </ul>
+                    </article>
+                    <article class="knowledge-card">
+                        <i class="fas fa-passport"></i>
+                        <h3>Umzug nach Brasilien</h3>
+                        <ul>
+                            <li>Unbegleitetes Umzugsgut</li>
+                            <li>Erforderliche Dokumente</li>
+                            <li>Zollabfertigung</li>
+                            <li>Einfuhr gebrauchter Gegenstände</li>
+                            <li>Fristen und Kosten</li>
+                        </ul>
                     </article>
                 </div>
             </div>
         </section>
+        <section class="blog-timeline">
+            <div class="blog-container">
+                <div class="blog-section-title">
+                    <span>Umzugsetappen</span>
+                    <h2>So verläuft ein gut geplanter Umzug</h2>
+                </div>
+                <div class="timeline-grid">
+                    <article><strong>01</strong>
+                        <h3>Bestandsaufnahme</h3>
+                        <p>Wir bewerten Volumen, Herkunft, Ziel, Serviceart und besondere Anforderungen.</p>
+                    </article>
+                    <article><strong>02</strong>
+                        <h3>Angebot</h3>
+                        <p>Wir senden ein individuelles Angebot entsprechend Umfang, Route und Transportart.</p>
+                    </article>
+                    <article><strong>03</strong>
+                        <h3>Dokumente</h3>
+                        <p>Wir beraten zu den erforderlichen Dokumenten je nach Umzugsart.</p>
+                    </article>
+                    <article><strong>04</strong>
+                        <h3>Verpackung</h3>
+                        <p>Das Team bereitet Ihr Umzugsgut mit geeigneten Materialien für den Transport vor.</p>
+                    </article>
+                    <article><strong>05</strong>
+                        <h3>Transport</h3>
+                        <p>Wir koordinieren den Versand per Straße, See oder Luft.</p>
+                    </article>
+                    <article><strong>06</strong>
+                        <h3>Lieferung</h3>
+                        <p>Wir begleiten Ankunft, Freigabe und endgültige Lieferung am Zielort.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="blog-destinos">
 
-        <section class="blog-guias">
-            <div class="blog-container guias-grid">
-                <div class="guias-text">
-                    <span>Guias gratuitos</span>
-                    <h2>Guias mais procurados</h2>
+            <div class="blog-container">
+
+                <div class="blog-section-title">
+                    <span>Zielländer</span>
+
+                    <h2>Die am häufigsten angefragten Ziele</h2>
+
                     <p>
-                        Criamos conteúdos simples e práticos para ajudar você a entender
-                        melhor cada tipo de mudança.
+                        Wir sind in zahlreichen Ländern über ein internationales Partnernetzwerk tätig
+                        und bieten umfassende Lösungen für private, gewerbliche und unternehmerische Umzüge.
                     </p>
                 </div>
 
-                <div class="guias-lista">
-                    <a href="#"><i class="fa-solid fa-arrow-right"></i> Guia para mudança para o Brasil</a>
-                    <a href="#"><i class="fa-solid fa-arrow-right"></i> Guia para mudança para os EUA</a>
-                    <a href="#"><i class="fa-solid fa-arrow-right"></i> Guia para mudança para Portugal</a>
-                    <a href="#"><i class="fa-solid fa-arrow-right"></i> Guia para expatriados</a>
+                <div class="destinos-grid">
+
+                    <article class="destino-card">
+                        <div class="flagUSA"></div>
+                        <h3>Vereinigte Staaten</h3>
+                        <p>Private und gewerbliche Umzüge mit See- und Lufttransport.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card">
+                        <div class="flagPT"></div>
+                        <h3>Portugal</h3>
+                        <p>Eines der meistgesuchten Ziele für Brasilianer, die im Ausland leben.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card">
+                        <div class="flagCA"></div>
+                        <h3>Kanada</h3>
+                        <p>Umfassende Door-to-Door-Betreuung für internationale Umzüge.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card">
+                        <div class="flagESP"></div>
+                        <h3>Spanien</h3>
+                        <p>Logistikplanung, Dokumentation und vollständige Umzugsbetreuung.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card">
+                        <div class="flagAL"></div>
+                        <h3>Deutschland</h3>
+                        <p>Spezialisierter Service für Familien und Unternehmen.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card">
+                        <div class="flagFR"></div>
+                        <h3>Frankreich</h3>
+                        <p>Internationaler Transport mit Sicherheit und Dokumentationshilfe.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card">
+                        <div class="flagIT"></div>
+                        <h3>Italien</h3>
+                        <p>Lösungen für internationale Umzüge von Familien und Expatriates.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card">
+                        <div class="flagRU"></div>
+                        <h3>Vereinigtes Königreich</h3>
+                        <p>Ein erfahrenes Team für umfassende internationale Umzugsprojekte.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card">
+                        <div class="flagAU"></div>
+                        <h3>Australien</h3>
+                        <p>Individuelle Planung für Umzüge über große Entfernungen.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card">
+                        <div class="flagAE"></div>
+                        <h3>Vereinigte Arabische Emirate</h3>
+                        <p>Spezialisten für Umzüge nach Dubai und in andere Städte der Region.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card">
+                        <div class="flagJP"></div>
+                        <h3>Japan</h3>
+                        <p>Umfassende Betreuung für internationale Umzüge nach Asien.</p>
+                        <a href="../servicos/internacional.html">Mehr erfahren →</a>
+                    </article>
+
+                    <article class="destino-card destaque">
+                        <div class="flag">🌎</div>
+                        <h3>Mehr als 40 Ziele</h3>
+                        <p>Kontaktieren Sie unser Team, um die Verfügbarkeit für Ihr Zielland zu prüfen.</p>
+
+                        <a class="btn-primary" href="../cotacao/cotacao.html">
+                            Angebot anfordern
+                        </a>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+        <section class="blog-glossary">
+            <div class="blog-container">
+                <div class="blog-section-title">
+                    <span>Glossar</span>
+                    <h2>Häufige Begriffe bei internationalen Umzügen</h2>
+                </div>
+                <div class="glossary-grid">
+                    <article>
+                        <h3>Door to Door</h3>
+                        <p>Service mit Abholung am Ursprung und Lieferung an die Zieladresse.</p>
+                    </article>
+                    <article>
+                        <h3>Port to Port</h3>
+                        <p>Service zwischen Häfen ohne Abholung oder Lieferung an Wohnadresse.</p>
+                    </article>
+                    <article>
+                        <h3>LCL</h3>
+                        <p>Geteilte Ladung in einem Seecontainer.</p>
+                    </article>
+                    <article>
+                        <h3>FCL</h3>
+                        <p>Exklusiver Container für eine einzelne Sendung.</p>
+                    </article>
+                    <article>
+                        <h3>Bill of Lading</h3>
+                        <p>Seefracht-Transportdokument für die Verschiffung.</p>
+                    </article>
+                    <article>
+                        <h3>Customs Clearance</h3>
+                        <p>Zollabfertigungsprozess im Zielland.</p>
+                    </article>
+                    <article>
+                        <h3>DTHC</h3>
+                        <p>Umschlagsgebühren am Zielterminal.</p>
+                    </article>
+                    <article>
+                        <h3>Inventory List</h3>
+                        <p>Liste der transportierten Güter, üblicherweise für Versicherung und Zoll verwendet.</p>
+                    </article>
                 </div>
             </div>
         </section>
-
+        <section class="blog-deep-content">
+            <div class="blog-container">
+                <article class="deep-article" id="mudanca-brasil">
+                    <span>Umzug nach Brasilien</span>
+                    <h2>Wie organisiert man einen Umzug nach Brasilien?</h2>
+                    <p>Wer nach Brasilien zurückkehrt oder dorthin zieht, sollte frühzeitig planen.
+                        Dokumentenorganisation, Inventarliste, Transportart und Freigabe im Zielgebiet sind
+                        entscheidend, um Verzögerungen zu vermeiden.</p>
+                    <p>Der erste Schritt besteht darin, Kundenprofil, Herkunft, Art des Umzugsguts und voraussichtliche
+                        Ankunft zu verstehen. Mit diesen Informationen kann der Prozess sicherer begleitet und die
+                        Dokumentation vorbereitet werden.</p>
+                </article>
+                <article class="deep-article" id="checklist-internacional">
+                    <span>Internationale Checkliste</span>
+                    <h2>Checkliste für internationale Umzüge</h2>
+                    <ul>
+                        <li>Legen Sie Zielland und voraussichtliches Umzugsdatum fest.</li>
+                        <li>Bereiten Sie persönliche Dokumente, Nachweise und erforderliche Genehmigungen vor.</li>
+                        <li>Erstellen Sie eine Liste der zu transportierenden Gegenstände.</li>
+                        <li>Geben Sie fragile Gegenstände, Kunstwerke, Elektronik und hochwertige Güter an.</li>
+                        <li>Prüfen Sie Versicherung, Lagerung und Lieferzeit.</li>
+                    </ul>
+                </article>
+                <article class="deep-article" id="custos">
+                    <span>Kosten</span>
+                    <h2>Was beeinflusst die Umzugskosten?</h2>
+                    <p>Die Kosten eines Umzugs können je nach Volumen, Gewicht, Herkunft, Ziel, Transportart, gebuchtem
+                        Service, Verpackung, Versicherung, Lagerung, Hafengebühren, Zielkosten und besonderen
+                        Anforderungen variieren.</p>
+                    <p>Deshalb ist eine Besichtigung oder detaillierte Liste wichtig, um das Volumen zu schätzen und ein
+                        realistisches Angebot zu erstellen.</p>
+                </article>
+                <article class="deep-article" id="empresa-mudanca">
+                    <span>Beauftragung</span>
+                    <h2>Wie wählt man ein Umzugsunternehmen aus?</h2>
+                    <p>Prüfen Sie, ob das Unternehmen Erfahrung mit Ihrer Umzugsart hat, ein klares Angebot vorlegt, den
+                        Leistungsumfang erklärt und während der wichtigsten Phasen Unterstützung bietet.</p>
+                </article>
+                <article class="deep-article" id="prazos">
+                    <span>Fristen</span>
+                    <h2>Wie lange dauert ein Umzug?</h2>
+                    <p>Die Dauer hängt von Herkunft, Ziel, Transportart, Abholverfügbarkeit, Dokumentation, Versand,
+                        Zollabfertigung und endgültiger Lieferung ab.</p>
+                </article>
+                <article class="deep-article" id="seguro">
+                    <span>Versicherung</span>
+                    <h2>Wie funktioniert die Umzugsversicherung?</h2>
+                    <p>Die Versicherung schützt das Umzugsgut während des Transports. In der Regel sind eine
+                        Inventarliste und deklarierte Werte erforderlich.</p>
+                </article>
+                <article class="deep-article" id="itens-permitidos">
+                    <span>Erlaubte Gegenstände</span>
+                    <h2>Was darf und was darf nicht transportiert werden?</h2>
+                    <p>Im Allgemeinen werden gebrauchte persönliche und Haushaltsgegenstände transportiert.
+                        Verderbliche, brennbare, illegale, gefährliche oder eingeschränkte Produkte können verboten sein
+                        oder eine Prüfung erfordern.</p>
+                </article>
+                <article class="deep-article" id="documentos-brasil">
+                    <span>Dokumentation</span>
+                    <h2>Dokumente für den Umzug nach Brasilien</h2>
+                    <p>Die Dokumente variieren je nach Kundenprofil, Zeit außerhalb des Landes, Migrationsstatus und Art
+                        der versendeten Güter. Richtige Beratung vermeidet Verzögerungen.</p>
+                </article>
+                <article class="deep-article" id="eua-brasil">
+                    <span>USA Brasilien</span>
+                    <h2>Umzug von den Vereinigten Staaten nach Brasilien</h2>
+                    <p>Ein Umzug zwischen den USA und Brasilien umfasst normalerweise Abholung, Verpackung,
+                        internationalen Transport, Dokumentation, Freigabe in Brasilien und endgültige Lieferung.
+                        Frühzeitige Planung ist entscheidend.</p>
+                </article>
+            </div>
+        </section>
         <section class="blog-faq">
             <div class="blog-container">
                 <div class="blog-section-title">
-                    <span>Perguntas frequentes</span>
-                    <h2>Dúvidas comuns sobre mudanças</h2>
+                    <span>Häufig gestellte Fragen</span>
+                    <h2>Häufige Fragen zu Umzügen</h2>
                 </div>
-
-                <div class="faq-list">
-                    <details>
-                        <summary>Quanto tempo demora uma mudança internacional?</summary>
-                        <p>
-                            O prazo depende da origem, destino, modalidade de transporte e liberação documental.
-                            Em geral, mudanças internacionais podem levar de algumas semanas a alguns meses.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>Posso enviar móveis usados para o Brasil?</summary>
-                        <p>
-                            Sim, desde que o processo siga as regras aplicáveis para bagagem desacompanhada
-                            e documentação exigida.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>O seguro da mudança é obrigatório?</summary>
-                        <p>
-                            Não é obrigatório em todos os casos, mas é altamente recomendado para proteger
-                            seus bens durante o transporte.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>Como funciona a embalagem?</summary>
-                        <p>
-                            A embalagem profissional utiliza materiais adequados para proteger móveis,
-                            eletrônicos, louças, objetos frágeis e itens pessoais.
-                        </p>
-                    </details>
+                <div class="faq-columns">
+                    <div class="faq-list">
+                        <details>
+                            <summary>Wie lange dauert ein internationaler Umzug?</summary>
+                            <p>Die Dauer hängt von Herkunft, Ziel, Transportart und Dokumentenfreigabe ab.</p>
+                        </details>
+                        <details>
+                            <summary>Kann ich gebrauchte Möbel nach Brasilien senden?</summary>
+                            <p>Ja, sofern der Prozess die geltenden Regeln und erforderlichen Dokumente erfüllt.</p>
+                        </details>
+                        <details>
+                            <summary>Ist eine Umzugsversicherung Pflicht?</summary>
+                            <p>Sie ist nicht in allen Fällen Pflicht, wird aber dringend empfohlen.</p>
+                        </details>
+                        <details>
+                            <summary>Wie funktioniert die Verpackung?</summary>
+                            <p>Professionelle Verpackung verwendet geeignete Materialien zum Schutz von Möbeln,
+                                Elektronik und fragilen Gegenständen.</p>
+                        </details>
+                    </div>
+                    <div class="faq-list">
+                        <details>
+                            <summary>Kann mein Umzugsgut gelagert werden?</summary>
+                            <p>Ja. Lagerung kann je nach Zeitraum, Standort und Serviceart bewertet werden.</p>
+                        </details>
+                        <details>
+                            <summary>Muss ich eine Inventarliste erstellen?</summary>
+                            <p>Ja. Die Liste hilft bei Organisation, Versicherung, Zoll und Kontrolle der Gegenstände.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>Kann ein Firmenumzug in Phasen erfolgen?</summary>
+                            <p>Ja. Firmenumzüge können phasenweise geplant werden, um Betriebsunterbrechungen zu
+                                reduzieren.</p>
+                        </details>
+                        <details>
+                            <summary>Was ist unbegleitetes Umzugsgut?</summary>
+                            <p>Es handelt sich um persönliche Gegenstände, die getrennt vom Reisenden transportiert
+                                werden, meist bei internationalen Umzügen.</p>
+                        </details>
+                    </div>
                 </div>
             </div>
         </section>
-
         <section class="blog-newsletter">
             <div class="blog-container newsletter-box">
                 <div>
-                    <h2>Receba dicas sobre mudanças internacionais</h2>
-                    <p>Cadastre seu e-mail para receber conteúdos úteis da Move and Shipping.</p>
+                    <h2>Erhalten Sie Tipps zu internationalen Umzügen</h2>
+                    <p>Geben Sie Ihre E-Mail-Adresse ein, um nützliche Inhalte von Move and Shipping zu erhalten.</p>
                 </div>
-
                 <form>
-                    <input type="email" placeholder="Seu e-mail">
-                    <button type="submit">Inscrever-se</button>
+                    <input placeholder="Ihre E-Mail" type="email" />
+                    <button type="submit">Abonnieren</button>
                 </form>
             </div>
         </section>
-
         <section class="blog-cta">
             <div class="blog-container">
-                <h2>Vai realizar uma mudança?</h2>
-                <p>
-                    Nossa equipe está pronta para ajudar você em todas as etapas,
-                    da cotação até a entrega final.
-                </p>
-
+                <h2>Planen Sie einen Umzug?</h2>
+                <p>Unser Team unterstützt Sie in allen Phasen, vom Angebot bis zur endgültigen Lieferung.</p>
                 <div class="blog-cta-buttons">
-                    <a href="../cotacao/cotacao.html" class="btn-primary">Solicitar Cotação</a>
-                    <a href="../contato/contato.html" class="btn-secondary">Fale Conosco</a>
+                    <a class="btn-primary" href="../cotacao/cotacao.html">Angebot anfordern</a>
+                    <a class="btn-secondary" href="../contato/contato.html">Kontaktieren Sie uns</a>
                 </div>
             </div>
         </section>
-
-        <section class="blog-knowledge">
-
-    <div class="blog-container">
-
-        <div class="blog-section-title">
-            <span>Guia Completo</span>
-            <h2>Tudo o que você precisa saber antes da sua mudança</h2>
-        </div>
-
-        <div class="knowledge-grid">
-
-            <article class="knowledge-card">
-                <i class="fas fa-globe-americas"></i>
-                <h3>Mudanças Internacionais</h3>
-
-                <ul>
-                    <li>Como funciona o processo porta a porta</li>
-                    <li>Documentação necessária</li>
-                    <li>Seguro internacional</li>
-                    <li>Frete marítimo x aéreo</li>
-                    <li>Prazos médios de entrega</li>
-                </ul>
-            </article>
-
-            <article class="knowledge-card">
-                <i class="fas fa-truck"></i>
-                <h3>Mudanças Nacionais</h3>
-
-                <ul>
-                    <li>Mudanças interestaduais</li>
-                    <li>Planejamento e logística</li>
-                    <li>Embalagem profissional</li>
-                    <li>Armazenagem temporária</li>
-                    <li>Proteção dos bens</li>
-                </ul>
-            </article>
-
-            <article class="knowledge-card">
-                <i class="fas fa-building"></i>
-                <h3>Mudanças Comerciais</h3>
-
-                <ul>
-                    <li>Transferência de escritórios</li>
-                    <li>Equipamentos corporativos</li>
-                    <li>Cronograma operacional</li>
-                    <li>Redução de interrupções</li>
-                    <li>Planejamento por etapas</li>
-                </ul>
-            </article>
-
-            <article class="knowledge-card">
-                <i class="fas fa-passport"></i>
-                <h3>Mudança para o Brasil</h3>
-
-                <ul>
-                    <li>Bagagem desacompanhada</li>
-                    <li>Documentação exigida</li>
-                    <li>Liberação aduaneira</li>
-                    <li>Importação de bens usados</li>
-                    <li>Prazos e custos envolvidos</li>
-                </ul>
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
     </main>
-
     <div id="footer-container"></div>
-
     <script src="../../../assets/js/menu.js"></script>
     <script src="../../../assets/js/whatsapp.js"></script>
     <script src="../../../assets/js/componentes.js"></script>
