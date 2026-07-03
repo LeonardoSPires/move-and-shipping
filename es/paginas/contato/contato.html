@@ -65,18 +65,23 @@
                     <h3>Contáctenos a través del formulario</h3>
 
                     <form class="contact-form">
-                        <input type="text" placeholder="Nombre" required>
-                        <input type="email" placeholder="Correo electrónico" required>
+                        <label for="contactName" class="sr-only">Nombre</label>
+                        <input type="text" id="contactName" placeholder="Nombre" required>
+                        
+                        <label for="contactEmail" class="sr-only">Correo</label>
+                        <input type="email" id="contactEmail" placeholder="Correo" required>
 
-                        <select required>
+                        <label for="contactSubject" class="sr-only">Asunto</label>
+                        <select id="contactSubject" required>
                             <option value="" disabled selected>Seleccione un asunto</option>
-                            <option value="duvidas">Consultas sobre la mudanza</option>
-                            <option value="cotacao">Solicitar un presupuesto</option>
-                            <option value="parceria">Colaboraciones</option>
+                            <option value="duvidas">Preguntas sobre mudanza</option>
+                            <option value="cotacao">Solicitar presupuesto</option>
+                            <option value="parceria">Asociaciones</option>
                             <option value="outros">Otros</option>
                         </select>
 
-                        <textarea placeholder="Mensaje" rows="6" required></textarea>
+                        <label for="contactMessage" class="sr-only">Mensaje</label>
+                        <textarea id="contactMessage" placeholder="Mensaje" rows="6" required></textarea>
 
                         <button type="submit" class="btn">Enviar mensaje</button>
                     </form>

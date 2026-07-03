@@ -64,10 +64,14 @@
                     <h3>Get in Touch Using the Form</h3>
 
                     <form class="contact-form">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="Email" required>
+                        <label for="contactName" class="sr-only">Name</label>
+                        <input type="text" id="contactName" placeholder="Name" required>
+                        
+                        <label for="contactEmail" class="sr-only">Email</label>
+                        <input type="email" id="contactEmail" placeholder="Email" required>
 
-                        <select required>
+                        <label for="contactSubject" class="sr-only">Subject</label>
+                        <select id="contactSubject" required>
                             <option value="" disabled selected>Select a subject</option>
                             <option value="duvidas">Moving Questions</option>
                             <option value="cotacao">Request a Quote</option>
@@ -75,7 +79,8 @@
                             <option value="outros">Other</option>
                         </select>
 
-                        <textarea placeholder="Message" rows="6" required></textarea>
+                        <label for="contactMessage" class="sr-only">Message</label>
+                        <textarea id="contactMessage" placeholder="Message" rows="6" required></textarea>
 
                         <button type="submit" class="btn">Send Message</button>
                     </form>

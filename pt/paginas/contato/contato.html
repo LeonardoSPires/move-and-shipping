@@ -74,10 +74,14 @@
                     <h3>Fale conosco usando o formulário</h3>
 
                     <form class="contact-form">
-                        <input type="text" placeholder="Nome" required>
-                        <input type="email" placeholder="E-mail" required>
+                        <label for="contactName" class="sr-only">Nome</label>
+                        <input type="text" id="contactName" placeholder="Nome" required>
+                        
+                        <label for="contactEmail" class="sr-only">E-mail</label>
+                        <input type="email" id="contactEmail" placeholder="E-mail" required>
 
-                        <select required>
+                        <label for="contactSubject" class="sr-only">Assunto</label>
+                        <select id="contactSubject" required>
                             <option value="" disabled selected>Selecione um assunto</option>
                             <option value="duvidas">Dúvidas sobre mudança</option>
                             <option value="cotacao">Solicitar cotação</option>
@@ -85,7 +89,8 @@
                             <option value="outros">Outros</option>
                         </select>
 
-                        <textarea placeholder="Mensagem" rows="6" required></textarea>
+                        <label for="contactMessage" class="sr-only">Mensagem</label>
+                        <textarea id="contactMessage" placeholder="Mensagem" rows="6" required></textarea>
 
                         <button type="submit" class="btn">Enviar mensagem</button>
                     </form>

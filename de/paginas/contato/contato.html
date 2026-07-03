@@ -64,18 +64,23 @@
                     <h3>Kontaktieren Sie uns über das Formular</h3>
 
                     <form class="contact-form">
-                        <input type="text" placeholder="Name" required>
-                        <input type="email" placeholder="E-Mail" required>
+                        <label for="contactName" class="sr-only">Name</label>
+                        <input type="text" id="contactName" placeholder="Name" required>
+                        
+                        <label for="contactEmail" class="sr-only">E-Mail</label>
+                        <input type="email" id="contactEmail" placeholder="E-Mail" required>
 
-                        <select required>
-                            <option value="" disabled selected>Betreff auswählen</option>
+                        <label for="contactSubject" class="sr-only">Betreff</label>
+                        <select id="contactSubject" required>
+                            <option value="" disabled selected>Wählen Sie ein Thema</option>
                             <option value="duvidas">Fragen zum Umzug</option>
-                            <option value="cotacao">Angebot anfordern</option>
+                            <option value="cotacao">Ein Angebot anfordern</option>
                             <option value="parceria">Partnerschaften</option>
-                            <option value="outros">Sonstiges</option>
+                            <option value="outros">Sonstige</option>
                         </select>
 
-                        <textarea placeholder="Nachricht" rows="6" required></textarea>
+                        <label for="contactMessage" class="sr-only">Nachricht</label>
+                        <textarea id="contactMessage" placeholder="Nachricht" rows="6" required></textarea>
 
                         <button type="submit" class="btn">Nachricht senden</button>
                     </form>
