@@ -68,8 +68,7 @@
     justify-content: flex-end;
 }
 
-.btnInfoCardTop,
-.btnInfoCardBottom {
+.btnInfoCardTop {
     background: var(--color-primary);
     color: var(--color-white);
     border: none;
@@ -86,15 +85,7 @@
     font-size: 1rem;
 }
 
-.btnInfoCardBottom {
-    margin: 10px 20px;
-    padding: 12px 20px;
-    font-size: 1.05rem;
-    width: 150px;
-}
-
-.btnInfoCardTop:hover,
-.btnInfoCardBottom:hover {
+.btnInfoCardTop:hover {
     opacity: .9;
 }
 

@@ -384,14 +384,6 @@
     margin-bottom: 18px;
 
 }
-.flagPT{
-    background: url('../../imagens/bandeira/PT.PNG') center / cover no-repeat;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 18px;
-
-}
 .flagCA{
     background: url('../../imagens/bandeira/CA.PNG') center / cover no-repeat;
     width: 60px;

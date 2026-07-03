@@ -57,39 +57,6 @@ function setupMegaMenu() {
     });
 }
 
-function updateHeader() {
-    const header = document.querySelector('.header-container');
-    const topBar = document.querySelector('.header-contact');
-    const dropdown = document.querySelector('.nav-dropdown');
-
-    if (!header) return;
-
-    const isMegaMenuOpen = dropdown && dropdown.classList.contains('active');
-
-    if (window.scrollY > 80 || isMegaMenuOpen) {
-        header.classList.remove('transparent');
-        header.classList.add('scrolled');
-
-        if (topBar) {
-            topBar.classList.add('hidden');
-        }
-    } else {
-        header.classList.remove('scrolled');
-        header.classList.add('transparent');
-
-        if (topBar) {
-            topBar.classList.remove('hidden');
-        }
-    }
-}
-
-function setupHeaderScroll() {
-    updateHeader();
-
-    window.removeEventListener('scroll', updateHeader);
-    window.addEventListener('scroll', updateHeader);
-}
-
 function setupMegaMenuTabs() {
     const servicesData = {
         internacional: {
@@ -180,34 +147,28 @@ function setupMobileMenu() {
 }
 
 function updateHeader() {
-
     const header = document.querySelector('.header-container');
     const topBar = document.querySelector('.header-contact');
     const dropdown = document.querySelector('.nav-dropdown');
 
     if (!header) return;
 
-    const isMegaMenuOpen =
-        dropdown && dropdown.classList.contains('active');
+    const isMegaMenuOpen = dropdown && dropdown.classList.contains('active');
 
     if (window.scrollY > 80 || isMegaMenuOpen) {
-
         header.classList.remove('transparent');
         header.classList.add('scrolled');
 
         if (topBar) {
             topBar.classList.add('hidden');
         }
-
     } else {
-
-        header.classList.add('transparent');
         header.classList.remove('scrolled');
+        header.classList.add('transparent');
 
         if (topBar) {
             topBar.classList.remove('hidden');
         }
-
     }
 }
 
@@ -217,3 +178,4 @@ function setupHeaderScroll() {
     window.removeEventListener('scroll', updateHeader);
     window.addEventListener('scroll', updateHeader);
 }
+
