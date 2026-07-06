@@ -145,13 +145,17 @@
 
 .features-grid-link article {
     background: var(--color-primary);
-    border-radius: 18px;
-    padding: 30px;
+    display: flex;
+    height: 258px;
+    border-radius: 23px;
+    padding: 3cqh;
     box-shadow: 0 8px 24px var(--color-border);
     border-top: 6px solid #51439b;
     margin-top: 60px;
     color: var(--color-primary-light);
     text-decoration: none;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .features-grid-link article p {
@@ -169,12 +173,14 @@
 }
 
 .features-grid-link button {
-    padding: 20px 30px;
-    background-color: var(--color-primary-light);
     color: var(--color-text-dark);
     font-size: 1.2rem;
     border-radius: 8px;
     text-decoration: none;
+}
+.features-grid-link button:hover {
+    color: var(--color-primary-light);
+
 }
 
 .features-grid i,
@@ -531,5 +537,6 @@
     .blog-service-grid article,
     .features-grid-link article {
         padding: 24px;
+        height: auto;
     }
 }
