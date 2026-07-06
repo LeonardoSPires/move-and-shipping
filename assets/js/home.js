@@ -7,6 +7,7 @@ function initializeScripts() {
     setupHeroWaveText();
     setupScrollAnimations();
     animateHeroIntro();
+    setupHeroFormModal();
 }
 
 /* FORMULÁRIO DO HERO */
@@ -232,3 +233,30 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeScripts();
     }
 });
+
+/* MODAL DO FORMULÁRIO DO HERO NO MOBILE */
+
+function setupHeroFormModal() {
+    const openHeroForm = document.getElementById('openHeroForm');
+    const closeHeroForm = document.getElementById('closeHeroForm');
+    const heroFormModal = document.getElementById('heroFormModal');
+
+    if (!openHeroForm || !closeHeroForm || !heroFormModal) return;
+
+    openHeroForm.addEventListener('click', function () {
+        heroFormModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeHeroForm.addEventListener('click', function () {
+        heroFormModal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            heroFormModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}

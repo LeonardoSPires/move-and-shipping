@@ -1,42 +1,81 @@
 <section class="hero">
     <div class="hero-container animate-up">
-        <h1> Mudanças<br>Nacionais e<br> Internacionais</h1>
-        <h3>Soluções completas para mudanças residenciais e empresariais.</h3>
+        <h1>Mudanças<br>Nacionais e<br>Internacionais</h1>
+
+        <h3>
+            Soluções completas para mudanças residenciais e empresariais.
+        </h3>
+
+        <!-- APARECE SOMENTE NO MOBILE -->
+        <button class="btn hero-quote-mobile" type="button" id="openHeroForm">
+            Solicite sua cotação
+        </button>
     </div>
 
-    <div class="hero-form-container animate-right delay">
+    <div class="hero-form-container animate-right delay" id="heroFormModal">
+
+        <!-- APARECE SOMENTE NO MOBILE -->
+        <button
+            class="hero-form-close"
+            type="button"
+            id="closeHeroForm"
+            aria-label="Fechar formulário"
+        >
+            <i class="fas fa-xmark"></i>
+        </button>
+
         <h3>Pensando em mudar?</h3>
         <h4>Obtenha uma cotação gratuita conosco.</h4>
 
         <form id="contactForm" class="hero-form">
 
-                <label for="heroName">Nome</label>
-                <div class="input-icon">
-                    <i class="fas fa-user" aria-hidden="true"></i>
-                    <input type="text" id="heroName" placeholder="Digite seu nome" required>
-                </div>
+            <label for="heroName">Nome</label>
+            <div class="input-icon">
+                <i class="fas fa-user" aria-hidden="true"></i>
+                <input
+                    type="text"
+                    id="heroName"
+                    placeholder="Digite seu nome"
+                    required
+                >
+            </div>
 
-                <label for="heroEmail">Email</label>
-                <div class="input-icon">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <input type="email" id="heroEmail" placeholder="Digite seu email" required>
-                </div>
+            <label for="heroEmail">Email</label>
+            <div class="input-icon">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <input
+                    type="email"
+                    id="heroEmail"
+                    placeholder="Digite seu email"
+                    required
+                >
+            </div>
 
-                <label for="heroOrigin">Origem</label>
-                <div class="input-icon">
-                    <i class="fas fa-location-dot" aria-hidden="true"></i>
-                    <input type="text" id="heroOrigin" placeholder="Digite sua origem" required>
-                </div>
+            <label for="heroOrigin">Origem</label>
+            <div class="input-icon">
+                <i class="fas fa-location-dot" aria-hidden="true"></i>
+                <input
+                    type="text"
+                    id="heroOrigin"
+                    placeholder="Digite sua origem"
+                    required
+                >
+            </div>
 
-                <label for="heroDestination">Destino</label>
-                <div class="input-icon">
-                    <i class="fas fa-flag-checkered" aria-hidden="true"></i>
-                    <input type="text" id="heroDestination" placeholder="Digite seu destino" required>
-                </div>
+            <label for="heroDestination">Destino</label>
+            <div class="input-icon">
+                <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+                <input
+                    type="text"
+                    id="heroDestination"
+                    placeholder="Digite seu destino"
+                    required
+                >
+            </div>
 
-                <button class="btn" type="submit">
-                    Solicitar Cotação
-                </button>
+            <button class="btn" type="submit">
+                Solicitar Cotação
+            </button>
 
         </form>
     </div>

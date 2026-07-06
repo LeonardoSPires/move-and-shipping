@@ -1,39 +1,82 @@
 <section class="hero">
     <div class="hero-container animate-up">
-        <h1>Nationale e<br>Internationale<br>Umzüge</h1>
-        <h3>Komplette Lösungen für private und geschäftliche Umzüge.</h3>
+        <h1>Nationale und<br>internationale<br>Umzüge</h1>
+
+        <h3>
+            Komplettlösungen für private und gewerbliche Umzüge.
+        </h3>
+
+        <!-- NUR AUF MOBILGERÄTEN SICHTBAR -->
+        <button class="btn hero-quote-mobile" type="button" id="openHeroForm">
+            Angebot anfordern
+        </button>
     </div>
 
-    <div class="hero-form-container animate-right delay">
+    <div class="hero-form-container animate-right delay" id="heroFormModal">
+
+        <!-- NUR AUF MOBILGERÄTEN SICHTBAR -->
+        <button
+            class="hero-form-close"
+            type="button"
+            id="closeHeroForm"
+            aria-label="Formular schließen"
+        >
+            <i class="fas fa-xmark"></i>
+        </button>
+
         <h3>Planen Sie einen Umzug?</h3>
-        <h4>Erhalten Sie ein kostenloses Angebot von uns.</h4>
+        <h4>Fordern Sie ein kostenloses Angebot bei uns an.</h4>
 
         <form id="contactForm" class="hero-form">
-            <label>Name</label>
+
+            <label for="heroName">Name</label>
             <div class="input-icon">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Geben Sie Ihren Namen ein" required>
+                <i class="fas fa-user" aria-hidden="true"></i>
+                <input
+                    type="text"
+                    id="heroName"
+                    placeholder="Geben Sie Ihren Namen ein"
+                    required
+                >
             </div>
 
-            <label>E-Mail</label>
+            <label for="heroEmail">E-Mail</label>
             <div class="input-icon">
-                <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Geben Sie Ihre E-Mail ein" required>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <input
+                    type="email"
+                    id="heroEmail"
+                    placeholder="Geben Sie Ihre E-Mail-Adresse ein"
+                    required
+                >
             </div>
 
-            <label>Ursprung</label>
+            <label for="heroOrigin">Herkunftsort</label>
             <div class="input-icon">
-                <i class="fas fa-location-dot"></i>
-                <input type="text" placeholder="Geben Sie den Abholort ein" required>
+                <i class="fas fa-location-dot" aria-hidden="true"></i>
+                <input
+                    type="text"
+                    id="heroOrigin"
+                    placeholder="Geben Sie Ihren Herkunftsort ein"
+                    required
+                >
             </div>
 
-            <label>Ziel</label>
+            <label for="heroDestination">Zielort</label>
             <div class="input-icon">
-                <i class="fas fa-flag-checkered"></i>
-                <input type="text" placeholder="Geben Sie das Ziel ein" required>
+                <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+                <input
+                    type="text"
+                    id="heroDestination"
+                    placeholder="Geben Sie Ihren Zielort ein"
+                    required
+                >
             </div>
 
-            <button class="btn" type="submit">Angebot anfordern</button>
+            <button class="btn" type="submit">
+                Angebot anfordern
+            </button>
+
         </form>
     </div>
 </section>

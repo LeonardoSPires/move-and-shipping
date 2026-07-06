@@ -1,39 +1,82 @@
 <section class="hero">
     <div class="hero-container animate-up">
-        <h1>Domestic and<br> International<br>Moving Services</h1>
-        <h3>Complete solutions for residential and corporate relocations.</h3>
+        <h1>National<br>and International<br>Moving Services</h1>
+
+        <h3>
+            Complete solutions for residential and corporate relocations.
+        </h3>
+
+        <!-- VISIBLE ON MOBILE ONLY -->
+        <button class="btn hero-quote-mobile" type="button" id="openHeroForm">
+            Request a Quote
+        </button>
     </div>
 
-    <div class="hero-form-container animate-right delay">
-        <h3>Planning a move?</h3>
-        <h4>Get a free quote from our team.</h4>
+    <div class="hero-form-container animate-right delay" id="heroFormModal">
+
+        <!-- VISIBLE ON MOBILE ONLY -->
+        <button
+            class="hero-form-close"
+            type="button"
+            id="closeHeroForm"
+            aria-label="Close form"
+        >
+            <i class="fas fa-xmark"></i>
+        </button>
+
+        <h3>Thinking about moving?</h3>
+        <h4>Get a free quote from us.</h4>
 
         <form id="contactForm" class="hero-form">
+
             <label for="heroName">Name</label>
             <div class="input-icon">
                 <i class="fas fa-user" aria-hidden="true"></i>
-                <input type="text" id="heroName" placeholder="Enter your name" required>
+                <input
+                    type="text"
+                    id="heroName"
+                    placeholder="Enter your name"
+                    required
+                >
             </div>
 
             <label for="heroEmail">Email</label>
             <div class="input-icon">
                 <i class="fas fa-envelope" aria-hidden="true"></i>
-                <input type="email" id="heroEmail" placeholder="Enter your email" required>
+                <input
+                    type="email"
+                    id="heroEmail"
+                    placeholder="Enter your email"
+                    required
+                >
             </div>
 
             <label for="heroOrigin">Origin</label>
             <div class="input-icon">
                 <i class="fas fa-location-dot" aria-hidden="true"></i>
-                <input type="text" id="heroOrigin" placeholder="Enter your origin" required>
+                <input
+                    type="text"
+                    id="heroOrigin"
+                    placeholder="Enter your origin"
+                    required
+                >
             </div>
 
             <label for="heroDestination">Destination</label>
             <div class="input-icon">
                 <i class="fas fa-flag-checkered" aria-hidden="true"></i>
-                <input type="text" id="heroDestination" placeholder="Enter your destination" required>
+                <input
+                    type="text"
+                    id="heroDestination"
+                    placeholder="Enter your destination"
+                    required
+                >
             </div>
 
-            <button class="btn" type="submit">Request a Quote</button>
+            <button class="btn" type="submit">
+                Request a Quote
+            </button>
+
         </form>
     </div>
 </section>
