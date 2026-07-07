@@ -118,7 +118,7 @@
 
         <div class="services-grid-top">
             <div class="imgServices">
-                <img src="assets/imagens/servicos/mudancaInter.png" alt="Mudanzas Internacionales">
+                <img src="assets/imagens/servicos/mudancaInter.png" alt="Mudanzas Internacionales" loading="lazy" decoding="async">
             </div>
 
             <div class="infoCardTop">
@@ -132,7 +132,7 @@
 
         <div class="services-grid-bottom">
             <div class="infoCardBottom">
-                <img src="assets/imagens/servicos/mudancaResid.png" alt="Mudanzas Nacionales">
+                <img src="assets/imagens/servicos/mudancaResid.png" alt="Mudanzas Nacionales" loading="lazy" decoding="async">
                 <div class="infoCardBaixo">
                     <h3>Mudanzas Nacionales</h3>
                     <p>We provide moving services across the country with safety, agility and care. Count on a specialized team to transport your belongings with peace of mind and confidence.</p>
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="infoCardBottom">
-                <img src="assets/imagens/servicos/mudancaComercial.png" alt="Mudanzas Comerciales">
+                <img src="assets/imagens/servicos/mudancaComercial.png" alt="Mudanzas Comerciales" loading="lazy" decoding="async">
                 <div class="infoCardBaixo">
                     <h3>Mudanzas Comerciales</h3>
                     <p>We handle commercial relocations with agility, organization and safety. We plan each stage to minimize disruption to your company’s operations and ensure an efficient transition.</p>
@@ -148,7 +148,7 @@
                 </div>
             </div>
             <div class="infoCardBottom">
-                <img src="assets/imagens/servicos/mudancaParaBrasilP.png" alt="Mudanza a Brasil">
+                <img src="assets/imagens/servicos/mudancaParaBrasilP.png" alt="Mudanza a Brasil" loading="lazy" decoding="async">
                 <div class="infoCardBaixo">
                     <h3>Mudanza a Brasil</h3>
                     <p>We bring your move to Brazil with efficiency and safety. We offer complete support with transportation and documentation, ensuring a smooth arrival for your belongings.</p>
@@ -175,22 +175,34 @@
             <h2>Solicite su Cotización</h2>
             <p>Complete los datos a continuación y reciba una propuesta personalizada para su mudanza nacional o internacional.</p>
         </div>
-        <form id="quoteForm" class="cotacao-form">
+        <form id="quoteForm" class="cotacao-form" label="Solicitud de Cotización">
+            <div>
+                <h2>¿Está pensando en mudarse?</h2>
+                <p>Solicite aquí su presupuesto</p>
+            </div>
             <div class="cotacao-grid">
-                <input type="text" placeholder="Nombre completo" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Teléfono" required>
-                <input type="text" placeholder="Origen city" required>
-                <input type="text" placeholder="Destino city" required>
-                <select required>
+                <label for="quoteName" class="sr-only">Nombre completo</label>
+                <input id="quoteName" type="text" placeholder="Nombre completo" required>
+                <label for="quoteEmail" class="sr-only">Email</label>
+                <input id="quoteEmail" type="email" placeholder="Email" required>
+                <label for="quotePhone" class="sr-only">Teléfono</label>
+                <input id="quotePhone" type="tel" placeholder="Teléfono" required>
+                <label for="quoteOrigin" class="sr-only">Origen city</label>
+                <input id="quoteOrigin" type="text" placeholder="Origen city" required>
+                <label for="quoteDestination" class="sr-only">Destino city</label>
+                <input id="quoteDestination" type="text" placeholder="Destino city" required>
+                <label for="quoteService" class="sr-only">Tipo de servicio</label>
+                <select id="quoteService" required>
                     <option value="" disabled selected>Tipo de servicio</option>
                     <option value="nacional">Mudanzas Nacionales</option>
                     <option value="internacional">Mudanzas Internacionales</option>
                     <option value="comercial">Mudanzas Comerciales</option>
                     <option value="brasil">Mudanza a Brasil</option>
                 </select>
-                <input type="text" placeholder="Volumen estimado (m³)" required>
-                <textarea placeholder="Información adicional" rows="4"></textarea>
+                <label for="quoteVolume" class="sr-only">Volumen estimado (m³)</label>
+                <input id="quoteVolume" type="text" placeholder="Volumen estimado (m³)" required>
+                <label for="quoteMessage" class="sr-only">Información adicional</label>
+                <textarea id="quoteMessage" placeholder="Información adicional" rows="4"></textarea>
             </div>
             <button class="btn" type="submit">Enviar Cotización</button>
             <div id="quoteSuccess" class="quote-success">
@@ -205,10 +217,10 @@
     <div class="testimonials-container">
         <h2>Testimonios</h2>
         <div class="testimonials-grid">
-            <article class="testimonials-card"><div class="testimonial-top"><div class="testimonial-photo"><img src="https://i.pravatar.cc/150?img=32" alt="Client photo Luciana"></div><div class="testimonial-meta"><h3>Luciana S.</h3><span>Residential client</span></div></div><p>Move and Shipping turned my move into a smooth process. Fast service, a very attentive team and support at every stage.</p></article>
-            <article class="testimonials-card"><div class="testimonial-top"><div class="testimonial-photo"><img src="https://i.pravatar.cc/150?img=45" alt="Client photo Aline"></div><div class="testimonial-meta"><h3>Aline M.</h3><span>Commercial client</span></div></div><p>Professionalism and organization from start to finish. My business move was handled with care and respect for the agreed deadlines.</p></article>
-            <article class="testimonials-card"><div class="testimonial-top"><div class="testimonial-photo"><img src="https://i.pravatar.cc/150?img=57" alt="Client photo Fernando"></div><div class="testimonial-meta"><h3>Fernando R.</h3><span>International client</span></div></div><p>The international move was very well planned. I felt safe with the support and attention to detail throughout the process.</p></article>
-            <article class="testimonials-card"><div class="testimonial-top"><div class="testimonial-photo"><img src="https://i.pravatar.cc/150?img=68" alt="Client photo Ricardo"></div><div class="testimonial-meta"><h3>Ricardo T.</h3><span>Domestic client</span></div></div><p>Excellent value for money and a very competent team. The move was completed without delays and with all the expected care.</p></article>
+            <article class="testimonials-card"><div class="testimonial-top"><div class="testimonial-photo"><img src="https://i.pravatar.cc/150?img=32" alt="Client photo Luciana" loading="lazy" decoding="async"></div><div class="testimonial-meta"><h3>Luciana S.</h3><span>Residential client</span></div></div><p>Move and Shipping turned my move into a smooth process. Fast service, a very attentive team and support at every stage.</p></article>
+            <article class="testimonials-card"><div class="testimonial-top"><div class="testimonial-photo"><img src="https://i.pravatar.cc/150?img=45" alt="Client photo Aline" loading="lazy" decoding="async"></div><div class="testimonial-meta"><h3>Aline M.</h3><span>Commercial client</span></div></div><p>Professionalism and organization from start to finish. My business move was handled with care and respect for the agreed deadlines.</p></article>
+            <article class="testimonials-card"><div class="testimonial-top"><div class="testimonial-photo"><img src="https://i.pravatar.cc/150?img=57" alt="Client photo Fernando" loading="lazy" decoding="async"></div><div class="testimonial-meta"><h3>Fernando R.</h3><span>International client</span></div></div><p>The international move was very well planned. I felt safe with the support and attention to detail throughout the process.</p></article>
+            <article class="testimonials-card"><div class="testimonial-top"><div class="testimonial-photo"><img src="https://i.pravatar.cc/150?img=68" alt="Client photo Ricardo" loading="lazy" decoding="async"></div><div class="testimonial-meta"><h3>Ricardo T.</h3><span>Domestic client</span></div></div><p>Excellent value for money and a very competent team. The move was completed without delays and with all the expected care.</p></article>
         </div>
     </div>
 </section>

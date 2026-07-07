@@ -121,7 +121,7 @@
 
         <div class="services-grid-top">
             <div class="imgServices">
-                <img src="/assets/imagens/servicos/mudancaInter.png" alt="Mudança Internacional">
+                <img src="/assets/imagens/servicos/mudancaInter.png" alt="Mudança Internacional" loading="lazy" decoding="async">
             </div>
 
 
@@ -141,7 +141,7 @@
 
         <div class="services-grid-bottom">
             <div class="infoCardBottom">
-                <img src="/assets/imagens/servicos/mudancaResidP.png" alt="Mudança Nacional">
+                <img src="/assets/imagens/servicos/mudancaResidP.png" alt="Mudança Nacional" loading="lazy" decoding="async">
                 <div class="infoCardBaixo">
                     <h3>Mudanças Nacionais</h3>
                     <p>Realizamos mudanças para todo o Brasil com segurança, agilidade e cuidado. Conte com uma equipe especializada para transportar seus bens com tranquilidade e confiança.</p>
@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div class="infoCardBottom">
-                <img src="/assets/imagens/servicos/mudancaComercialPp.png" alt="Mudança Comercial">
+                <img src="/assets/imagens/servicos/mudancaComercialPp.png" alt="Mudança Comercial" loading="lazy" decoding="async">
                 <div class="infoCardBaixo">
                     <h3>Mudanças Comerciais</h3>
                     <p>Realizamos mudanças comerciais com agilidade, organização e segurança. Planejamos cada etapa para minimizar impactos nas operações da sua empresa e garantir uma transição eficiente.</p>
@@ -161,7 +161,7 @@
                 </div>
             </div>
             <div class="infoCardBottom">
-                <img src="/assets/imagens/servicos/mudancaParaBrasilP.png" alt="Mudança para o Brasil">
+                <img src="/assets/imagens/servicos/mudancaParaBrasilP.png" alt="Mudança para o Brasil" loading="lazy" decoding="async">
                 <div class="infoCardBaixo">
                     <h3>Mudanças para o Brasil</h3>
                     <p>Trazemos sua mudança para o Brasil com eficiência e segurança. Oferecemos suporte completo no transporte e na documentação, garantindo uma chegada tranquila dos seus bens.</p>
@@ -206,22 +206,34 @@
             <p>Preencha os dados abaixo e receba uma proposta personalizada para sua mudança nacional ou internacional.</p>
         </div>
 
-        <form id="quoteForm" class="cotacao-form">
+        <form id="quoteForm" class="cotacao-form" label="Solicitação de Cotação">
+            <div>
+                <h2>Mudança em vista?</h2>
+                <p>Faça aqui o seu orçamento</p>
+            </div>
             <div class="cotacao-grid">
-                <input type="text" placeholder="Nome completo" required>
-                <input type="email" placeholder="E-mail" required>
-                <input type="tel" placeholder="Telefone" required>
-                <input type="text" placeholder="Cidade de origem" required>
-                <input type="text" placeholder="Cidade de destino" required>
-                <select required>
+                <label for="quoteName" class="sr-only">Nome completo</label>
+                <input id="quoteName" type="text" placeholder="Nome completo" required>
+                <label for="quoteEmail" class="sr-only">E-mail</label>
+                <input id="quoteEmail" type="email" placeholder="E-mail" required>
+                <label for="quotePhone" class="sr-only">Telefone</label>
+                <input id="quotePhone" type="tel" placeholder="Telefone" required>
+                <label for="quoteOrigin" class="sr-only">Cidade de origem</label>
+                <input id="quoteOrigin" type="text" placeholder="Cidade de origem" required>
+                <label for="quoteDestination" class="sr-only">Cidade de destino</label>
+                <input id="quoteDestination" type="text" placeholder="Cidade de destino" required>
+                <label for="quoteService" class="sr-only">Tipo de serviço</label>
+                <select id="quoteService" required>
                     <option value="" disabled selected>Tipo de serviço</option>
                     <option value="nacional">Mudança Nacional</option>
                     <option value="internacional">Mudança Internacional</option>
                     <option value="comercial">Mudança Comercial</option>
                     <option value="comercial">Mudança para o Brasil</option>
                 </select>
-                <input type="text" placeholder="Volume estimado (m³)" required>
-                <textarea placeholder="Informações adicionais" rows="4"></textarea>
+                <label for="quoteVolume" class="sr-only">Volume estimado (m³)</label>
+                <input id="quoteVolume" type="text" placeholder="Volume estimado (m³)" required>
+                <label for="quoteMessage" class="sr-only">Informações adicionais</label>
+                <textarea id="quoteMessage" placeholder="Informações adicionais" rows="4"></textarea>
             </div>
             <button class="btn" type="submit">Enviar Cotação</button>
 
@@ -245,7 +257,7 @@
             <article class="testimonials-card">
                 <div class="testimonial-top">
                     <div class="testimonial-photo">
-                        <img src="https://i.pravatar.cc/150?img=32" alt="Foto de cliente Luciana">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="Foto de cliente Luciana" loading="lazy" decoding="async">
                     </div>
                     <div class="testimonial-meta">
                         <h3>Luciana S.</h3>
@@ -258,7 +270,7 @@
             <article class="testimonials-card">
                 <div class="testimonial-top">
                     <div class="testimonial-photo">
-                        <img src="https://i.pravatar.cc/150?img=45" alt="Foto de cliente João">
+                        <img src="https://i.pravatar.cc/150?img=45" alt="Foto de cliente João" loading="lazy" decoding="async">
                     </div>
                     <div class="testimonial-meta">
                         <h3>Aline M.</h3>
@@ -271,7 +283,7 @@
             <article class="testimonials-card">
                 <div class="testimonial-top">
                     <div class="testimonial-photo">
-                        <img src="https://i.pravatar.cc/150?img=57" alt="Foto de cliente Fernanda">
+                        <img src="https://i.pravatar.cc/150?img=57" alt="Foto de cliente Fernanda" loading="lazy" decoding="async">
                     </div>
                     <div class="testimonial-meta">
                         <h3>Fernando R.</h3>
@@ -284,7 +296,7 @@
             <article class="testimonials-card">
                 <div class="testimonial-top">
                     <div class="testimonial-photo">
-                        <img src="https://i.pravatar.cc/150?img=68" alt="Foto de cliente Ricardo">
+                        <img src="https://i.pravatar.cc/150?img=68" alt="Foto de cliente Ricardo" loading="lazy" decoding="async">
                     </div>
                     <div class="testimonial-meta">
                         <h3>Ricardo T.</h3>

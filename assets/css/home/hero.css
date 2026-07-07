@@ -64,7 +64,7 @@
 }
 
 .hero-form label {
-    color: var(--color-label);
+    color: var(--text-dark);
     font-size: 0.8rem;
 }
 
