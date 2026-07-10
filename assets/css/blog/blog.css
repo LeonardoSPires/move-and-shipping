@@ -207,9 +207,12 @@
 }
 
 .blog-timeline,
-.blog-glossary,
+.blog-glossary {
+    background: linear-gradient(white, var(--color-primary-light));
+}
+
 .blog-deep-content {
-    background: var(--color-white);
+    background: var(--color-primary);
 }
 
 .destaques-grid,
@@ -587,7 +590,7 @@ padding:28px;
 
 .blog-newsletter {
     padding: 90px 0;
-    background: var(--color-light-bg);
+    background: #fff;
 }
 
 .newsletter-box {

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../../../assets/css/componentes/header.css">
     <link rel="stylesheet" href="../../../assets/css/componentes/footer.css">
     <link rel="stylesheet" href="../../../assets/css/contato/contato.css">
+    <link rel="stylesheet" href="../../../assets/css/home/hero.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -35,6 +36,50 @@
             <div class="contact-container">
                 <h1>Contáctenos</h1>
                 <h2>¿Tiene alguna pregunta sobre su mudanza, nuestros servicios o presupuestos?</h2>
+
+                <!-- APARECE SOLO EN MOBILE -->
+                <button class="btn hero-quote-mobile" type="button" id="openHeroForm">
+                    Solicitar presupuesto
+                </button>
+            </div>
+
+            <div class="hero-form-container animate-right delay" id="heroFormModal">
+
+                <!-- APARECE SOLO EN MOBILE -->
+                <button class="hero-form-close" type="button" id="closeHeroForm" aria-label="Cerrar formulario">
+                    <i class="fas fa-xmark"></i>
+                </button>
+
+                <h3>¿Pensando en mudarte?</h3>
+                <h4>Obtén una cotización gratuita con nosotros.</h4>
+
+                <form id="contactForm" class="hero-form">
+                    <label for="heroName">Nombre</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <input type="text" id="heroName" placeholder="Ingrese su nombre" required>
+                    </div>
+
+                    <label for="heroEmail">Correo</label>
+                    <div class="input-icon">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <input type="email" id="heroEmail" placeholder="Ingrese su correo" required>
+                    </div>
+
+                    <label for="heroOrigin">Origen</label>
+                    <div class="input-icon">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        <input type="text" id="heroOrigin" placeholder="Ingrese su origen" required>
+                    </div>
+
+                    <label for="heroDestination">Destino</label>
+                    <div class="input-icon">
+                        <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+                        <input type="text" id="heroDestination" placeholder="Ingrese su destino" required>
+                    </div>
+
+                    <button class="btn" type="submit">Solicitar presupuesto</button>
+                </form>
             </div>
         </section>
 
@@ -59,32 +104,6 @@
                         <i class="fa-solid fa-at"></i>
                         <span>info@moveandshipping.com</span>
                     </div>
-                </div>
-
-                <div class="contact-form-box">
-                    <h3>Contáctenos a través del formulario</h3>
-
-                    <form class="contact-form">
-                        <label for="contactName" class="sr-only">Nombre</label>
-                        <input type="text" id="contactName" placeholder="Nombre" required>
-                        
-                        <label for="contactEmail" class="sr-only">Correo</label>
-                        <input type="email" id="contactEmail" placeholder="Correo" required>
-
-                        <label for="contactSubject" class="sr-only">Asunto</label>
-                        <select id="contactSubject" required>
-                            <option value="" disabled selected>Seleccione un asunto</option>
-                            <option value="duvidas">Preguntas sobre mudanza</option>
-                            <option value="cotacao">Solicitar presupuesto</option>
-                            <option value="parceria">Asociaciones</option>
-                            <option value="outros">Otros</option>
-                        </select>
-
-                        <label for="contactMessage" class="sr-only">Mensaje</label>
-                        <textarea id="contactMessage" placeholder="Mensaje" rows="6" required></textarea>
-
-                        <button type="submit" class="btn">Enviar mensaje</button>
-                    </form>
                 </div>
 
             </div>

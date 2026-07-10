@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../../../assets/css/componentes/header.css">
     <link rel="stylesheet" href="../../../assets/css/componentes/footer.css">
     <link rel="stylesheet" href="../../../assets/css/contato/contato.css">
+    <link rel="stylesheet" href="../../../assets/css/home/hero.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,6 +35,50 @@
             <div class="contact-container">
                 <h1>Contact Us</h1>
                 <h2>Do you have any questions about your move, our services, or requesting a quote?</h2>
+
+                <!-- APPEARS ONLY ON MOBILE -->
+                <button class="btn hero-quote-mobile" type="button" id="openHeroForm">
+                    Request a Quote
+                </button>
+            </div>
+
+            <div class="hero-form-container animate-right delay" id="heroFormModal">
+
+                <!-- APPEARS ONLY ON MOBILE -->
+                <button class="hero-form-close" type="button" id="closeHeroForm" aria-label="Close form">
+                    <i class="fas fa-xmark"></i>
+                </button>
+
+                <h3>Thinking about moving?</h3>
+                <h4>Get a free quote with us.</h4>
+
+                <form id="contactForm" class="hero-form">
+                    <label for="heroName">Name</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <input type="text" id="heroName" placeholder="Enter your name" required>
+                    </div>
+
+                    <label for="heroEmail">Email</label>
+                    <div class="input-icon">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <input type="email" id="heroEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <label for="heroOrigin">Origin</label>
+                    <div class="input-icon">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        <input type="text" id="heroOrigin" placeholder="Enter your origin" required>
+                    </div>
+
+                    <label for="heroDestination">Destination</label>
+                    <div class="input-icon">
+                        <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+                        <input type="text" id="heroDestination" placeholder="Enter your destination" required>
+                    </div>
+
+                    <button class="btn" type="submit">Request Quote</button>
+                </form>
             </div>
         </section>
 
@@ -58,32 +103,6 @@
                         <i class="fa-solid fa-at"></i>
                         <span>info@moveandshipping.com</span>
                     </div>
-                </div>
-
-                <div class="contact-form-box">
-                    <h3>Get in Touch Using the Form</h3>
-
-                    <form class="contact-form">
-                        <label for="contactName" class="sr-only">Name</label>
-                        <input type="text" id="contactName" placeholder="Name" required>
-                        
-                        <label for="contactEmail" class="sr-only">Email</label>
-                        <input type="email" id="contactEmail" placeholder="Email" required>
-
-                        <label for="contactSubject" class="sr-only">Subject</label>
-                        <select id="contactSubject" required>
-                            <option value="" disabled selected>Select a subject</option>
-                            <option value="duvidas">Moving Questions</option>
-                            <option value="cotacao">Request a Quote</option>
-                            <option value="parceria">Partnerships</option>
-                            <option value="outros">Other</option>
-                        </select>
-
-                        <label for="contactMessage" class="sr-only">Message</label>
-                        <textarea id="contactMessage" placeholder="Message" rows="6" required></textarea>
-
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
                 </div>
 
             </div>

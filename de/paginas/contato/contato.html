@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../../../assets/css/componentes/header.css">
     <link rel="stylesheet" href="../../../assets/css/componentes/footer.css">
     <link rel="stylesheet" href="../../../assets/css/contato/contato.css">
+    <link rel="stylesheet" href="../../../assets/css/home/hero.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,6 +35,50 @@
             <div class="contact-container">
                 <h1>Kontaktieren Sie uns</h1>
                 <h2>Haben Sie Fragen zu Ihrem Umzug, unseren Dienstleistungen oder einem Angebot?</h2>
+
+                <!-- ERSCHEINT NUR AUF MOBILE -->
+                <button class="btn hero-quote-mobile" type="button" id="openHeroForm">
+                    Angebot anfordern
+                </button>
+            </div>
+
+            <div class="hero-form-container animate-right delay" id="heroFormModal">
+
+                <!-- ERSCHEINT NUR AUF MOBILE -->
+                <button class="hero-form-close" type="button" id="closeHeroForm" aria-label="Formular schließen">
+                    <i class="fas fa-xmark"></i>
+                </button>
+
+                <h3>Planen Sie einen Umzug?</h3>
+                <h4>Erhalten Sie ein kostenloses Angebot bei uns.</h4>
+
+                <form id="contactForm" class="hero-form">
+                    <label for="heroName">Name</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <input type="text" id="heroName" placeholder="Geben Sie Ihren Namen ein" required>
+                    </div>
+
+                    <label for="heroEmail">E-Mail</label>
+                    <div class="input-icon">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <input type="email" id="heroEmail" placeholder="Geben Sie Ihre E-Mail ein" required>
+                    </div>
+
+                    <label for="heroOrigin">Abfahrt</label>
+                    <div class="input-icon">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        <input type="text" id="heroOrigin" placeholder="Geben Sie Ihren Herkunftsort ein" required>
+                    </div>
+
+                    <label for="heroDestination">Ziel</label>
+                    <div class="input-icon">
+                        <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+                        <input type="text" id="heroDestination" placeholder="Geben Sie Ihr Ziel ein" required>
+                    </div>
+
+                    <button class="btn" type="submit">Angebot anfordern</button>
+                </form>
             </div>
         </section>
 
@@ -58,32 +103,6 @@
                         <i class="fa-solid fa-at"></i>
                         <span>info@moveandshipping.com</span>
                     </div>
-                </div>
-
-                <div class="contact-form-box">
-                    <h3>Kontaktieren Sie uns über das Formular</h3>
-
-                    <form class="contact-form">
-                        <label for="contactName" class="sr-only">Name</label>
-                        <input type="text" id="contactName" placeholder="Name" required>
-                        
-                        <label for="contactEmail" class="sr-only">E-Mail</label>
-                        <input type="email" id="contactEmail" placeholder="E-Mail" required>
-
-                        <label for="contactSubject" class="sr-only">Betreff</label>
-                        <select id="contactSubject" required>
-                            <option value="" disabled selected>Wählen Sie ein Thema</option>
-                            <option value="duvidas">Fragen zum Umzug</option>
-                            <option value="cotacao">Ein Angebot anfordern</option>
-                            <option value="parceria">Partnerschaften</option>
-                            <option value="outros">Sonstige</option>
-                        </select>
-
-                        <label for="contactMessage" class="sr-only">Nachricht</label>
-                        <textarea id="contactMessage" placeholder="Nachricht" rows="6" required></textarea>
-
-                        <button type="submit" class="btn">Nachricht senden</button>
-                    </form>
                 </div>
 
             </div>

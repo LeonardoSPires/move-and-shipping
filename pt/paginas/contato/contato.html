@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/imagens/logos/favicon.png">
+    <link rel="icon" type="image/png" href="../../../assets/imagens/logos/favicon.png">
     <title>Contato e Orçamentos | Move and Shipping</title>
     <meta name="description"
-    content="Solicite sua cotação de mudança nacional, internacional ou comercial com a Move and Shipping.">
+        content="Solicite sua cotação de mudança nacional, internacional ou comercial com a Move and Shipping.">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Move and Shipping">
     <meta property="og:title" content="Move and Shipping | Empresa de Mudanças Nacionais e Internacionais">
-    <meta property="og:description" content="Empresa especializada em mudanças nacionais, internacionais e comerciais, oferecendo logística segura e atendimento personalizado.">
+    <meta property="og:description"
+        content="Empresa especializada em mudanças nacionais, internacionais e comerciais, oferecendo logística segura e atendimento personalizado.">
     <meta property="og:url" content="https://moveandshipping.com/pt/">
     <meta property="og:image" content="https://moveandshipping.com/assets/imagens/seo/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -31,6 +32,7 @@
     <link rel="stylesheet" href="../../../assets/css/componentes/header.css">
     <link rel="stylesheet" href="../../../assets/css/componentes/footer.css">
     <link rel="stylesheet" href="../../../assets/css/contato/contato.css">
+    <link rel="stylesheet" href="../../../assets/css/home/hero.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -44,6 +46,50 @@
             <div class="contact-container">
                 <h1>Contate-nos</h1>
                 <h2>Você tem alguma dúvida sobre sua mudança, nossos serviços ou cotações?</h2>
+
+                <!-- APARECE SOMENTE NO MOBILE -->
+                <button class="btn hero-quote-mobile" type="button" id="openHeroForm">
+                    Solicite sua cotação
+                </button>
+            </div>
+
+            <div class="hero-form-container animate-right delay" id="heroFormModal">
+
+                <!-- APARECE SOMENTE NO MOBILE -->
+                <button class="hero-form-close" type="button" id="closeHeroForm" aria-label="Fechar formulário">
+                    <i class="fas fa-xmark"></i>
+                </button>
+
+                <h3>Pensando em mudar?</h3>
+                <h4>Obtenha uma cotação gratuita conosco.</h4>
+
+                <form id="contactForm" class="hero-form">
+                    <label for="heroName">Nome</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <input type="text" id="heroName" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <label for="heroEmail">Email</label>
+                    <div class="input-icon">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <input type="email" id="heroEmail" placeholder="Digite seu email" required>
+                    </div>
+
+                    <label for="heroOrigin">Origem</label>
+                    <div class="input-icon">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        <input type="text" id="heroOrigin" placeholder="Digite sua origem" required>
+                    </div>
+
+                    <label for="heroDestination">Destino</label>
+                    <div class="input-icon">
+                        <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+                        <input type="text" id="heroDestination" placeholder="Digite seu destino" required>
+                    </div>
+
+                    <button class="btn" type="submit">Solicitar Cotação</button>
+                </form>
             </div>
         </section>
 
@@ -70,85 +116,55 @@
                     </div>
                 </div>
 
-                <div class="contact-form-box">
-                    <h3>Fale conosco usando o formulário</h3>
-
-                    <form class="contact-form">
-                        <label for="contactName" class="sr-only">Nome</label>
-                        <input type="text" id="contactName" placeholder="Nome" required>
-                        
-                        <label for="contactEmail" class="sr-only">E-mail</label>
-                        <input type="email" id="contactEmail" placeholder="E-mail" required>
-
-                        <label for="contactSubject" class="sr-only">Assunto</label>
-                        <select id="contactSubject" required>
-                            <option value="" disabled selected>Selecione um assunto</option>
-                            <option value="duvidas">Dúvidas sobre mudança</option>
-                            <option value="cotacao">Solicitar cotação</option>
-                            <option value="parceria">Parcerias</option>
-                            <option value="outros">Outros</option>
-                        </select>
-
-                        <label for="contactMessage" class="sr-only">Mensagem</label>
-                        <textarea id="contactMessage" placeholder="Mensagem" rows="6" required></textarea>
-
-                        <button type="submit" class="btn">Enviar mensagem</button>
-                    </form>
-                </div>
-
             </div>
         </section>
 
-    <section class="contact-address">
-        <div class="contact-container address-grid">
+        <section class="contact-address">
+            <div class="contact-container address-grid">
 
-            <article class="address-card">
+                <article class="address-card">
 
-                <iframe
-                    src="https://www.google.com/maps?q=N1309+Coffeen+Ave+STE+1200+Sheridan+WY+82801&output=embed"
-                    loading="lazy">
-                </iframe>
+                    <iframe
+                        src="https://www.google.com/maps?q=N1309+Coffeen+Ave+STE+1200+Sheridan+WY+82801&output=embed"
+                        loading="lazy">
+                    </iframe>
 
-                <h3>MOVE AND SHIPPING USA</h3>
+                    <h3>MOVE AND SHIPPING USA</h3>
 
-                <p>N1309 Coffeen Ave STE 1200</p>
-                <p>Sheridan, WY 82801</p>
-                <p>United States</p>
+                    <p>N1309 Coffeen Ave STE 1200</p>
+                    <p>Sheridan, WY 82801</p>
+                    <p>United States</p>
 
-            </article>
+                </article>
 
-            <article class="address-card">
+                <article class="address-card">
 
-                <iframe
-                    src="https://www.google.com/maps?q=Rio+de+Janeiro+RJ+Brasil&output=embed"
-                    loading="lazy">
-                </iframe>
+                    <iframe src="https://www.google.com/maps?q=Rio+de+Janeiro+RJ+Brasil&output=embed" loading="lazy">
+                    </iframe>
 
-                <h3>MOVE AND SHIPPING RJ</h3>
+                    <h3>MOVE AND SHIPPING RJ</h3>
 
-                <p>Rio de Janeiro - RJ</p>
-                <p>Brasil</p>
-                <p>Atendimento nacional e internacional</p>
+                    <p>Rio de Janeiro - RJ</p>
+                    <p>Brasil</p>
+                    <p>Atendimento nacional e internacional</p>
 
-            </article>
+                </article>
 
-            <article class="address-card">
+                <article class="address-card">
 
-                <iframe
-                    src="https://www.google.com/maps?q=Sao+Paulo+SP+Brasil&output=embed"
-                    loading="lazy">
-                </iframe>
+                    <iframe src="https://www.google.com/maps?q=Sao+Paulo+SP+Brasil&output=embed" loading="lazy">
+                    </iframe>
 
-                <h3>MOVE AND SHIPPING SP</h3>
+                    <h3>MOVE AND SHIPPING SP</h3>
 
-                <p>São Paulo - SP</p>
-                <p>Brasil</p>
-                <p>Atendimento comercial e residencial</p>
+                    <p>São Paulo - SP</p>
+                    <p>Brasil</p>
+                    <p>Atendimento comercial e residencial</p>
 
-            </article>
+                </article>
 
-        </div>
-    </section>
+            </div>
+        </section>
 
         <section class="contact-faq">
             <div class="contact-container">
@@ -198,7 +214,7 @@
     <script src="../../../assets/js/componentes.js"></script>
     <script src="../../../assets/js/menu.js"></script>
     <script src="../../../assets/js/whatsapp.js"></script>
-    <script src="../../../assets/js/home.js"></script>   
+    <script src="../../../assets/js/home.js"></script>
 </body>
 
 </html>
