@@ -224,7 +224,6 @@
 
     .hero-form-container {
         display: block;
-
         position: fixed;
         inset: 0;
 
@@ -236,21 +235,23 @@
 
         background: var(--color-light-bg);
         border-radius: 0;
+        box-shadow: none;
 
-        z-index: 5000;
-
+        z-index: 9999;
         overflow-y: auto;
+        overscroll-behavior: contain;
 
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
 
         transform: translateY(100%);
+        will-change: transform, opacity;
 
         transition:
-            transform .4s ease,
-            opacity .3s ease,
-            visibility .3s;
+            transform .5s cubic-bezier(.22, 1, .36, 1),
+            opacity .35s ease,
+            visibility 0s linear .5s;
     }
 
     .hero-form-container.active {
@@ -259,6 +260,11 @@
         pointer-events: auto;
 
         transform: translateY(0);
+
+        transition:
+            transform .5s cubic-bezier(.22, 1, .36, 1),
+            opacity .35s ease,
+            visibility 0s linear 0s;
     }
 
     .hero-form-close {
@@ -266,13 +272,14 @@
         align-items: center;
         justify-content: center;
 
-        position: absolute;
+        position: fixed;
         top: 22px;
         right: 22px;
 
         width: 46px;
         height: 46px;
 
+        padding: 0;
         border: none;
         border-radius: 50%;
 
@@ -281,13 +288,20 @@
 
         font-size: 1.4rem;
         cursor: pointer;
+        z-index: 10000;
 
-        z-index: 10;
+        transition:
+            transform .25s ease,
+            opacity .25s ease;
+    }
+
+    .hero-form-close:hover {
+        transform: rotate(90deg);
     }
 
     .hero-form-container h3 {
         font-size: 1.8rem;
-        padding-right: 55px;
+        padding-right: 60px;
     }
 
     .hero-form-container h4 {
@@ -304,6 +318,13 @@
         min-height: 54px;
         margin-top: 20px;
     }
+}
+
+/* IMPEDE A PÁGINA DE ROLAR COM O MODAL ABERTO */
+
+body.hero-form-open {
+    overflow: hidden;
+    touch-action: none;
 }
 
 @media(max-width: 480px) {

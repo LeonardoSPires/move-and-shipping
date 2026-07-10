@@ -386,8 +386,9 @@
         visibility: hidden;
         pointer-events: none;
 
-        transform: translateX(100%);
-        transition: .3s ease;
+        transform: translate3d(100%, 0, 0);
+        will-change: transform, opacity;
+        transition: transform .35s cubic-bezier(0.22, 1, 0.36, 1), opacity .35s ease, visibility .35s ease;
         z-index: 4500;
 
         overflow-y: auto;
@@ -397,7 +398,7 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     .header-nav a,

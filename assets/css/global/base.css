@@ -70,26 +70,26 @@ p {
 /* ANIMAÇÕES GLOBAIS */
 .animate-up {
     opacity: 0;
-    transform: translateY(40px);
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease-out;
+    transform: translate3d(0, 48px, 0);
+    transition: transform 0.95s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.95s ease-out;
     will-change: transform, opacity;
 }
 
 .animate-up.in-view {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
 }
 
 .animate-right {
     opacity: 0;
-    transform: translateX(80px);
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease-out;
+    transform: translate3d(80px, 0, 0);
+    transition: transform 0.95s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.95s ease-out;
     will-change: transform, opacity;
 }
 
 .animate-right.in-view {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
 }
 
 .hero-container.animate-up.in-view {
@@ -97,12 +97,14 @@ p {
 }
 
 .animate-right.delay.in-view {
-    transition-delay: 0.40s;
+    transition-delay: 0.35s;
 }
 
-body.menu-open {
+body.menu-open,
+body.hero-form-open {
     overflow: hidden;
 }
+
 .whatsapp-floating {
     position: fixed;
     bottom: 25px;

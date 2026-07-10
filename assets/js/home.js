@@ -105,16 +105,15 @@ function setupHeroWaveText() {
 
 function animateHeroIntro() {
     const heroContainer = document.querySelector('.hero-container');
-    const heroForm = document.querySelector('.hero-form-container');
 
-    if (!heroContainer || !heroForm) return;
+    if (!heroContainer) return;
 
     requestAnimationFrame(() => {
-        heroContainer.classList.add('in-view');
-        heroForm.classList.add('in-view');
+        requestAnimationFrame(() => {
+            heroContainer.classList.add('in-view');
+        });
     });
 }
-
 /* ANIMAÇÕES AO ROLAR A PÁGINA */
 
 function setupScrollAnimations() {
@@ -148,7 +147,6 @@ function setupScrollAnimations() {
     ];
 
     const rightSelectors = [
-        '.hero-form-container',
         '.service-form-box',
         '.infoCardTop',
         '.contact-form-box'
@@ -234,29 +232,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
 /* MODAL DO FORMULÁRIO DO HERO NO MOBILE */
 
 function setupHeroFormModal() {
-    const openHeroForm = document.getElementById('openHeroForm');
-    const closeHeroForm = document.getElementById('closeHeroForm');
-    const heroFormModal = document.getElementById('heroFormModal');
+    const openButton = document.getElementById('openHeroForm');
+    const closeButton = document.getElementById('closeHeroForm');
+    const modal = document.getElementById('heroFormModal');
 
-    if (!openHeroForm || !closeHeroForm || !heroFormModal) return;
+    if (!openButton || !closeButton || !modal) return;
 
-    openHeroForm.addEventListener('click', function () {
-        heroFormModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
+    function openModal() {
+        modal.classList.add('active');
+        document.body.classList.add('hero-form-open');
 
-    closeHeroForm.addEventListener('click', function () {
-        heroFormModal.classList.remove('active');
-        document.body.style.overflow = '';
-    });
+        openButton.setAttribute('aria-expanded', 'true');
+        modal.setAttribute('aria-hidden', 'false');
+
+        setTimeout(() => {
+            const firstInput = modal.querySelector('input');
+
+            if (firstInput) {
+                firstInput.focus();
+            }
+        }, 500);
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.classList.remove('hero-form-open');
+
+        openButton.setAttribute('aria-expanded', 'false');
+        modal.setAttribute('aria-hidden', 'true');
+
+        openButton.focus();
+    }
+
+    openButton.setAttribute('aria-controls', 'heroFormModal');
+    openButton.setAttribute('aria-expanded', 'false');
+    modal.setAttribute('aria-hidden', 'true');
+
+    openButton.addEventListener('click', openModal);
+    closeButton.addEventListener('click', closeModal);
 
     document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') {
-            heroFormModal.classList.remove('active');
-            document.body.style.overflow = '';
+        if (event.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
         }
     });
 }
