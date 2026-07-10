@@ -637,8 +637,9 @@ padding:28px;
 .blog-cta {
     padding: 180px 0;
     background:
-        linear-gradient(rgba(215,41,145,.10), rgba(215,41,145,.88)),
-        url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
+    url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat,
+        linear-gradient(#fff, rgba(215,41,145,.88));
+        
     text-align: center;
     color: var(--color-white);
 }
