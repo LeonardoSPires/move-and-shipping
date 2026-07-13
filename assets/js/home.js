@@ -149,7 +149,8 @@ function setupScrollAnimations() {
     const rightSelectors = [
         '.service-form-box',
         '.infoCardTop',
-        '.contact-form-box'
+        '.contact-form-box',
+        '.hero-form-container'
     ];
 
     const upElements = document.querySelectorAll(upSelectors.join(', '));
