@@ -6,7 +6,7 @@ const ROOT = "";
 const pages = {
     home: "index.html",
 
-    services: "paginas/servicos/servicos.html",
+    services: "paginas/servicos/internacional.html",
 
     about: "paginas/sobre/sobre.html",
 
@@ -118,6 +118,10 @@ async function loadComponent(containerId, componentPath) {
     if (typeof setupWhatsappMessages === 'function') setupWhatsappMessages();
     }
 
+        if (containerId === 'footer-container') {
+            adjustFooterLinks();
+        }
+
         adjustImagePaths(container);
 
     } catch (error) {
@@ -143,6 +147,43 @@ function adjustHeaderLinks() {
 
 }
 
+function getFooterScrollTarget(page) {
+    const scrollTargets = {
+        home: 'hero',
+        about: 'about',
+        services: 'services',
+        blog: 'blog',
+        contato: 'cotacao'
+    };
+
+    return scrollTargets[page] || null;
+}
+
+function smoothScrollToTarget(targetElement, duration = 1200) {
+    const startY = window.scrollY;
+    const targetY = targetElement.getBoundingClientRect().top + window.scrollY - 90;
+    const distance = targetY - startY;
+    const startTime = performance.now();
+
+    function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+    }
+
+    function animate(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutCubic(progress);
+
+        window.scrollTo(0, startY + distance * eased);
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
 function adjustFooterLinks() {
 
     document.querySelectorAll('.footer-links-container [data-page]').forEach(link => {
@@ -151,8 +192,30 @@ function adjustFooterLinks() {
 
         if (!pages[page]) return;
 
-        link.href = `${ROOT}/${getCurrentLang()}/${pages[page]}`;
+        const targetSection = getFooterScrollTarget(page);
+        const destinationPage = pages[page];
+        const destinationPath = `${ROOT}/${getCurrentLang()}/${destinationPage}`;
 
+        link.href = targetSection ? `${destinationPath}#${targetSection}` : destinationPath;
+
+        if (link.dataset.footerBound === 'true') return;
+
+        link.dataset.footerBound = 'true';
+
+        link.addEventListener('click', (event) => {
+            const targetElement = document.getElementById(targetSection);
+
+            if (targetElement && targetSection) {
+                event.preventDefault();
+                smoothScrollToTarget(targetElement, 1400);
+                return;
+            }
+
+            if (targetSection && window.location.pathname.includes(`/${getCurrentLang()}/${destinationPage}`)) {
+                event.preventDefault();
+                window.location.hash = targetSection;
+            }
+        });
     });
 }
 
@@ -188,7 +251,44 @@ function adjustImagePaths(scope = document) {
 
     });
 }
+
+function initPageTransitions() {
+    if (document.querySelector('.page-transition-overlay')) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'page-transition-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(overlay);
+
+    document.addEventListener('click', (event) => {
+        const trigger = event.target.closest('a[href], button[data-href]');
+
+        if (!trigger) return;
+
+        const href = trigger.getAttribute('href') || trigger.dataset.href;
+
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+        if (trigger.tagName === 'A' && trigger.target === '_blank') return;
+
+        const nextUrl = new URL(href, window.location.href);
+
+        if (nextUrl.origin !== window.location.origin) return;
+
+        if (nextUrl.pathname === window.location.pathname && nextUrl.hash) return;
+
+        event.preventDefault();
+        document.body.classList.add('page-transition-active');
+        overlay.classList.add('is-visible');
+
+        setTimeout(() => {
+            window.location.href = nextUrl.href;
+        }, 420);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    initPageTransitions();
 
     loadComponent('header-container', 'componentes/header.html');
     loadComponent('footer-container', 'componentes/footer.html');

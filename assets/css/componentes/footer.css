@@ -171,3 +171,29 @@
         display: none;
     }
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+.page-transition-overlay {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.page-transition-overlay.is-visible {
+    opacity: 1;
+}
+
+body.page-transition-active {
+    overflow: hidden;
+}
