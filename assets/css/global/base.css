@@ -259,3 +259,76 @@ body.hero-form-open {
     white-space: nowrap;
     border-width: 0;
 }
+
+/* Ativa transições entre páginas do mesmo domínio */
+@view-transition {
+    navigation: auto;
+}
+
+/* Duração geral da transição */
+::view-transition-group(root) {
+    animation-duration: 0.45s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Página atual saindo */
+::view-transition-old(root) {
+    animation: page-out 0.3s ease forwards;
+}
+
+/* Nova página entrando */
+::view-transition-new(root) {
+    animation: page-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes page-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes page-in {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Respeita usuários que preferem menos animações */
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+    }
+}
+
+main {
+    animation: content-entry 0.5s ease both;
+}
+
+@keyframes content-entry {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.whatsapp-fixed {
+    view-transition-name: whatsapp-button;
+}

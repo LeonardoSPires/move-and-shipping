@@ -252,44 +252,7 @@ function adjustImagePaths(scope = document) {
     });
 }
 
-function initPageTransitions() {
-    if (document.querySelector('.page-transition-overlay')) return;
-
-    const overlay = document.createElement('div');
-    overlay.className = 'page-transition-overlay';
-    overlay.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(overlay);
-
-    document.addEventListener('click', (event) => {
-        const trigger = event.target.closest('a[href], button[data-href]');
-
-        if (!trigger) return;
-
-        const href = trigger.getAttribute('href') || trigger.dataset.href;
-
-        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
-
-        if (trigger.tagName === 'A' && trigger.target === '_blank') return;
-
-        const nextUrl = new URL(href, window.location.href);
-
-        if (nextUrl.origin !== window.location.origin) return;
-
-        if (nextUrl.pathname === window.location.pathname && nextUrl.hash) return;
-
-        event.preventDefault();
-        document.body.classList.add('page-transition-active');
-        overlay.classList.add('is-visible');
-
-        setTimeout(() => {
-            window.location.href = nextUrl.href;
-        }, 420);
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    initPageTransitions();
-
     loadComponent('header-container', 'componentes/header.html');
     loadComponent('footer-container', 'componentes/footer.html');
 });
