@@ -68,7 +68,7 @@
     box-shadow: 0 12px 32px rgba(0, 0, 0, .10);
 
     position: relative;
-    top: -240px;
+    top: -220px;
     align-self: flex-start;
 }
 
@@ -259,8 +259,8 @@
 .service-cta {
     padding: 300px 0;
     background:
-        linear-gradient( rgba(215, 41, 145, 0), var(--color-light-bg)),
-        url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat;
+        url('../../imagens/backgrounds/backgroundCotacao.png') center / cover no-repeat,
+        linear-gradient( rgba(215, 41, 145, 0), var(--color-light-bg));
     text-align: center;
     color: var(--color-primary);
 }
