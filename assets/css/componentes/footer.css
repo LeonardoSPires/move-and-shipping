@@ -4,7 +4,7 @@
     background: url('../../imagens/backgrounds/backgroundFooter.png') no-repeat center;
     background-size: cover;
     color: var(--color-white);
-    padding: 90px 0 28px;
+    padding: 40px 0 28px;
 }
 
 .footer-container-principal {
