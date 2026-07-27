@@ -117,6 +117,7 @@
 
 @media(max-width: 900px) {
     .footer {
+        background: url('../../imagens/backgrounds/backgroundFooter2.png') no-repeat center;
         padding: 70px 0 28px;
     }
 
